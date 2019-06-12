@@ -19,7 +19,7 @@ body {
 }
 
 .jumbo {
-  background: url('http://aztecahomeservices.com/wp-content/uploads/headerbg2.jpg') no-repeat;
+  /* background: url('http://aztecahomeservices.com/wp-content/uploads/headerbg2.jpg') no-repeat; */
   background-size: cover; 
   padding: 10px;
 }
