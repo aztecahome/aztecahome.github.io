@@ -1,0 +1,152 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (max-width: 421px) {
+  nav {
+    min-height: 112px;
+  }
+}
+@media screen and (max-width: 246px) {
+  nav {
+    min-height: 168px;
+  }
+}
+@media screen and (max-width: 174px) {
+  nav {
+    min-height: 224px;
+  }
+}
+
+.jumbo {
+  background: url('http://aztecahomeservices.com/wp-content/uploads/headerbg2.jpg') no-repeat;
+  background-size: cover; 
+  padding: 10px;
+}
+
+.social-icons
+{
+  display: block;
+}
+.social-icons li
+{
+  display: inline-block;
+}
+.social-icons li a {
+  display: block;
+  padding: 10px 12px;
+  border: 2px solid black;
+  border-radius: 50px;
+}
+.social-icons li img {
+  width: 25px;
+}
+
+
+.callBanner h3 {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 2em;
+}
+.callBanner h3 i {
+  font-size:.85em;
+  margin-right: 5px;
+}
+.callBanner a{
+  font-size: 2em;
+  color: #1b6f1b;
+  font-weight: bold;
+}
+
+body{
+  min-height:1000px;
+}
+
+.carousel {
+  max-height: 900px;
+}
+
+.contactBanner {
+  padding: 25px 15px;
+}
+.contactBanner h4 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.contactBanner .btn {
+  margin-top: 15px;
+}
+
+.mainTitle {
+  font-weight: 300;
+}
+
+.sideBanner img {
+  width: 150px;
+}
+.sideBanner ul{
+  max-width: 45ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sideBanner ul li:before {content:"\2714  "}
+.sideBanner {
+  font-size: 1.25em;
+}
+.sideBanner h5 {
+  font-weight: 700;
+}
+.sideBanner i {
+  font-size: 2em;
+  color: #fdd835;
+}
+blockquote {
+  border-left: 5px solid #1b5e20;
+  max-width: 55ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+img.charms {
+  width: 200px;
+}
+
+.citiesList {
+  padding: 20px 0;
+  background-image: url("../resources/images/general/azBackground.jpg");
+  background-size: cover;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 8px #000000;
+  background-position: center;
+  
+}
+.citiesList h4 {
+  font-weight: 300;
+}
+.citiesList ul {
+  margin: 0;
+}
+.citiesList ul li {
+  padding: 5px 0;
+}
+
+footer {
+  font-size: 1.25em;
+}
+footer img {
+  max-width: 100%;
+}
+footer ul {
+  text-align: center;
+}
+footer ul li {
+  display: inline;
+  padding: 5px;
+  margin: 5px;
+}
+
+.dropdown-content{
+  min-width: 125px;
+}
+.dropdown-content li a {
+  color: #1b5e20;
+}
