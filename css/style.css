@@ -1,96 +1,171 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
 }
 
-@media screen and (max-width: 421px) {
-  nav {
-    min-height: 112px;
-  }
+.btn {
+  border-radius: 10px;
 }
-@media screen and (max-width: 246px) {
-  nav {
-    min-height: 168px;
-  }
-}
-@media screen and (max-width: 174px) {
-  nav {
-    min-height: 224px;
-  }
+.star {
+  width: 48px;
+  position: relative;
+  top: -148px;
+  left: 56px;
 }
 
-.jumbo {
-  /* background: url('http://aztecahomeservices.com/wp-content/uploads/headerbg2.jpg') no-repeat; */
-  background-size: cover; 
-  padding: 10px;
+.starSide {
+  width: 48px;
+  position: relative;
+  top: -50px;
+  left: 13rem;
 }
 
-.social-icons
-{
-  display: block;
-}
-.social-icons li
-{
-  display: inline-block;
-}
-.social-icons li a {
-  display: block;
-  padding: 10px 12px;
-  border: 2px solid black;
-  border-radius: 50px;
-}
-.social-icons li img {
-  width: 25px;
-}
-
-
-.callBanner h3 {
-  margin-top: 5px;
+.covid19Section {
+  background-size: cover;
+  background-position: right;
   margin-bottom: 0;
-  font-size: 2em;
+  padding: 2em 0;
+  color: white;
+  background: red;
 }
-.callBanner h3 i {
-  font-size:.85em;
-  margin-right: 5px;
+.covid19Section .container .col {
+  background: rgba(150, 150, 150, 0.5);
+  border-radius: 20px;
+  padding: 1em;
 }
-.callBanner a{
-  font-size: 2em;
-  color: #1b6f1b;
-  font-weight: bold;
-}
-
-body{
-  min-height:1000px;
+.covid19Title {
+  margin: 20px 0;
+  color: white;
 }
 
-.carousel {
-  max-height: 900px;
-  background-color: #dcedc8;
+.covid19Menu {
+  height: 48px;
 }
 
-.contactBanner {
-  padding: 25px 15px;
+.christie {
+  /* background-image: url("/resources/images/corona/christinaWeb.jpg"); */
+  background-size: cover;
+  background-position: right;
+  height: 100%;
+  min-height: 30em;
+  border-radius: 20px;
 }
-.contactBanner h4 {
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.contactBanner .btn {
-  margin-top: 15px;
+.christieContainer {
+  background: none !important;
 }
 
-.mainTitle {
-  font-weight: 300;
+.btn {
+  font-weight: 900;
+}
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+}
+
+.sidenav {
+  max-width: 90vw;
+  padding-top: 64px;
+}
+
+.sidenav h6 {
+  padding: 0 32px;
+}
+
+.contactButton {
+  height: 48px;
+  padding: 7px 10px;
+}
+
+header {
+  margin-bottom: 56px;
+}
+
+body {
+  min-height: 100vh;
+}
+.grassholder {
+  display: flex;
+  border-bottom: 5px solid #149e47;
+  background: skyblue;
+  background: linear-gradient(
+    0deg,
+    rgba(133, 205, 234, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  height: 45vw;
+}
+
+.lawnMowerHolder {
+  top: -33.33vw;
+  position: relative;
+  margin-bottom: -33vw;
+}
+
+.lawnMower {
+  height: 33.33vw;
+  position: relative;
+  animation: oscillateLawnMower;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  /* ease-in-out 0 infinite alternate; */
+  /* transition: 2s ease-in-out; */
+}
+
+@keyframes oscillateLawnMower {
+  0% {
+    margin-left: -40vw;
+    transform: rotateY(0deg);
+  }
+  49% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    margin-left: 100vw;
+    transform: rotateY(180deg);
+  }
+  99% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    margin-left: -40vw;
+    transform: rotateY(0deg);
+  }
+}
+
+.grass {
+  flex-basis: auto;
+  width: 33.33vw;
+  margin-top: 11.66vw;
+  /* width: 19vw; */
+  /* margin-bottom: -5px; */
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header {
+  background: white;
+  /* min-height: 300px; */
+}
+
+.brand-logo {
+  height: 64px;
+  width: 150px;
 }
 
 .sideBanner img {
   width: 150px;
 }
-.sideBanner ul{
+.sideBanner ul {
   max-width: 45ch;
-  margin-left: auto;
-  margin-right: auto;
 }
-.sideBanner ul li:before {content:"\2714  "}
+.sideBanner ul li:before {
+  content: "\2714  ";
+}
 .sideBanner {
   font-size: 1.25em;
 }
@@ -102,7 +177,7 @@ body{
   color: #fdd835;
 }
 blockquote {
-  border-left: 5px solid #1b5e20;
+  border-left: 5px solid #505050;
   max-width: 55ch;
   margin-left: auto;
   margin-right: auto;
@@ -112,22 +187,24 @@ img.charms {
 }
 
 .citiesList {
-  padding: 20px 0;
-  background-image: url("../resources/images/general/azBackground.jpg");
-  background-size: cover;
+  padding: 20px 0 70px 0;
   margin-bottom: 0;
-  text-shadow: 2px 2px 8px #000000;
-  background-position: center;
-  
-}
-.citiesList h4 {
-  font-weight: 300;
+
+  background: linear-gradient(
+    0deg,
+    rgb(245, 245, 245) 10%,
+    rgb(227, 226, 226) 40%
+  );
 }
 .citiesList ul {
   margin: 0;
 }
 .citiesList ul li {
   padding: 5px 0;
+}
+
+.mainTitle {
+  padding: 0 10px;
 }
 
 footer {
@@ -145,9 +222,301 @@ footer ul li {
   margin: 5px;
 }
 
-.dropdown-content{
+.dropdown-content {
   min-width: 125px;
+  background: white;
 }
 .dropdown-content li a {
-  color: #1b5e20;
+  color: #1e1c1b;
+}
+
+.pestSection {
+  background: #113;
+  width: 100vw;
+  margin-bottom: 0;
+  /* min-height: 100vh; */
+  color: white;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.pestSection p {
+  margin: 40px 0;
+  z-index: 1000;
+  position: relative;
+}
+
+.scorpion {
+  /* height: 622px; */
+  width: 100%;
+  max-height: 615px;
+  position: relative;
+}
+
+.blackLight {
+  /* height: 622px; */
+  width: 100%;
+  max-height: 615px;
+  position: relative;
+  -webkit-animation: moveLight 8s infinite; /* Safari 4.0 - 8.0 */
+  animation: moveLight 8s infinite;
+  top: -622px;
+  margin-bottom: -600px;
+  opacity: 1;
+  mix-blend-mode: difference;
+}
+
+@keyframes moveLight {
+  0% {
+    left: 0%;
+  }
+  15% {
+    left: -70%;
+  }
+  30% {
+    left: 70%;
+  }
+  45% {
+    left: -50%;
+  }
+  60% {
+    left: 50%;
+  }
+  75% {
+    left: -20%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.pestTitleDiv {
+  padding: 0 0 !important;
+}
+.pestTitle {
+  font-weight: 900;
+  position: relative;
+  text-shadow: 0 0 50px rgba(100, 0, 200, 0.8);
+  border-radius: 20px;
+  /* padding: 20px; */
+  /* color: white; */
+  margin: 30px 0;
+  /* font-size: 5rem; */
+  font-variant: caps;
+}
+
+.pestDesc {
+  /* background-color: rgba(255,255,255,.7); */
+  margin-bottom: 50px;
+  border-radius: 20px;
+}
+
+.pestDesc p {
+  margin: 20px;
+}
+
+.poolSection {
+  background: white;
+  margin-bottom: 0;
+  /* min-height: 100vh; */
+}
+
+/* .pool { */
+/* max-height: 50vh; */
+/* } */
+
+.landSection {
+  background: linear-gradient(
+    0deg,
+    rgba(45, 29, 26, 1) 0%,
+    rgba(78, 52, 46, 1) 100%
+  );
+}
+
+.loading {
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 6rem;
+  line-height: 1em;
+}
+
+@keyframes wave-animation {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 200px bottom;
+  }
+}
+@keyframes loading-animation {
+  0% {
+    background-size: 200px 20vw;
+  }
+  100% {
+    background-size: 200px 20vw;
+  }
+}
+
+.waveTransition {
+  /* transform: rotateX(180deg); */
+  margin-top: -5px;
+}
+.landscapeChampions {
+  text-shadow: 0 0 40px rgba(255, 193, 7, 0.4);
+}
+.wave {
+  background: url("../wave.png") round 0 0;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-position: 0 0;
+  text-shadow: 0 0 rgba(57, 143, 255, 0.59);
+  animation: wave-animation 4s infinite linear;
+  /* loading-animation 10s infinite linear alternate; */
+  background-size: 100px 0.75em;
+  background-repeat: repeat-x;
+  opacity: 1;
+}
+
+/* @media screen and (min-width: 800px) {
+  @keyframes big-loading-animation { 
+    0% {
+      background-size: 200px 100px;
+    }
+    100% {
+      background-size: 200px 100px;
+    }
+  }
+
+  .wave {
+    animation: wave-animation 1s infinite linear,
+    big-loading-animation 10s infinite linear alternate;
+
+  }
+  .loading {
+    font-size: 150px;
+    line-height: 150px;
+  }
+  
+}  */
+
+.double a {
+  line-height: 20px;
+  height: 137px;
+}
+
+.double p {
+  margin: 0;
+  padding: 50px 0;
+}
+
+.double {
+  height: 137px;
+}
+
+@media screen and (min-width: 992px) {
+  .loading {
+    font-size: 7rem;
+  }
+  .brand-logo {
+    width: 200px;
+    margin: 10px;
+    margin-left: 15vw;
+  }
+  .nav-wrapper ul {
+    margin-right: 15vw;
+  }
+  nav {
+    height: 137px;
+  }
+  nav,
+  nav .nav-wrapper i,
+  nav a.sidenav-trigger,
+  nav a.sidenav-trigger i {
+    line-height: 137px;
+  }
+  header {
+    margin-bottom: 137px;
+  }
+}
+
+#SVGID_1_ {
+  background: red;
+}
+
+.scorpion {
+  animation-name: vibrate;
+  animation-delay: 0s;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  /* animation-fill-mode: forwards; */
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes vibrate {
+  0% {
+    transform: rotate(0deg);
+  }
+  86% {
+    transform: rotate(0deg);
+  }
+  87% {
+    transform: rotate(-5deg);
+  }
+  88% {
+    transform: rotate(0deg);
+  }
+  89% {
+    transform: rotate(-5deg);
+  }
+  91% {
+    transform: rotate(0deg);
+  }
+  92% {
+    transform: rotate(-5deg);
+  }
+  93% {
+    transform: rotate(0deg);
+  }
+  94% {
+    transform: rotate(-5deg);
+  }
+  95% {
+    transform: rotate(0deg);
+  }
+  96% {
+    transform: rotate(-5deg);
+  }
+  97% {
+    transform: rotate(0deg);
+  }
+  98% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.light-tan {
+  background-color: white;
+}
+
+.light-tan-text {
+  color: #bdbd8c;
+}
+
+.blackish {
+  background-color: #1e1c1b;
+}
+
+.blackish-text {
+  color: #1e1c1b;
+}
+
+.light-green-text {
+  color: #63c11d;
 }

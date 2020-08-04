@@ -12,14 +12,22 @@
   
   
   
-  document.addEventListener('DOMContentLoaded', function () {
+  // document.addEventListener('DOMContentLoaded', function () {
     // Render the navbar and other Materialize elements through here
     httpGetAsync("resources/header.html", renderItems);
     // Render the footer through here
     httpGetAsync("resources/footer.html", renderFooter);
   
+  // });
+  document.addEventListener('DOMContentLoaded', function() {
+ 
+
+    var collapsible = document.querySelector('.collapsible');
+    var collapsibleInstace = M.Collapsible.init(collapsible, {});
+    
+    var dropdowns = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(dropdowns, {});
   });
-  
   
   
   function httpGetAsync(theUrl, callback) {
