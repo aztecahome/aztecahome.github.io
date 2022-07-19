@@ -5,10 +5,15 @@ const production = process.env.NODE_ENV === "production";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: { port: 3000 },
+  server: { port: 8080 },
+  preview: { port: 8080 },
+  build: { outdir: "../" },
   plugins: [
     svelte({
       preprocess: sveltePreprocess({
+        replace: [
+          [/process\.env\.NODE_ENV/g, JSON.stringify(process.env.NODE_ENV)],
+        ],
         sourceMap: !production,
         postcss: true,
         scss: {
