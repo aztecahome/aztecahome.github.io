@@ -1,24 +1,29 @@
 <template>
-  <div class="bg-blue-900 min-h-[200px] p-4 flex flex-col items-center">
-    <h3 class="text-center text-white text-sm italic underline">
-      Eight Annual
-    </h3>
-    <h1 class="text-blue-50 mt-[-1px] text-4xl center font-bold">
+  <div class="flex min-h-[200px] flex-col items-center bg-blue-900 p-4">
+    <h3 class="p-4 text-center text-sm text-white underline">Eighth Annual</h3>
+    <h1 class="py-2 text-center text-4xl font-bold text-blue-50">
       Water Drive for the Homeless
     </h1>
-    <div class="w-full flex justify-center">
-      <p class="text-white text-2xl center max-w-[500px]">
-        Drop off donations at Rhapsody Music, AZTECA will distribute to Phoenix
-        Rescue Mission. You can also donate money at the link below:
+    <div class="flex w-full justify-center">
+      <p class="center mb-4 max-w-[500px] text-2xl text-white">
+        Drop off water donations with Rhapsody Music at 42201 N. 41st Dr. Suite
+        132 Anthem, Arizona 85086 or with AZTECA at 22047 N Black Canyon Highway
+        Phoenix, AZ 85087.
+      </p>
+    </div>
+    <div class="flex w-full justify-center">
+      <p class="center max-w-[500px] text-2xl text-white">
+        AZTECA will distribute the water to Phoenix Rescue Mission. You can also
+        donate money at the link below:
       </p>
     </div>
     <a
-      href="https://paypal.me/"
-      class="m-8 text-3xl text-white bg-blue-400 py-2 px-4 font-bold hover:bg-blue-600 rounded-full"
+      href="https://www.paypal.com/pools/c/8LFbdkcNS2"
+      class="m-8 rounded-full bg-blue-400 py-2 px-4 text-3xl font-bold text-white hover:bg-blue-600"
     >
       Donate Now
     </a>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+    <div class="grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
       <img
         alt="Rhapsody Music Logo"
         src="/resources/images/general/rhapsody.svg"

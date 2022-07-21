@@ -1,65 +1,56 @@
 <template>
-  <footer class="page-footer light-green lighten-5">
-    <div class="container">
-      <div class="row">
-        <div class="col m4 s12 center">
-          <img src="resources/images/general/1.svg" alt="AZTECA Logo" />
-          <p class="green-text text-darken-4">
-            3655 W Anthem Way A109 #342 Phoenix, AZ 85086
-          </p>
-          <p class="green-text text-darken-4">(602) 926-2021</p>
+  <footer class="bg-army-200 text-army-700">
+    <div class="p-4">
+      <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-12 md:col-span-3">
+          <img
+            src="resources/images/general/aztecaLogo.svg"
+            alt="AZTECA Logo"
+          />
         </div>
-        <div class="col m4 s12 center footerLogo">
+        <div class="col-span-12 md:col-span-3">
           <img
             src="resources/images/general/veteranOwned.svg"
             alt="Azteca is veteran owned"
           />
         </div>
-        <div class="col m4 s12 center">
+        <div class="col-span-12 md:col-span-3">
           <img
             src="resources/images/general/bbb.svg"
             alt="Azteca A+ Rating Logo"
           />
         </div>
-        <div class="col s12 center">
-          <ul>
-            <li><a class="green-text text-darken-3" href="#!">Home</a></li>
+        <div class="col-span-12 text-lg md:col-span-3">
+          <p class="py-2">3655 W Anthem Way A-109 #342 Phoenix, AZ 85086</p>
+          <a class="py-2" href="tel:602-926-2021">(602) 926-2021</a>
+          <ul class="py-2 font-bold">
             <li>
-              <a class="green-text text-darken-3" href="#!">Pest Control</a>
+              <a href="https://www.facebook.com/AztecaHomeServices">Home</a>
             </li>
             <li>
-              <a class="green-text text-darken-3" href="#!">Landscaping</a>
+              <a href="https://www.facebook.com/AztecaHomeServices"
+                >Pest Control</a
+              >
             </li>
-            <li><a class="green-text text-darken-3" href="#!">Pool</a></li>
-            <li><a class="green-text text-darken-3" href="#!">Contact</a></li>
+            <li>
+              <a href="https://www.facebook.com/AztecaHomeServices"
+                >Landscaping</a
+              >
+            </li>
+            <li>
+              <a href="https://www.facebook.com/AztecaHomeServices">Pool</a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/AztecaHomeServices">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-        © 2022 Copyright AZTECA Home Services. All rights reserved.
-      </div>
+    <div class="bg-army-700 p-4 text-army-100">
+      © 2022 Copyright AZTECA Home Services, LIC #9119. All rights reserved.
     </div>
   </footer>
 </template>
 
-<style>
-  footer {
-    font-size: 1.25em;
-  }
-  footer img {
-    max-width: 100%;
-  }
-  footer ul {
-    text-align: center;
-  }
-  footer ul li {
-    display: inline;
-    padding: 5px;
-    margin: 5px;
-  }
-  .page-footer .footer-copyright {
-    color: rgba(3, 65, 4, 0.8);
-  }
-</style>
+<style></style>
