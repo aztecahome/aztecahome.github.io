@@ -47,19 +47,11 @@
         <div class="col-span-12 md:col-span-3">
           <h5 class="py-3 text-xl font-black">WHY AZTECA?</h5>
           <ul>
-            <li class="before:content-['\2714__']">
-              Dedicated to Quality, Workmanship and Service
-            </li>
-            <li class="before:content-['\2714__']">
-              Licensed, Bonded and Insured
-            </li>
-            <li class="before:content-['\2714__']">
-              100% Veteran Owned Business
-            </li>
-            <li class="before:content-['\2714__']">
-              Best in Industry Service / Customer Care Practices
-            </li>
-            <li class="before:content-['\2714__']">
+            <li class="">Dedicated to Quality, Workmanship and Service</li>
+            <li class="">Licensed, Bonded and Insured</li>
+            <li class="">100% Veteran Owned Business</li>
+            <li class="">Best in Industry Service / Customer Care Practices</li>
+            <li class="">
               Azteca is a nominee with Ranking Arizona as one of the Top
               Family-Owned Businesses in the State of Arizona.
             </li>
