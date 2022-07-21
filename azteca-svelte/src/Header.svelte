@@ -20,27 +20,6 @@
 </script>
 
 <template>
-  <svelte:head>
-    <title>Azteca Home Services</title>
-
-    <meta charset="UTF-8" />
-    <meta
-      name="Description"
-      content="Azteca Home Serives: Providing Pest Control, Pool, and Landscape services in the valley of Phoenix, AZ."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-  </svelte:head>
   <div id="fb-root"></div>
 
   <!-- Your customer chat code -->

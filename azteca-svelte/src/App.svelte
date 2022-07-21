@@ -47,13 +47,13 @@
         <div class="col-span-12 md:col-span-3">
           <h5 class="py-3 text-xl font-black">WHY AZTECA?</h5>
           <ul>
-            <li class="">Dedicated to Quality, Workmanship and Service</li>
-            <li class="">Licensed, Bonded and Insured</li>
-            <li class="">100% Veteran Owned Business</li>
-            <li class="">Best in Industry Service / Customer Care Practices</li>
-            <li class="">
-              Azteca is a nominee with Ranking Arizona as one of the Top
-              Family-Owned Businesses in the State of Arizona.
+            <li>&check; Dedicated to Quality, Workmanship and Service</li>
+            <li>&check; Licensed, Bonded and Insured</li>
+            <li>&check; 100% Veteran Owned Business</li>
+            <li>&check; Best in Industry Service / Customer Care Practices</li>
+            <li>
+              &check; Azteca is a nominee with Ranking Arizona as one of the
+              <em>Top Family-Owned Businesses</em>.
             </li>
           </ul>
           <hr class="my-3 border-army-300" />
@@ -212,6 +212,23 @@
       </div>
     </div>
   </main>
+  <div class="mb-[-4px] flex justify-end bg-army-100 px-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xml:space="preserve"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-miterlimit="10"
+      clip-rule="evenodd"
+      viewBox="0 0 60 72"
+      class="w-[200px] max-w-full fill-army-200"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M29 0c-4 0-8 4-8 9v21h-9V18a5 5 0 1 0-11 0v19c0 3 2 6 5 6h15v30a8 8 0 1 0 17 0V40h15c3 0 6-2 6-5V7c0-3-3-6-6-6s-5 3-5 6v21H38V9c0-5-4-9-9-9Z"
+      />
+    </svg>
+  </div>
   <MyFooter />
 </template>
 

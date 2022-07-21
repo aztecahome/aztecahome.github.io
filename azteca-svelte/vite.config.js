@@ -7,7 +7,6 @@ const production = process.env.NODE_ENV === "production";
 export default defineConfig({
   server: { port: 8080 },
   preview: { port: 8080 },
-  build: { outdir: "../" },
   plugins: [
     svelte({
       preprocess: sveltePreprocess({

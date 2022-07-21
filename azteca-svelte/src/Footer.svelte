@@ -43,6 +43,9 @@
             <li>
               <a href="https://www.facebook.com/AztecaHomeServices">Contact</a>
             </li>
+            <li>
+              <a href="/mediakit.zip">Media Kit</a>
+            </li>
           </ul>
         </div>
       </div>
