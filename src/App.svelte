@@ -1,5 +1,4 @@
 <script>
-  import svelteLogo from "./assets/svelte.svg";
   import Counter from "./lib/Counter.svelte";
   import MyHeader from "./Header.svelte";
   import MyFooter from "./Footer.svelte";
@@ -8,7 +7,6 @@
 
 <template>
   <MyHeader />
-  <Announcement />
   <main class="bg-army-100 text-army-800">
     <div
       class="grid grid-cols-1 items-center gap-4 bg-army-400 p-4 md:grid-cols-3"

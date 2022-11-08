@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class="bg-army-700 p-4 text-army-100">
-      © 2022 Copyright AZTECA Home Services, LIC #9119. All rights reserved.
+      © 2022 Copyright AZTECA Home Services, Pest Control #9119. All rights reserved.
     </div>
   </footer>
 </template>
