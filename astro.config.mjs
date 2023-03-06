@@ -5,7 +5,7 @@ import { astroImageTools } from "astro-imagetools";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), astroImageTools, compress()],
+  integrations: [tailwind(), astroImageTools, compress({img: false,})],
   // build: {
   //   // assets: "",
   // },
