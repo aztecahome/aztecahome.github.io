@@ -1,0 +1,94 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import * as Turbo from "@hotwired/turbo";
+
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="bg-army-200 selection:bg-army-700 selection:text-army-50 text-army-900 "
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="Description" content="Azteca Home Serives: Providing Pest Control, Pool, and Landscape services in the valley of Phoenix, AZ."
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script>
+      Turbo.start();
+    </script>
+  </head>
+  <body class="bg-army-50">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: #f6f6f6;
+    height: 100%;
+  }
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+  body {
+    min-height: 100%;
+  }
+  a {
+    -webkit-tap-highlight-color: theme("colors.army.300");
+
+  }
+  .hero img {
+    position: absolute !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .hero picture {
+    height: 100% !important;
+    width: 100% !important;
+  }
+</style>
+<!-- prettier-ignore -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "http://schema.org/",
+    "@type": "LocalBusiness",
+    "name": "AZTECA Home Services",
+    "image": "https://www.aztecahome.com/general/aztecaLogo.svg",
+    "telephone": "(602)-926-2021",
+    "url": "https://aztecahome.com",
+    "email": "officemanager@aztecahomeservices.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3655 W Anthem Way A-109 #342",
+      "addressLocality": "Phoenix",
+      "addressRegion": "AZ",
+      "postalCode": "85086"
+    },
+    "priceRange": "$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": {
+        "@type": "DayOfWeek",
+        "name": "Monday - Friday"
+      },
+      "opens": "16:00:00Z",
+      "closes": "21:00:00Z"
+    }
+  })}
+></script>

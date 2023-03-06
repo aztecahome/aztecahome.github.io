@@ -1,0 +1,87 @@
+---
+import AztecaLogo from "./AztecaLogo.astro";
+---
+
+<div class="mb-[-4px] mt-10 flex justify-end px-4">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xml:space="preserve"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+    clip-rule="evenodd"
+    viewBox="0 0 60 72"
+    class="w-[200px] max-w-full fill-army-200"
+    transform="scale(0.9 1)"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M29 0c-4 0-8 4-8 9v21h-9V18a5 5 0 1 0-11 0v19c0 3 2 6 5 6h15v30a8 8 0 1 0 17 0V40h15c3 0 6-2 6-5V7c0-3-3-6-6-6s-5 3-5 6v21H38V9c0-5-4-9-9-9Z"
+    ></path>
+  </svg>
+</div>
+<footer class="bg-army-200 text-army-700" 
+data-turbo-permanent id="footer"
+>
+  <div class="p-4 lg:p-8">
+    <div class="grid grid-cols-12 gap-4">
+      <div class="col-span-12 mx-auto sm:col-span-5 md:col-span-4">
+        <AztecaLogo data-turbo-permanent id="headerLogo" />
+      </div>
+      <div class="col-span-6 sm:col-span-4 md:col-span-3">
+        <img
+          class="mx-auto max-w-[220px]"
+          src="/general/veteranOwned.svg"
+          alt="Azteca is veteran owned"
+        />
+      </div>
+      <div class="col-span-6 sm:col-span-3 md:col-span-2">
+        <img
+          class="mx-auto max-h-[150px]"
+          src="/general/bbb.svg"
+          alt="Azteca A+ Rating Logo"
+        />
+      </div>
+      <div class="col-span-12 text-lg md:col-span-3">
+        <address class="not-italic">
+          <p class="py-2">3655 W Anthem Way A-109 #342 Phoenix, AZ 85086</p>
+          <a class="py-2 underline" href="tel:602-926-2021">(602) 926-2021</a>
+        </address>
+        <ul class="py-2 font-bold" role="tree">
+          <li role="none">
+            <a class="hover:underline" role="treeitem" href="/">Home</a>
+          </li>
+          <li role="none">
+            <a class="hover:underline" role="treeitem" href="/pest-control"
+              >Pest Control</a
+            >
+          </li>
+          <li role="none">
+            <a class="hover:underline" role="treeitem" href="/landscaping"
+              >Landscaping</a
+            >
+          </li>
+          <li role="none">
+            <a class="hover:underline" role="treeitem" href="/pools">Pools</a>
+          </li>
+          <li role="none">
+            <a
+              class="hover:underline"
+              role="treeitem"
+              href="/contact">Contact</a
+            >
+          </li>
+          <li role="none">
+            <a class="hover:underline" role="treeitem" href="/mediakit.zip"
+              >Media Kit</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="bg-army-700 p-4 lg:p-8 text-army-100">
+    &#169; {new Date().getFullYear()} Copyright AZTECA Home Services. All rights
+    reserved.
+  </div>
+</footer>

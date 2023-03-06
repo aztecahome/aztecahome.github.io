@@ -1,0 +1,226 @@
+---
+import Layout from "../layouts/Layout.astro";
+let doneLoading = true;
+---
+
+<Layout title="Contact Us">
+  <main class="my-12 grid grid-cols-12">
+    <section
+      class="col-span-12 m-4 flex flex-col gap-4 bg-[url('/general/aztecaCalendarOutline.svg')] bg-contain bg-right-top bg-no-repeat text-xl sm:col-span-5 lg:m-8"
+    >
+      <h2 class="col-span-12 text-3xl font-black uppercase">Contact Us</h2>
+      <!-- <p>The best way to reach us is via phone or email:</p> -->
+      <ul class="flex flex-col gap-4">
+        <li class="flex gap-2">
+          <svg
+            class="my-[5px] h-[24px] w-[24px] shrink-0 fill-army-900"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            width="24px"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
+            ></path>
+          </svg>
+          <span>
+            <h3 class="text-2xl font-bold">Call Us</h3>
+            <a class="font-bold underline" href="tel:602-926-2021"
+              >(602)-926-2021</a
+            >
+          </span>
+        </li>
+        <li class="flex gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="my-[5px] h-[24px] w-[24px] shrink-0 fill-army-900"
+            height="24px"
+            width="24px"
+          >
+            <path
+              d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1ZM8.7 14.7l-2 2a1 1 0 0 1-1.4-1.4l2-2a1 1 0 0 1 1.4 1.4Zm10 2a1 1 0 0 1-1.4 0l-2-2a1 1 0 0 1 1.4-1.4l2 2a1 1 0 0 1 0 1.4Zm.8-7.8-7 4a1 1 0 0 1-1 0l-7-4a1 1 0 1 1 1-1.8l6.5 3.7 6.5-3.7a1 1 0 1 1 1 1.8Z"
+            ></path>
+          </svg>
+          <span>
+            <h3 class="text-2xl font-bold">Email Us</h3>
+            <a
+              class="font-bold inline-block underline"
+              href="mailto:officemanager@aztecahomeservices.com"
+              >officemanager@<wbr/>aztecahomeservices<wbr/>.com<wbr/></a
+            >
+          </span>
+        </li>
+        <li class="flex gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="my-[5px] h-[24px] w-[24px] shrink-0 fill-army-900"
+            height="24px"
+            width="24px"
+          >
+            <path
+              d="M426 74c-9 0-17 7-19 15-8 4-15 10-19 19-5 11-7 24-7 39 0 25 3 54 5 79-2 15-5 29-9 41 2 18 3 37 0 56-5 38-36 61-70 68-31 6-65 0-87-20-35 23-77 29-113 17-42 16-74 39-87 61h321c103 0 138-108 112-225-6-41 1-71 14-89a19 19 0 0 0 25-18 19 19 0 1 0-37 3c-21 25-29 66-19 118-10 5-21 3-31-7-2-28-6-59-5-84 0-13 2-24 5-31 2-5 4-8 8-9a19 19 0 1 0 13-33zm-233 32h-6c-35 2-70 16-99 42-57 50-60 144-10 201 39 38 107 35 152-10 38-38 41-95 9-127a60 60 0 0 0-86 1c-6 6-9 16-9 27s4 22 10 29c3 4 10 9 18 11l14 1c13 0 26-9 26-27 0-16-10-24-22-26 8-1 15 0 21 4 8 4 14 13 15 21 4 17-5 37-25 44h-1c-10 4-22 3-33 1-11-3-21-9-28-17-9-11-14-26-14-41 0-14 4-29 14-40 32-33 84-31 113-1 40 40 35 109-9 153l-8 8c17 12 44 17 69 12 28-5 51-22 55-52 9-72-34-147-72-179-28-23-61-35-94-35z"
+            ></path>
+          </svg>
+          <span>
+            <h3 class="text-2xl font-bold">Mail Us</h3>
+            <p>3655 W Anthem Way Ste. A-109 #342</p>
+            <p>Anthem, AZ 85086</p>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+
+    <section class="col-span-12 sm:col-span-7 m-4 lg:m-8 flex items-center justify-center">
+      <div
+        class="w-full max-w-[800px] min-h-[100vh] max-h-fit bg-white rounded-lg shadow-lg"
+        id="4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3"
+      >
+      </div>
+      <!-- <link
+        rel="stylesheet"
+        media="screen"
+        href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"
+      /> -->
+      <script
+        clienthub_id="4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3"
+        form_url="https://clienthub.getjobber.com/client_hubs/4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3/public/work_request/embedded_work_request_form"
+      >
+        !(function () {
+          function e() {
+            window.addEventListener(
+              "message",
+              function (e) {
+                var t = e[e.message ? "message" : "data"];
+                if ("close" === t)
+                  document
+                    .querySelector(".jobber-dialog-overlay")
+                    .classList.add("jobber-hidden");
+                else if ("scrolltop" === t)
+                  document
+                    .querySelector(".jobber-dialog-overlay")
+                    .scrollTo(0, 0);
+                else if ("recaptcha-setup" === t);
+                else {
+                  var r = document.querySelector("iframe.jobber-work-request");
+                  (r.parentElement.style.height = t), (r.style.height = t);
+                }
+              },
+              !1
+            );
+          }
+
+          function t() {
+            (responseElement = c.response.documentElement),
+              responseElement
+                .querySelector("iframe.jobber-work-request")
+                .addEventListener("load", function () {
+                  e(), r(), (this.style.visibility = "visible");
+                });
+            var t = responseElement.querySelector("iframe");
+            l.insertAdjacentElement("beforeend", t);
+          }
+
+          function r() {
+            for (
+              var e = document.querySelectorAll(".jobber-spinner"), t = 0;
+              t < e.length;
+              t++
+            ){
+              e[t].classList.remove("jobber-spinner");
+            }
+            for (
+              var e = document.querySelectorAll(".animate-pulse"), t = 0;
+              t < e.length;
+              t++
+            ){
+              e[t].classList.remove("animate-pulse");
+            }
+          }
+
+          function n() {
+            if (200 == c.status) t();
+            else {
+              r();
+              var e = document.querySelector(".jobber-inline-work-request"),
+                n = document.createElement("div");
+              n.classList.add("jobber-flash", "jobber-flash--error");
+              var o = document.createElement("p");
+              o.innerHTML = "<strong>Something went wrong</strong>";
+              var s = document.createElement("p");
+              (s.innerText = "Form is currently unavailable"),
+                n.appendChild(o),
+                n.appendChild(s),
+                e.appendChild(n);
+            }
+          }
+          var o;
+          document.currentScript =
+            document.currentScript ||
+            (o = document.getElementsByTagName("script"))[o.length - 1];
+          var s = document.currentScript.getAttribute("clienthub_id"),
+            i = document.currentScript.getAttribute("form_url"),
+            l = document.getElementById(s);
+          l.classList.add("jobber-inline-work-request"),
+            l.classList.add("jobber-spinner");
+          var c = new XMLHttpRequest();
+          c.addEventListener("loadend", n),
+            c.open("GET", i, !0),
+            c.setRequestHeader("Accept", "text/html"),
+            (c.responseType = "document"),
+            c.send();
+        })();
+      </script>
+    </section>
+
+    
+    <!-- <section
+      class="col-span-12 m-4 my-10 rounded bg-army-300 p-4 sm:col-span-6 lg:m-8"
+    >
+      <h2 class="col-span-12 pb-4 text-2xl font-black">Email Us</h2>
+      <form
+        action="mailto:officemanager@aztecahomeservices.com"
+        method="get"
+        enctype="text/plain"
+        class="col-span-12 flex flex-col gap-4"
+      >
+        <label for="subject" class="font-bold uppercase">Subject:</label>
+        <input
+          class="rounded bg-army-50 p-2 text-army-900"
+          type="text"
+          name="subject"
+          id="subject"
+        />
+        <label for="body" class="font-bold uppercase">Body:</label>
+        <textarea
+          class="rounded bg-army-50 p-2 text-army-900"
+          name="body"
+          id="body"
+          rows="6"
+          cols="35"></textarea>
+        <button
+          type="submit"
+          name="submit"
+          value="Send"
+          class="rounded bg-army-900 p-4 font-bold uppercase text-army-50"
+          >Send</button
+        >
+      </form>
+    </section> -->
+  </main>
+</Layout>
+<style is:global>
+  iframe {
+    width: 100%;
+    min-height: 100vh;
+    max-height: fit-content;
+    max-width: 800px;
+    border-radius: theme("borderRadius.lg");
+    /* box-shadow: theme("boxShadow.DEFAULT") !important; */
+  }
+  iframe .headingTwo {
+    display: none !important;
+  }
+</style>

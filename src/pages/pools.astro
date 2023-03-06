@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Picture } from "astro-imagetools/components";
+---
+
+<Layout title="Pools">
+  <main>
+    <section
+      class="relative flex h-[75vh] flex-col items-end justify-end sm:justify-center bg-army-900"
+    >
+      <div class="hero contents">
+        <Picture src="/pool/18.webp" alt="Beautiful clean sparkling pool" objectFit="cover" objectPosition="top left" />
+      </div>
+      <div class="absolute z-10 flex flex-col items-end gap-4 p-4 lg:p-8">
+        <h2
+          class="max-w-[600px] rounded bg-army-50/60 p-4 text-3xl text-army-900 drop-shadow-2xl backdrop-blur-sm"
+        >
+          Dive into a <b>Clean</b>, <b>Crystal Clear</b> Pool with Our <b
+            >Expert Care</b
+          >
+        </h2>
+        <a
+          class="w-fit rounded border-b-8 border-army-300 bg-army-900 p-4 pb-3 text-lg font-bold text-army-50 drop-shadow-2xl transition-colors hover:bg-army-300"
+          href="/contact"
+          >Book Pool Service
+        </a>
+      </div>
+    </section>
+
+    <aside
+      class="grid grid-cols-1 items-center gap-4 bg-army-400 p-4 md:grid-cols-3 lg:p-8 relative z-10"
+    >
+      <h4 class="py-[14px] text-2xl font-light text-army-50 md:col-span-2">
+        Transform Your Backyard into an Oasis
+      </h4>
+      <a
+        href="/contact"
+        class="col-span-1 rounded bg-army-900 px-2 py-4 text-center text-lg font-bold uppercase text-army-50 transition-[background] hover:bg-army-300"
+        >Contact Us</a
+      >
+    </aside>
+  </main>
+</Layout>
