@@ -1,15 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-let doneLoading = true;
 ---
 
 <Layout title="Contact Us">
-  <main class="my-12 grid grid-cols-12">
+  <main class="my-12 grid grid-cols-12 container mx-auto">
     <section
-      class="col-span-12 m-4 flex flex-col gap-4 bg-[url('/general/aztecaCalendarOutline.svg')] bg-contain bg-right-top bg-no-repeat text-xl sm:col-span-5 lg:m-8"
+      class="col-span-12 m-4 flex flex-col gap-4 bg-[url('/general/aztecaCalendarOutline.svg')] bg-contain bg-right-top bg-no-repeat text-xl sm:col-span-5 "
     >
       <h2 class="col-span-12 text-3xl font-black uppercase">Contact Us</h2>
-      <!-- <p>The best way to reach us is via phone or email:</p> -->
       <ul class="flex flex-col gap-4">
         <li class="flex gap-2">
           <svg
@@ -45,9 +43,9 @@ let doneLoading = true;
           <span>
             <h3 class="text-2xl font-bold">Email Us</h3>
             <a
-              class="font-bold inline-block underline"
+              class="inline-block font-bold underline"
               href="mailto:officemanager@aztecahomeservices.com"
-              >officemanager@<wbr/>aztecahomeservices<wbr/>.com<wbr/></a
+              >officemanager@<wbr />aztecahomeservices<wbr />.com<wbr /></a
             >
           </span>
         </li>
@@ -72,10 +70,13 @@ let doneLoading = true;
       </ul>
     </section>
 
-
-    <section class="col-span-12 sm:col-span-7 m-4 lg:m-8 flex items-center justify-center">
+    <section
+      class="col-span-12 m-4 flex items-center justify-center sm:col-span-7 "
+      data-turbolinks-permanent
+      id="bruh"
+    >
       <div
-        class="w-full max-w-[800px] min-h-[100vh] bg-white rounded-lg shadow-lg"
+        class="min-h-[100vh] w-full max-w-[800px] rounded-lg bg-white shadow-lg"
         id="4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3"
       >
       </div>
@@ -89,126 +90,98 @@ let doneLoading = true;
         form_url="https://clienthub.getjobber.com/client_hubs/4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3/public/work_request/embedded_work_request_form"
       >
         !(function () {
-          function e() {
+          function handleMessages() {
             window.addEventListener(
               "message",
               function (e) {
-                var t = e[e.message ? "message" : "data"];
-                if ("close" === t)
+                var messageData = e[e.message ? "message" : "data"];
+                if ("close" === messageData)
                   document
                     .querySelector(".jobber-dialog-overlay")
                     .classList.add("jobber-hidden");
-                else if ("scrolltop" === t)
+                else if ("scrolltop" === messageData)
                   document
                     .querySelector(".jobber-dialog-overlay")
                     .scrollTo(0, 0);
-                else if ("recaptcha-setup" === t);
+                else if ("recaptcha-setup" === messageData);
                 else {
-                  var r = document.querySelector("iframe.jobber-work-request");
-                  (r.parentElement.style.height = t), (r.style.height = t);
+                  var iframe = document.querySelector(
+                    "iframe.jobber-work-request"
+                  );
+                  iframe.parentElement.style.height = messageData;
+                  iframe.style.height = messageData;
                 }
               },
-              !1
+              false
             );
           }
 
-          function t() {
-            (responseElement = c.response.documentElement),
-              responseElement
-                .querySelector("iframe.jobber-work-request")
-                .addEventListener("load", function () {
-                  e(), r(), (this.style.visibility = "visible");
-                });
-            var t = responseElement.querySelector("iframe");
-            l.insertAdjacentElement("beforeend", t);
+          function insertIFrame() {
+            var responseElement = req.response.documentElement;
+            console.log("RRR", req);
+
+            responseElement
+              .querySelector("iframe.jobber-work-request")
+              .addEventListener("load", function () {
+                handleMessages();
+                removeLoaders();
+                this.style.visibility = "visible";
+              });
+            var iframe = responseElement.querySelector("iframe");
+            holderDiv.insertAdjacentElement("beforeend", iframe);
           }
 
-          function r() {
-            for (
-              var e = document.querySelectorAll(".jobber-spinner"), t = 0;
-              t < e.length;
-              t++
-            ){
-              e[t].classList.remove("jobber-spinner");
+          function removeLoaders() {
+            var spinners = document.querySelectorAll(".jobber-spinner");
+            for (i = 0; i < i.length; i++) {
+              spinners[i].classList.remove("jobber-spinner");
             }
-            for (
-              var e = document.querySelectorAll(".animate-pulse"), t = 0;
-              t < e.length;
-              t++
-            ){
-              e[t].classList.remove("animate-pulse");
+            var pulses = document.querySelectorAll(".animate-pulse");
+            for (i = 0; i < pulses.length; i++) {
+              pulses[i].classList.remove("animate-pulse");
             }
           }
 
-          function n() {
-            if (200 == c.status) t();
+          function checkStatus() {
+            if (200 == req.status) insertIFrame();
             else {
-              r();
-              var e = document.querySelector(".jobber-inline-work-request"),
-                n = document.createElement("div");
-              n.classList.add("jobber-flash", "jobber-flash--error");
-              var o = document.createElement("p");
-              o.innerHTML = "<strong>Something went wrong</strong>";
-              var s = document.createElement("p");
-              (s.innerText = "Form is currently unavailable"),
-                n.appendChild(o),
-                n.appendChild(s),
-                e.appendChild(n);
+              removeLoaders();
+              var iframe = document.querySelector(
+                ".jobber-inline-work-request"
+              );
+              div = document.createElement("div");
+              div.classList.add("jobber-flash", "jobber-flash--error");
+              var paragraph1 = document.createElement("p");
+              paragraph1.innerHTML = "<strong>Something went wrong</strong>";
+              var paragraph2 = document.createElement("p");
+              paragraph2.innerText = "Form is currently unavailable";
+              div.appendChild(paragraph1);
+              div.appendChild(paragraph2);
+              iframe.appendChild(div);
             }
           }
-          var o;
+          var currentScript;
           document.currentScript =
             document.currentScript ||
-            (o = document.getElementsByTagName("script"))[o.length - 1];
-          var s = document.currentScript.getAttribute("clienthub_id"),
-            i = document.currentScript.getAttribute("form_url"),
-            l = document.getElementById(s);
-          l.classList.add("jobber-inline-work-request"),
-            l.classList.add("jobber-spinner");
-          var c = new XMLHttpRequest();
-          c.addEventListener("loadend", n),
-            c.open("GET", i, !0),
-            c.setRequestHeader("Accept", "text/html"),
-            (c.responseType = "document"),
-            c.send();
+            (currentScript = document.getElementsByTagName("script"))[
+              currentScript.length - 1
+            ];
+          var clienthub_id =
+            document.currentScript.getAttribute("clienthub_id");
+          var form_url = document.currentScript.getAttribute("form_url");
+          var holderDiv = document.getElementById(clienthub_id);
+          holderDiv.classList.add("jobber-inline-work-request");
+          holderDiv.classList.add("jobber-spinner");
+          var req = new XMLHttpRequest();
+          req.addEventListener("loadend", checkStatus);
+          req.open("GET", form_url, true);
+          req.setRequestHeader("Accept", "text/html");
+          req.responseType = "document";
+          req.send();
         })();
       </script>
     </section>
 
-    
-    <!-- <section
-      class="col-span-12 m-4 my-10 rounded bg-army-300 p-4 sm:col-span-6 lg:m-8"
-    >
-      <h2 class="col-span-12 pb-4 text-2xl font-black">Email Us</h2>
-      <form
-        action="mailto:officemanager@aztecahomeservices.com"
-        method="get"
-        enctype="text/plain"
-        class="col-span-12 flex flex-col gap-4"
-      >
-        <label for="subject" class="font-bold uppercase">Subject:</label>
-        <input
-          class="rounded bg-army-50 p-2 text-army-900"
-          type="text"
-          name="subject"
-          id="subject"
-        />
-        <label for="body" class="font-bold uppercase">Body:</label>
-        <textarea
-          class="rounded bg-army-50 p-2 text-army-900"
-          name="body"
-          id="body"
-          rows="6"
-          cols="35"></textarea>
-        <button
-          type="submit"
-          name="submit"
-          value="Send"
-          class="rounded bg-army-900 p-4 font-bold uppercase text-army-50"
-          >Send</button
-        >
-      </form>
-    </section> -->
   </main>
 </Layout>
 <style is:global>

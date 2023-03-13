@@ -1,8 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import * as Turbo from "@hotwired/turbo";
-
 
 export interface Props {
   title: string;
@@ -14,17 +12,24 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html
   lang="en"
-  class="bg-army-200 selection:bg-army-700 selection:text-army-50 text-army-900 "
+  class="bg-army-200 text-army-900 selection:bg-army-700 selection:text-army-50"
 >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="Description" content="Azteca Home Serives: Providing Pest Control, Pool, and Landscape services in the valley of Phoenix, AZ."
+    <link rel="preload" href="general/Rokkitt-Black.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="general/Rokkitt-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="general/Rokkitt-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <meta
+      name="Description"
+      content="Azteca Home Serives: Providing Pest Control, Pool, and Landscape services in the valley of Phoenix, AZ."
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <script>
+      import * as Turbo from "@hotwired/turbo";
       Turbo.start();
     </script>
   </head>
@@ -35,11 +40,42 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
+  @font-face {
+    font-family: "Rokkitt";
+    src: url("general/Rokkitt-Black.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rokkitt";
+    src: url("general/Rokkitt-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rokkitt";
+    src: url("general/Rokkitt-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
   html {
-    font-family: system-ui, sans-serif;
+    font-family: "Rokkitt", system-ui, sans-serif;
     background-color: #f6f6f6;
     height: 100%;
+    /* font-size: 18px; */
   }
+  p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
@@ -50,7 +86,6 @@ const { title } = Astro.props;
   }
   a {
     -webkit-tap-highlight-color: theme("colors.army.300");
-
   }
   .hero img {
     position: absolute !important;

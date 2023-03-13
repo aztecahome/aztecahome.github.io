@@ -1,0 +1,24 @@
+---
+interface Props {
+  url: string;
+  content: string;
+  fullWidth?: boolean;
+  upperCase?: boolean;
+  addBorder?: boolean;
+}
+
+const {url, content, fullWidth = false, upperCase = false, addBorder = false} = Astro.props;
+---
+
+<a
+  class={`rounded border-army-300 bg-army-900 p-4 pb-3 text-lg 
+          font-bold text-army-50 drop-shadow-lg transition-all hover:bg-army-300
+          hover:border-army-400 hover:text-army-900 active:translate-y-1 
+          text-center select-none font-sans
+          ${fullWidth ? "w-full" : "w-fit"}
+          ${upperCase && "uppercase"}
+          ${addBorder && "border-b-8"}`}
+  href={url}
+  >
+  {content}
+</a>
