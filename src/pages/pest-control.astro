@@ -1,8 +1,161 @@
 ---
+// Our 6 step process
 import Layout from "../layouts/Layout.astro";
 import { Picture } from "astro-imagetools/components";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
+
+const categories = [
+  "household-pests",
+  "stinging-insects",
+  "blood-sucking-pests",
+  "nuisance-pests",
+  "flies",
+  "arachnids",
+  "outdoor-pests",
+  "termites",
+] as const;
+
+type Pest = {
+  name: string;
+  file: string;
+  url: (typeof categories)[number];
+};
+
+const pests: Pest[] = [
+  {
+    name: "Ants",
+    file: "ant.svg",
+    url: "household-pests",
+    // colonial type of pest. very similar to termites. kill the queen. give them bait to give back to the queen.
+  },
+  {
+    name: "Beetles",
+    file: "beetle.svg",
+    url: "outdoor-pests",
+    //
+  },
+  {
+    name: "Bees",
+    file: "bee.svg",
+    url: "stinging-insects",
+  },
+  {
+    name: "Bed Bugs",
+    file: "bedbug.svg",
+    url: "household-pests",
+  },
+  {
+    name: "Birds",
+    file: "bird.svg",
+    url: "nuisance-pests",
+  },
+  {
+    name: "Crickets",
+    file: "cricket.svg",
+    url: "household-pests",
+  },
+  {
+    name: "Fleas",
+    file: "flea.svg",
+    url: "household-pests",
+  },
+  {
+    name: "Flies",
+    file: "fly.svg",
+    url: "household-pests",
+  },
+  {
+    name: "Mosquitoes",
+    file: "mosquito.svg",
+    url: "blood-sucking-pests",
+  },
+  {
+    name: "Roaches",
+    file: "roach.svg",
+    url: "household-pests",
+  },
+  {
+    name: "Rodents",
+    file: "rodent.svg",
+    url: "nuisance-pests",
+  },
+  {
+    name: "Spiders",
+    file: "spider.svg",
+    url: "arachnids",
+  },
+  {
+    name: "Scorpions",
+    file: "scorpion.svg",
+    url: "arachnids",
+  },
+  {
+    name: "Termites",
+    file: "termite.svg",
+    url: "termites",
+  },
+  {
+    name: "Ticks",
+    file: "tick.svg",
+    url: "blood-sucking-pests",
+  },
+  {
+    name: "Wasps",
+    file: "wasp.svg",
+    url: "stinging-insects",
+  },
+];
+
+const pestsSorted = pests.sort(({ name: a }, { name: b }) =>
+  a.localeCompare(b)
+);
+
+type Step = {
+  title: string;
+  description: string;
+  bgImage: string;
+};
+
+const sixSteps: Step[] = [
+  {
+    title: "Exterior Barrier",
+    description:
+      "We spray a robust exterior barrier that goes three feet up and five feet out with a power sprayer to protect your family.",
+    bgImage: "/general/days/Crocodile.svg",
+  },
+  {
+    title: "Eaves Dusting",
+    description: "We dust your eaves ridding them of all webs.",
+    bgImage: "/general/days/Death.svg",
+  },
+  {
+    title: "Plant Granulation",
+    description:
+      "Granulate all the plants around your home. These granules when touched by water, usually rain or irrigation, heat up and force insects out of their hiding spots.",
+    bgImage: "/general/days/Flower.svg",
+  },
+  {
+    title: "Scorpion Dusting",
+    description:
+      "We dust all your block walls with a product proven to kill scorpions (block walls are the #1 hiding spot for scorpions).",
+    bgImage: "/general/days/Jaguar.svg",
+  },
+  {
+    title: "Baseboard Protection",
+    description:
+      "We come inside your property and we spray all of your baseboards creating a double barrier.",
+    bgImage: "/general/days/Rain.svg",
+  },
+  {
+    title: "Plumbing Intrusion Treatment",
+    description:
+    "Even the smallest opening in your plumbing can be an entryway for insects. Our comprehensive treatment ensures all intrusion points are covered, making your home bug-free.",
+    bgImage: "/general/days/Flint.svg",
+  },
+];
+// description:
+// "When your home is built, contractors automatically make a giant hole that the pipes rarely fill. Insects take advantage of this gap so we treat all of your plumbing intrusions which is one of the most forgotten areas and is a highway for insects to come into your home.",
 ---
 
 <Layout title="Pest Control">
@@ -18,7 +171,7 @@ import Banner from "../components/ui/Banner.astro";
           objectPosition="center"
         />
       </div>
-      <div class="container mx-auto absolute z-10 flex flex-col gap-4 p-4">
+      <div class="container absolute z-10 mx-auto flex flex-col gap-4 p-4">
         <h2
           class="max-w-[600px] rounded bg-army-50/60 p-4 text-3xl text-army-900 drop-shadow-2xl backdrop-blur-sm"
         >
@@ -35,5 +188,206 @@ import Banner from "../components/ui/Banner.astro";
     </section>
 
     <Banner cta="Bid farewell to creepy crawlers" />
+
+    <section class="container mx-auto p-4">
+      <h4 class="col-span-12 py-4 text-3xl font-black uppercase">
+        Pests We Handle
+      </h4>
+      <ul class="grid grid-cols-12 gap-4 text-xl">
+        {
+          pestsSorted.map(({ name, file }) => (
+            <li class="group col-span-6 gap-2 sm:col-span-4 md:col-span-3 lg:col-span-2">
+              <!--TODO: use URL -->
+              <a
+                href={`/contact`}
+                class="flex flex-col items-center justify-center gap-2"
+              >
+                <div class=" bg-army-200 group-hover:bg-army-400 flex h-[100px] w-[100px] items-center justify-center rounded p-3 transition-colors">
+                  <object
+                    class="pointer-events-none h-full w-full group-hover:animate-[shake_120ms_linear_infinite]"
+                    data={`/pest/${file}`}
+                    type=""
+                  />
+                </div>
+                <h2 class="group-hover:underline">{name}</h2>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="my-24 flex justify-center bg-army-200">
+      <div class="container flex flex-col items-center justify-center p-8">
+        <p>
+          <h2 class="text-center text-4xl">
+            Over <b>10 Years</b> of Experience Using <br />
+            <dfn title="Integrated Pest Management"
+              ><u><b>Integrated Pest Management</b></u></dfn
+            >
+          </h2>
+          <em class="text-2xl">(noun)</em>
+          <span class="max-w-prose text-2xl">
+            a <u>modern</u> and <u>sustainable</u> approach to pest control that
+            uses
+            <u>eco-friendly</u> methods to manage pests while minimizing the use
+            of harmful chemicals. Our tailored IPM programs are designed to save
+            you money by <u>preventing pest problems before they occur</u>,
+            ensuring your property is protected from pests in a safe, effective,
+            and environmentally responsible manner.
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <section class="my-48 py-16 flex flex-col items-center bg-army-100">
+      <h2
+        class="sticky top-[150px] max-w-[400px] p-4 text-center text-3xl font-bold"
+      >
+        Our Six-Step Pest Control Initial:
+      </h2>
+      <ol
+        class="initialList sticky top-[200px] grid grid-rows-6 gap-3 p-3 text-xl"
+      >
+        {
+          sixSteps.map(({ title, description, bgImage }, i) => (
+            <li class={`bg-army-100 sticky top-[250px] text-left z-10 flex max-w-[400px] flex-col content-start items-center gap-2 rounded-lg p-8 `} data-image-url="/general/days/Crocodile.svg" style={`--image-url: url('${bgImage}');`}>
+              <h3 class="text-2xl font-bold w-full ">{`${i+1}. ${title}`}</h3>
+              <p class="text-xl drop-shadow w-full">{description}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+    <!-- 
+    <section class="min-h-[70vh] bg-purple-300">
+      <span id="stinging-insects" class="relative top-[-150px] h-1 w-1"></span>
+      <h2 class="text-2xl">Wasps & Bees</h2>
+      <p>two methods. method 1: relocation method where we can trap them and relocate them. method 2: extermination</p>
+
+    </section>
+
+    <section class="min-h-[70vh] bg-purple-300">
+      <span id="household-pests" class="relative top-[-150px] h-1 w-1"></span>
+      <h2>Household Pests</h2>
+    </section>
+
+    <section class="min-h-[70vh] bg-purple-300">
+      <span id="blood-sucking-pests" class="relative top-[-150px] h-1 w-1"
+      ></span>
+      <h2>Blood Sucking Pests</h2>
+    </section>
+
+    <section class="min-h-[70vh] bg-purple-300">
+      <span id="nuisance-pests" class="relative top-[-150px] h-1 w-1"></span>
+      <h2>Nuisance Pests</h2>
+    </section>
+
+    <section class="min-h-[70vh] bg-purple-300">
+      <span id="flies" class="relative top-[-150px] h-1 w-1"></span>
+      <h2>Flies</h2>
+    </section>
+
+    <section class="min-h-[70vh] bg-purple-300">
+      <span id="arachnids" class="relative top-[-150px] h-1 w-1"></span>
+      <h2>Arachnids</h2>
+    </section>
+
+    <section class="min-h-[70vh] bg-purple-300">
+      <span id="outdoor-pests" class="relative top-[-150px] h-1 w-1"></span>
+      <h2>Outdoor Pests</h2>
+    </section>
+
+    <section class="min-h-[70vh] bg-purple-300">
+      <span id="termites" class="relative top-[-150px] h-1 w-1"></span>
+      <h2>Termites</h2>
+    </section> -->
   </main>
 </Layout>
+<style is:global>
+  @keyframes shake {
+    0% {
+      transform: rotate(3deg);
+    }
+    50% {
+      transform: rotate(-3deg);
+    }
+    100% {
+      transform: rotate(3deg);
+    }
+  }
+  .initialList {
+    scroll-snap-type: y mandatory;
+  }
+
+  /* Proof of concept: https://codepen.io/xav-ie/pen/poOqQme?editors=0100
+   * 
+   * The purpose of the weird ::before is because:
+   * I want the ::before element wrapping the shadow of each <li>. The reason I want to wrap 
+   * shadows because they stack on top of each other, so I want the ::before to have the same 
+   * color as the page background. This will create the illusion of shadows not stacking!
+   * 
+   * Why not have ::before wrap the shadow? This is because applying `position: sticky` to the
+   * <li> breaks z-index values and does not work as expected (if you don't know how ::before 
+   * works and stacking contexts work). 
+   * 
+   * Trying to set the ::before element to be behind the the <li> will NOT work. 
+   * I tried and it only puts it behind the content/text of the <li>. The background of 
+   * the <li> cannot be put in front of the ::before element because the <li> is (a) sticky
+   * which does not respect stacking contexts and (b) holds the ::before element within it, 
+   * naturally not allowing its children to be stacked behind it.
+   * 
+   * There *is* a way to put the ::before element behind the <li> by applying `translateZ(-1px)`
+   * to the ::before and `transform-style: preserve-3d` to the <li>, but this makes the text
+   * extremely blurry and it seems like this workaround is more effort than just having the
+   * ::before wrap the shadow instead. :/
+   *  
+   */
+  .initialList li {
+    --size: 4px;
+    --insetAmt: 2.75;    
+  }
+
+  .initialList li::before {
+    content: "";
+    width: calc(100% - var(--size) * var(--insetAmt));
+    height: calc(100% - var(--size) * var(--insetAmt));
+    inset: calc(var(--size) * var(--insetAmt) / 2);
+    background-color: theme("colors.army.50");
+    /* background-blend-mode: multiply; */
+    background-size: 450px 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 var(--size);
+    position: absolute;
+    border-radius: inherit;
+    /* The attr function will not work here */
+    background-image: var(--image-url); 
+    z-index: -1;
+  } 
+   
+
+
+</style>
+<!-- <script> 
+  // const anime = require("/anime.min.js");
+  // anime({
+  //   targets: 'a[href^="#"]',
+  //   translateY: 100
+  // });
+ </script>-->
+<!-- <script data-turbo-track="reload">
+
+
+  // this script only works bc we do not save any variables
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+
+  
+</script> -->

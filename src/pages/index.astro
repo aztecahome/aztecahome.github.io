@@ -53,7 +53,7 @@ import Banner from "../components/ui/Banner.astro";
             <p>
               <u>Termites</u>, <u>birds</u>, <u>scorpions</u>, <u>roaches</u>, <u
                 >spiders</u
-              >, <u>home seal</u>, <u>bed bugs</u>, <u>fleas</u>, <u>flies</u>, <u
+              >, <u>bed bugs</u>, <u>fleas</u>, <u>flies</u>, <u
                 >mosquitoes</u
               >, <u>rodents</u>, and <u>bees</u> are pests we can rid you of. With
               <b>over 10 years of experience</b> using <em
@@ -61,6 +61,7 @@ import Banner from "../components/ui/Banner.astro";
               >, we have a proven track record of successfully eradicating pest
               issues.
             </p>
+            <!-- <u>home seal</u>,  -->
           </div>
 
           <ButtonLink
@@ -70,6 +71,36 @@ import Banner from "../components/ui/Banner.astro";
             addBorder
           />
         </li>
+
+        <li
+          class="col-span-12 flex flex-col justify-between gap-4 pb-8 sm:col-span-4 sm:pb-0"
+        >
+          <div>
+            <div class="flex items-center gap-2">
+              <object
+                width="40px"
+                height="40px"
+                data="/general/pool.svg"
+                type=""></object>
+              <h5 class="whitespace-nowrap text-2xl font-bold">
+                Pool Services
+              </h5>
+            </div>
+            <p>
+              <u>Chemical balancing & testing</u>, <u>green-to-cleans</u>, <u
+                >vacuuming & cleaning</u
+              >, <u>algae prevention & removal</u>, <u>filter cleaning</u>, <u
+                >sand changes</u
+              >, <u>pool acid washes</u>, <u>tile cleaning</u>, <u
+                >equipment repairs</u
+              > and
+              <u><em>more</em></u>! All of our services are performed by CPO-certified technicians to ensure the highest level of quality and
+              professionalism.
+            </p>
+          </div>
+          <ButtonLink content="Pool Service" url="/pools" fullWidth addBorder />
+        </li>
+
 
         <li
           class="col-span-12 flex flex-col justify-between gap-4 pb-8 sm:col-span-4 sm:pb-0"
@@ -102,35 +133,7 @@ import Banner from "../components/ui/Banner.astro";
             addBorder
           />
         </li>
-        <li
-          class="col-span-12 flex flex-col justify-between gap-4 pb-8 sm:col-span-4 sm:pb-0"
-        >
-          <div>
-            <div class="flex items-center gap-2">
-              <object
-                width="40px"
-                height="40px"
-                data="/general/pool.svg"
-                type=""></object>
-              <h5 class="whitespace-nowrap text-2xl font-bold">
-                Pool Services
-              </h5>
-            </div>
-            <p>
-              <u>Chemical balancing & testing</u>, <u>green-to-cleans</u>, <u
-                >vacuuming & cleaning</u
-              >, <u>algae prevention & removal</u>, <u>filter cleaning</u>, <u
-                >sand changes</u
-              >, <u>pool acid washes</u>, <u>tile cleaning</u>, <u
-                >equipment repairs</u
-              > and
-              <u><em>more</em></u>! All of our services are performed by CPO
-              certified technicians to ensure the highest level of quality and
-              professionalism.
-            </p>
-          </div>
-          <ButtonLink content="Pool Service" url="/pools" fullWidth addBorder />
-        </li>
+        
       </ul>
     </section>
 

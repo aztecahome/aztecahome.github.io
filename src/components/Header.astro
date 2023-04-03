@@ -14,8 +14,7 @@ const paths = [
 ---
 
 <header
-  class="bg-[var(--nav-background)] sm:flex sm:justify-between z-10 relative shadow-lg"
-  
+  class="bg-[var(--nav-background)] sm:flex sm:justify-between z-20 shadow-lg top-[-170px] sticky sm:top-0"
 >
   <div class="flex w-auto justify-center">
     <a href="/">
@@ -26,10 +25,10 @@ const paths = [
   </div>
   <div class="sm:flex sm:flex-col sm:justify-between">
     <div
-      class="mx-2 my-1 flex h-full items-center justify-center sm:justify-end flex-wrap"
+      class="mx-3 my-1 flex h-full items-center justify-center sm:justify-end flex-wrap"
     >
       <svg
-        class="h-[25px] w-[25px] fill-army-900 shrink-0"
+        class="h-[20px] w-[20px] fill-army-900 shrink-0 mx-1 animate-[wiggle_15s_linear_infinite_15s] "
         xmlns="http://www.w3.org/2000/svg"
         height="24px"
         viewBox="0 0 24 24"
@@ -57,12 +56,13 @@ const paths = [
                         underline sm:no-underline whitespace-nowrap
                         sm:active:pb-0 sm:active:pt-4
                         ${pathname === path.url || otherPathname === path.url
-                        ? "border-army-900 bg-army-900 text-army-50 no-underline sm:bg-transparent sm:text-army-900 sm:bg-army-300"
+                        ? "border-army-900 bg-army-900 text-army-50 no-underline sm:text-army-900 sm:bg-army-300"
                         : " border-transparent bg-army-300 sm:bg-transparent "
                       }`}
                 href={path.url}
                 aria-current={pathname === path.url ? "true" : "false"}
                 role="menuitem"
+                data-turbo-preload
               >
                 {path.name}
               </a>
@@ -70,26 +70,6 @@ const paths = [
           ))
         }
       </ul>
-      <!-- <ul class="grid grid-cols-12 sm:grid-cols-none sm:grid-flow-col-dense sm:auto-cols-max" role="menubar">
-        {
-          paths.map((path) => (
-            <li class="contents" role="none">
-              <a
-                class={`col-span-4 sm:col-auto text-center ring-2 ring-inset sm:border-b-8 sm:pb-2 sm:ring-0 sm:px-3 py-3 transition-colors hover:bg-army-300 hover:underline underline sm:no-underline whitespace-nowrap  ${
-                  pathname === path.url || otherPathname === path.url
-                    ? "ring-army-900 border-army-900 bg-army-300"
-                    : "ring-army-300 border-transparent bg-transparent"
-                }`}
-                href={path.url}
-                aria-current={pathname === path.url ? "true" : "false"}
-                role="menuitem"
-              >
-                {path.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul> -->
     </nav>
   </div>
 </header>
@@ -97,4 +77,32 @@ const paths = [
   :root {
     --nav-background: theme(colors.army.200);
   }
+
+  
+  @keyframes wiggle {
+  0% {
+    transform: rotate(0deg)
+  }
+  1.786% {
+    transform: rotate(20deg);
+  }
+  2.679% {
+    transform: rotate(-20deg);
+  }
+  3.571% {
+    transform: rotate(20deg);
+  }
+  4.464% {
+    transform: rotate(-20deg);
+  }
+  5.357% {
+    transform: rotate(20deg);
+  }
+  7.143% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 </style>
