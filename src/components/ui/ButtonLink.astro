@@ -5,19 +5,21 @@ interface Props {
   fullWidth?: boolean;
   upperCase?: boolean;
   addBorder?: boolean;
+  light?: boolean;
 }
 
-const {url, content, fullWidth = false, upperCase = false, addBorder = false} = Astro.props;
+const {url, content, fullWidth = false, upperCase = false, addBorder = false, light = false} = Astro.props;
 ---
 
 <a
-  class={`rounded border-army-300 bg-army-900 p-4 pb-3 text-lg 
-          font-bold text-army-50 drop-shadow-lg transition-all hover:bg-army-300
+  class={`rounded border-army-300 p-4 pb-3 text-lg 
+          font-bold  drop-shadow-lg transition-all hover:bg-army-300
           hover:border-army-400 hover:text-army-900 active:translate-y-1 
           text-center select-none font-sans
           ${fullWidth ? "w-full" : "w-fit"}
           ${upperCase && "uppercase"}
-          ${addBorder && "border-b-8"}`}
+          ${addBorder && "border-b-8"}
+          ${light ? "bg-army-200 text-army-900" : "bg-army-900 text-army-50"}`}
   href={url}
   >
   {content}
