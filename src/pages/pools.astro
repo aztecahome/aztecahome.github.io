@@ -3,17 +3,102 @@ import Layout from "../layouts/Layout.astro";
 import { Picture } from "astro-imagetools/components";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
+
+type Service = {
+  name: string;
+  imageUrl: string;
+  url: string;
+  d?: string;
+};
+
+const DEFAULT_WAVE =
+  "M0,64L34.3,80C68.6,96,137,128,206,165.3C274.3,203,343,245,411,256C480,267,549,245,617,202.7C685.7,160,754,96,823,112C891.4,128,960,224,1029,224C1097.1,224,1166,128,1234,90.7C1302.9,53,1371,75,1406,85.3L1440,96L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z";
+
+const services: Service[] = [
+  {
+    name: "Green-To-Clean",
+    imageUrl: "/pool/greentoclean.webp",
+    url: "/contact",
+    d: "M0,64L34.3,80C68.6,96,137,128,206,165.3C274.3,203,343,245,411,256C480,267,549,245,617,202.7C685.7,160,754,96,823,112C891.4,128,960,224,1029,224C1097.1,224,1166,128,1234,90.7C1302.9,53,1371,75,1406,85.3L1440,96L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z",
+  },
+  {
+    name: "Chemical Balancing & Testing",
+    imageUrl: "/pool/strips.webp",
+    url: "/contact",
+    d: "M0,160L34.3,138.7C68.6,117,137,75,206,96C274.3,117,343,203,411,240C480,277,549,267,617,245.3C685.7,224,754,192,823,170.7C891.4,149,960,139,1029,144C1097.1,149,1166,171,1234,186.7C1302.9,203,1371,213,1406,218.7L1440,224L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z",
+  },
+  {
+    name: "Algae Prevention & Removal",
+    imageUrl: "/pool/algae.webp",
+    url: "/contact",
+    d: "M0,320L34.3,314.7C68.6,309,137,299,206,293.3C274.3,288,343,288,411,272C480,256,549,224,617,213.3C685.7,203,754,213,823,218.7C891.4,224,960,224,1029,186.7C1097.1,149,1166,75,1234,85.3C1302.9,96,1371,192,1406,240L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z",
+  },
+  {
+    name: "Filter Cleaning",
+    imageUrl: "/pool/filters.webp",
+    url: "/contact",
+    d: "M0,288L34.3,261.3C68.6,235,137,181,206,154.7C274.3,128,343,128,411,149.3C480,171,549,213,617,192C685.7,171,754,85,823,69.3C891.4,53,960,107,1029,149.3C1097.1,192,1166,224,1234,234.7C1302.9,245,1371,235,1406,229.3L1440,224L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z",
+  },
+  {
+    name: "Pool Acid Washes",
+    imageUrl: "/pool/acidwash.webp",
+    url: "/contact",
+    d: "M0,128L34.3,128C68.6,128,137,128,206,133.3C274.3,139,343,149,411,144C480,139,549,117,617,144C685.7,171,754,245,823,266.7C891.4,288,960,256,1029,224C1097.1,192,1166,160,1234,165.3C1302.9,171,1371,213,1406,234.7L1440,256L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z",
+  },
+  {
+    name: "Tile Cleaning",
+    imageUrl: "/pool/tilecleaning.webp",
+    url: "/contact",
+    d: "M0,64L34.3,69.3C68.6,75,137,85,206,80C274.3,75,343,53,411,74.7C480,96,549,160,617,181.3C685.7,203,754,181,823,181.3C891.4,181,960,203,1029,218.7C1097.1,235,1166,245,1234,240C1302.9,235,1371,213,1406,202.7L1440,192L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z",
+  },
+  {
+    name: "Equipment Repair",
+    imageUrl: "/pool/lightrepair.webp",
+    url: "/contact",
+    d: "M0,64L34.3,69.3C68.6,75,137,85,206,122.7C274.3,160,343,224,411,245.3C480,267,549,245,617,234.7C685.7,224,754,224,823,240C891.4,256,960,288,1029,304C1097.1,320,1166,320,1234,266.7C1302.9,213,1371,107,1406,53.3L1440,0L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z",
+  },
+  {
+    name: "Weekly Maintentance",
+    imageUrl: "/pool/maintenance.webp",
+    url: "/contact",
+    d: "M0,64L34.3,69.3C68.6,75,137,85,206,122.7C274.3,160,343,224,411,245.3C480,267,549,245,617,234.7C685.7,224,754,224,823,240C891.4,256,960,288,1029,304C1097.1,320,1166,320,1234,266.7C1302.9,213,1371,107,1406,53.3L1440,0L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z",
+  },
+];
+
+const servicesSorted = services.sort(({ name: a }, { name: b }) =>
+  a.localeCompare(b)
+);
 ---
 
+<!-- 
+  <p>
+              <u>Chemical balancing & testing</u>, <u>green-to-cleans</u>, <u
+                >vacuuming & cleaning</u
+              >, <u>algae prevention & removal</u>, <u>filter cleaning</u>, <u
+                >sand changes</u
+              >, <u>pool acid washes</u>, <u>tile cleaning</u>, <u
+                >equipment repairs</u
+              > and
+              <u><em>more</em></u>! All of our services are performed by CPO-certified technicians to ensure the highest level of quality and
+              professionalism.
+            </p>
+ -->
 <Layout title="Pools">
   <main>
     <section
-      class="relative flex h-[75vh] flex-col items-center justify-end sm:justify-center bg-army-900"
+      class="relative flex h-[75vh] flex-col items-center justify-end bg-army-900 sm:justify-center"
     >
       <div class="hero contents">
-        <Picture src="/pool/18.webp" alt="Beautiful clean sparkling pool" objectFit="cover" objectPosition="top left" />
+        <Picture
+          src="/pool/18.webp"
+          alt="Beautiful clean sparkling pool"
+          objectFit="cover"
+          objectPosition="top left"
+        />
       </div>
-      <div class="container mx-auto absolute z-10 flex flex-col items-end gap-4 p-4">
+      <div
+        class="container absolute z-10 mx-auto flex flex-col items-end gap-4 p-4"
+      >
         <h2
           class="max-w-[600px] rounded bg-army-50/60 p-4 text-3xl text-army-900 drop-shadow-2xl backdrop-blur-sm"
         >
@@ -26,6 +111,42 @@ import Banner from "../components/ui/Banner.astro";
     </section>
 
     <Banner cta="Transform your backyard into an oasis" />
-    
+
+    <section class="container mx-auto p-4 my-16">
+      <h4 class="col-span-12 py-8 text-3xl font-black uppercase">
+        Our Pool Services
+      </h4>
+      <ul
+        class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
+        {
+          services.map(({ name, url, imageUrl, d = DEFAULT_WAVE }) => (
+            <li class="contents">
+              <a
+                href={url}
+                style={`background-image: url('${imageUrl}');`}
+                class="bg-army-200 my-0 mx-auto aspect-square w-full max-w-[300px] overflow-hidden rounded-lg bg-cover group hover:underline shadow"
+              >
+                <h5 class="bg-army-50/90 p-4 text-2xl group-hover:pb-16 transition-all">{name}</h5>
+                <svg
+                  class="fill-army-50/90"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1440 320"
+                >
+                  <path d={d} />
+                </svg>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+
+    <Banner cta="Set up weekly pool service now!" />
+
+
+
+   
   </main>
 </Layout>

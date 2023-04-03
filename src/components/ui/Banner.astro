@@ -11,8 +11,8 @@ const { cta } = Astro.props;
   class="relative z-10 bg-army-500 "
 >
   <div class="container mx-auto p-4 grid grid-cols-1 items-center gap-4 md:grid-cols-3 ">
-    <h4 class="py-[14px] text-2xl text-army-50 md:col-span-2">
-      {cta}
+    <h4 class="text-2xl text-army-50 md:col-span-2 hover:underline grid">
+      <a class="w-full h-full py-[14px] " href="/contact">{cta}</a>
     </h4>
     <ButtonLink content="Contact Us" url="/contact" fullWidth upperCase />
   </div>
