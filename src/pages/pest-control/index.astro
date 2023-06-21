@@ -1,38 +1,27 @@
 ---
 // Our 6 step process
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import { Picture } from "astro-imagetools/components";
-import ButtonLink from "../components/ui/ButtonLink.astro";
-import Banner from "../components/ui/Banner.astro";
-
-const categories = [
-  "household-pests",
-  "stinging-insects",
-  "blood-sucking-pests",
-  "nuisance-pests",
-  "flies",
-  "arachnids",
-  "outdoor-pests",
-  "termites",
-] as const;
+import ButtonLink from "../../components/ui/ButtonLink.astro";
+import Banner from "../../components/ui/Banner.astro";
 
 type Pest = {
   name: string;
   file: string;
-  url: (typeof categories)[number];
+  url: string;
 };
 
 const pests: Pest[] = [
   {
     name: "Ants",
     file: "ant.svg",
-    url: "household-pests",
+    url: "/ants",
     // colonial type of pest. very similar to termites. kill the queen. give them bait to give back to the queen.
   },
   {
     name: "Beetles",
     file: "beetle.svg",
-    url: "outdoor-pests",
+    url: "/beetles",
     //
   },
   {
@@ -202,7 +191,7 @@ const sixSteps: Step[] = [
                 href={`/contact`}
                 class="flex flex-col items-center justify-center gap-2"
               >
-                <div class=" bg-army-200 group-hover:bg-army-400 flex h-[100px] w-[100px] items-center justify-center rounded p-3 transition-colors">
+                <div class="bg-army-200 group-hover:bg-army-400 flex h-[100px] w-[100px] items-center justify-center rounded p-3 transition-colors">
                   <object
                     class="pointer-events-none h-full w-full group-hover:animate-[shake_120ms_linear_infinite]"
                     data={`/pest/${file}`}

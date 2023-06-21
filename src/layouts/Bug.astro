@@ -1,0 +1,77 @@
+---
+// Our 6 step process
+import type { MarkdownLayoutProps } from "astro";
+import Layout from "./Layout.astro";
+import Banner from "../components/ui/Banner.astro";
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+  svg: string;
+  bug: string;
+  image: string;
+  alt: string;
+  url: string;
+}>;
+
+const { frontmatter, compiledContent } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <div class="container mx-auto mt-14">
+    <div class="w-fit rounded bg-army-100 p-4 font-bold">
+      <a href="/pest-control" class="underline">/pest-control</a>{
+        frontmatter.url.slice(13)
+      }
+    </div>
+    <div class="flex items-center gap-4">
+      <h1>{frontmatter.title}</h1>
+      <div
+        class="flex h-[80px] w-[80px] items-center justify-center rounded bg-army-200 p-3 transition-colors group-hover:bg-army-400"
+      >
+        <object
+          class="pointer-events-none h-full w-full group-hover:animate-[shake_120ms_linear_infinite]"
+          data={`/pest/${frontmatter.svg}`}
+          type=""></object>
+      </div>
+    </div>
+    <div class="grid grid-cols-12">
+      <div class="col-auto md:col-span-8 xl:col-span-6">
+        <img
+          src={frontmatter.image}
+          alt={frontmatter.alt}
+          class="max-h-[70vh] rounded-md"
+        />
+        <div class="my-10">
+            <slot />
+        </div>
+      </div>
+    </div>
+  </div>
+  <Banner cta={`Book ${frontmatter.bug} Control Now`} />
+</Layout>
+
+<style>
+  h1 {
+    font-size: 2em;
+    padding: 1em 0;
+  }
+  h2 {
+    font-size: 1.5em;
+    padding: 0.75em 0;
+  }
+  h3 {
+    font-size: 1.25em;
+    padding: 0.5em 0;
+  }
+  p {
+    font-size: 1em;
+    padding: 0.25em 0;
+  }
+  ul {
+    list-style-type: disc;
+    margin-left: 1em;
+  }
+  li {
+    padding: 1em 0;
+  }
+</style>
