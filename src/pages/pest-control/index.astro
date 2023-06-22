@@ -15,69 +15,69 @@ const pests: Pest[] = [
   {
     name: "Ants",
     file: "ant.svg",
-    url: "/ants",
+    url: "ants",
     // colonial type of pest. very similar to termites. kill the queen. give them bait to give back to the queen.
   },
   {
     name: "Beetles",
     file: "beetle.svg",
-    url: "/beetles",
+    url: "beetles",
     //
   },
   {
     name: "Bees",
     file: "bee.svg",
-    url: "stinging-insects",
+    url: "bees",
   },
   {
     name: "Bed Bugs",
     file: "bedbug.svg",
-    url: "household-pests",
+    url: "bed-bugs",
   },
   {
     name: "Birds",
     file: "bird.svg",
-    url: "nuisance-pests",
+    url: "birds",
   },
   {
     name: "Crickets",
     file: "cricket.svg",
-    url: "household-pests",
+    url: "crickets",
   },
   {
     name: "Fleas",
     file: "flea.svg",
-    url: "household-pests",
+    url: "fleas",
   },
   {
     name: "Flies",
     file: "fly.svg",
-    url: "household-pests",
+    url: "flies",
   },
   {
     name: "Mosquitoes",
     file: "mosquito.svg",
-    url: "blood-sucking-pests",
+    url: "mosquitoes",
   },
   {
     name: "Roaches",
     file: "roach.svg",
-    url: "household-pests",
+    url: "roaches",
   },
   {
     name: "Rodents",
     file: "rodent.svg",
-    url: "nuisance-pests",
+    url: "rodents",
   },
   {
     name: "Spiders",
     file: "spider.svg",
-    url: "arachnids",
+    url: "spiders",
   },
   {
     name: "Scorpions",
     file: "scorpion.svg",
-    url: "arachnids",
+    url: "scorpions",
   },
   {
     name: "Termites",
@@ -87,12 +87,12 @@ const pests: Pest[] = [
   {
     name: "Ticks",
     file: "tick.svg",
-    url: "blood-sucking-pests",
+    url: "ticks",
   },
   {
     name: "Wasps",
     file: "wasp.svg",
-    url: "stinging-insects",
+    url: "wasps",
   },
 ];
 
@@ -184,11 +184,11 @@ const sixSteps: Step[] = [
       </h4>
       <ul class="grid grid-cols-12 gap-4 text-xl">
         {
-          pestsSorted.map(({ name, file }) => (
+          pestsSorted.map(({ name, file, url }) => (
             <li class="group col-span-6 gap-2 sm:col-span-4 md:col-span-3 lg:col-span-2">
               <!--TODO: use URL -->
               <a
-                href={`/contact`}
+                href={`/pest-control/${url}`}
                 class="flex flex-col items-center justify-center gap-2"
               >
                 <div class="bg-army-200 group-hover:bg-army-400 flex h-[100px] w-[100px] items-center justify-center rounded p-3 transition-colors">
