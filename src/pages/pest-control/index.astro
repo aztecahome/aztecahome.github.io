@@ -143,6 +143,39 @@ const sixSteps: Step[] = [
     bgImage: "/general/days/Flint.svg",
   },
 ];
+
+const reasons: Step[] = [
+  {
+    title: "Local Expertise",
+    description:
+      "Living in Arizona means dealing with unique pest challenges. Our team of skilled technicians understands the specific pest issues that homeowners face in this region. From scorpions and termites to ants and rodents, we have the expertise to identify, treat, and prevent a wide range of pests that are common from Scottsdale, Peoria, Glendale, Anthem, and beyond all across the Phoenix Arizona Metro Area.",
+    bgImage: "/general/days/Crocodile.svg",
+  },
+  {
+    title: "Customized Approach",
+    description:
+      "At Azteca Home Services, we believe in providing tailored solutions to meet your specific needs. We understand that every home is different, and so are the pest problems. Our team will conduct a thorough inspection of your property to identify the root cause of the infestation. Based on our findings, we will develop a customized treatment plan that effectively eliminates pests and prevents future invasions.",
+    bgImage: "/general/days/Crocodile.svg",
+  },
+  {
+    title: "Environmentally Friendly Solutions",
+    description:
+      "We prioritize the safety of your family, pets, and the environment. Our pest control methods are designed to minimize the use of harsh chemicals while still delivering exceptional results. We utilize eco-friendly products and techniques that effectively target pests without causing harm to your loved ones or the surrounding ecosystem.",
+    bgImage: "/general/days/Crocodile.svg",
+  },
+  {
+    title: "Exceptional Customer Service",
+    description:
+      "Your satisfaction is our top priority. Our friendly and professional team is dedicated to providing you with exceptional customer experience from start to finish. We take the time to listen to your concerns, answer your questions, and address any pest-related issues you may have. With Azteca Home Services, you can expect prompt, reliable, and courteous service every step of the way. Our Goal is to Become Your Exterminator of Choice",
+    bgImage: "/general/days/Crocodile.svg",
+  },
+  {
+    title: "Long-Term Protection",
+    description:
+      "Our goal is not just to eliminate pests temporarily but to provide long-term protection for your home. We offer comprehensive pest management plans that include regular inspections and preventive treatments to ensure that pests stay away for good. Our proactive approach helps you maintain a pest- free environment and gives you peace of mind knowing that your home is protected year-round.",
+    bgImage: "/general/days/Crocodile.svg",
+  },
+];
 // description:
 // "When your home is built, contractors automatically make a giant hole that the pipes rarely fill. Insects take advantage of this gap so we treat all of your plumbing intrusions which is one of the most forgotten areas and is a highway for insects to come into your home.",
 ---
@@ -177,6 +210,21 @@ const sixSteps: Step[] = [
     </section>
 
     <Banner cta="Bid farewell to creepy crawlers" />
+
+    <section class="container mx-auto p-4 py-8"> 
+      <h4 class="col-span-12 py-4 text-4xl font-bold max-w-3xl">Welcome to Azteca Home Services - <br/>
+Your Trusted Pest Control Experts in
+Phoenix, Arizona Metro Area
+      </h4>
+    </section>
+
+    <div class="bg-army-200 py-4">
+    <section class="container mx-auto p-4">
+      <h4 class="col-span-12 max-w-3xl text-3xl py-4 font-bold">Effective Pest Control Solutions Tailored for Arizona Homes Throughout Phoenix</h4>
+
+      <p class="max-w-prose py-4 text-2xl accent-font">Are pests invading your home and disrupting your peace of mind? Look no further than Azteca Home Services for reliable and effective pest control solutions in Phoenix, Arizona. With our extensive knowledge of local pests and years of experience, we are committed to providing you with a pest-free environment that you and your family deserve.</p>
+    </section>
+    </div>
 
     <section class="container mx-auto p-4">
       <h4 class="col-span-12 py-4 text-3xl font-black uppercase">
@@ -232,68 +280,49 @@ const sixSteps: Step[] = [
 
     <Banner cta="Get pest control now!" />
 
-    <section class="mb-36 py-16 flex flex-col items-center bg-army-100">
+    <section class=" py-8 bg-army-100">
+      <div class="container mx-auto flex flex-col items-center">
       <h2
-        class="sticky top-[150px] max-w-[400px] p-4 text-center text-3xl font-bold"
+        class="sticky lg:relative lg:top-auto top-[150px] max-w-[400px] p-4 text-center text-3xl font-bold"
       >
         Our Six-Step Pest Control Initial:
       </h2>
       <ol
-        class="initialList sticky top-[200px] grid grid-rows-6 gap-3 p-3 text-xl"
+        class="initialList sticky lg:relative lg:top-auto top-[200px] grid grid-rows-6 gap-3 p-3 text-xl lg:grid-cols-3 lg:grid-rows-2"
       >
         {
           sixSteps.map(({ title, description, bgImage }, i) => (
-            <li class={`bg-army-100 sticky top-[250px] text-left z-10 flex max-w-[400px] flex-col content-start items-center gap-2 rounded-lg p-8 `} data-image-url="/general/days/Crocodile.svg" style={`--image-url: url('${bgImage}');`}>
+            <li class={`bg-army-100 sticky lg:relative lg:top-auto top-[250px] text-left z-10 flex max-w-[400px] flex-col content-start items-center gap-2 rounded-lg p-8 `} data-image-url="/general/days/Crocodile.svg" style={`--image-url: url('${bgImage}');`}>
               <h3 class="text-2xl font-bold w-full ">{`${i+1}. ${title}`}</h3>
               <p class="text-xl drop-shadow w-full">{description}</p>
             </li>
           ))
         }
       </ol>
-    </section>
-    <!-- 
-    <section class="min-h-[70vh] bg-purple-300">
-      <span id="stinging-insects" class="relative top-[-150px] h-1 w-1"></span>
-      <h2 class="text-2xl">Wasps & Bees</h2>
-      <p>two methods. method 1: relocation method where we can trap them and relocate them. method 2: extermination</p>
-
+      </div>
     </section>
 
-    <section class="min-h-[70vh] bg-purple-300">
-      <span id="household-pests" class="relative top-[-150px] h-1 w-1"></span>
-      <h2>Household Pests</h2>
+    <section class=" py-8 bg-army-50">
+      <div class="container mx-auto flex flex-col items-center">
+      <h2
+        class="lg:relative lg:top-auto top-[150px] max-w-[400px] p-4 text-center text-4xl font-black"
+      >
+        Why choose AZTECA Home Services?
+      </h2>
+      <ol
+        class="grid grid-rows-5 gap-3 p-3 text-xl lg:grid-cols-2 lg:grid-rows-3"
+      >
+        {
+          reasons.map(({ title, description, bgImage }, i) => (
+            <li class={`bg-army-100 text-left z-10 flex max-w-prose flex-col content-start items-center gap-2 rounded-lg p-8 `} data-image-url="/general/days/Crocodile.svg" style={`--image-url: url('${bgImage}');`}>
+              <h3 class="text-2xl font-bold w-full ">{`${i+1}. ${title}`}</h3>
+              <p class="text-xl drop-shadow w-full">{description}</p>
+            </li>
+          ))
+        }
+      </ol>
+      </div>
     </section>
-
-    <section class="min-h-[70vh] bg-purple-300">
-      <span id="blood-sucking-pests" class="relative top-[-150px] h-1 w-1"
-      ></span>
-      <h2>Blood Sucking Pests</h2>
-    </section>
-
-    <section class="min-h-[70vh] bg-purple-300">
-      <span id="nuisance-pests" class="relative top-[-150px] h-1 w-1"></span>
-      <h2>Nuisance Pests</h2>
-    </section>
-
-    <section class="min-h-[70vh] bg-purple-300">
-      <span id="flies" class="relative top-[-150px] h-1 w-1"></span>
-      <h2>Flies</h2>
-    </section>
-
-    <section class="min-h-[70vh] bg-purple-300">
-      <span id="arachnids" class="relative top-[-150px] h-1 w-1"></span>
-      <h2>Arachnids</h2>
-    </section>
-
-    <section class="min-h-[70vh] bg-purple-300">
-      <span id="outdoor-pests" class="relative top-[-150px] h-1 w-1"></span>
-      <h2>Outdoor Pests</h2>
-    </section>
-
-    <section class="min-h-[70vh] bg-purple-300">
-      <span id="termites" class="relative top-[-150px] h-1 w-1"></span>
-      <h2>Termites</h2>
-    </section> -->
   </main>
 </Layout>
 <style is:global>
@@ -358,6 +387,9 @@ const sixSteps: Step[] = [
     z-index: -1;
   } 
    
+  .accent-font {
+    font-family: "Rokkitt";
+  }
 
 
 </style>
