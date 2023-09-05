@@ -97,32 +97,5 @@ const { title } = Astro.props;
   }
 </style>
 <!-- prettier-ignore -->
-<script
-  type="application/ld+json"
-  set:html={JSON.stringify({
-    "@context": "http://schema.org/",
-    "@type": "LocalBusiness",
-    "name": "AZTECA Home Services",
-    "image": "https://www.aztecahome.com/general/aztecaLogo.svg",
-    "telephone": "(602)-926-2021",
-    "url": "https://aztecahome.com",
-    "email": "officemanager@aztecahomeservices.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "3655 W Anthem Way A-109 #342",
-      "addressLocality": "Phoenix",
-      "addressRegion": "AZ",
-      "postalCode": "85086"
-    },
-    "priceRange": "$",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": {
-        "@type": "DayOfWeek",
-        "name": "Monday - Friday"
-      },
-      "opens": "16:00:00Z",
-      "closes": "21:00:00Z"
-    }
-  })}
-></script>
+
+type="application/ld+json"

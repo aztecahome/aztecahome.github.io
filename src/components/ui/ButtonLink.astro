@@ -8,7 +8,14 @@ interface Props {
   light?: boolean;
 }
 
-const {url, content, fullWidth = false, upperCase = false, addBorder = false, light = false} = Astro.props;
+const {
+  url,
+  content,
+  fullWidth = false,
+  upperCase = false,
+  addBorder = false,
+  light = false,
+} = Astro.props;
 ---
 
 <a
@@ -21,6 +28,6 @@ const {url, content, fullWidth = false, upperCase = false, addBorder = false, li
           ${addBorder && "border-b-8"}
           ${light ? "bg-army-200 text-army-900" : "bg-army-900 text-army-50"}`}
   href={url}
-  >
+>
   {content}
 </a>

@@ -139,7 +139,7 @@ const sixSteps: Step[] = [
   {
     title: "Plumbing Intrusion Treatment",
     description:
-    "Even the smallest opening in your plumbing can be an entryway for insects. Our comprehensive treatment ensures all intrusion points are covered, making your home bug-free.",
+      "Even the smallest opening in your plumbing can be an entryway for insects. Our comprehensive treatment ensures all intrusion points are covered, making your home bug-free.",
     bgImage: "/general/days/Flint.svg",
   },
 ];
@@ -211,19 +211,28 @@ const reasons: Step[] = [
 
     <Banner cta="Bid farewell to creepy crawlers" />
 
-    <section class="container mx-auto p-4 py-8"> 
-      <h4 class="col-span-12 py-4 text-4xl font-bold max-w-3xl">Welcome to Azteca Home Services - <br/>
-Your Trusted Pest Control Experts in
-Phoenix, Arizona Metro Area
+    <section class="container mx-auto p-4 py-8">
+      <h4 class="col-span-12 max-w-3xl py-4 text-4xl font-bold">
+        Welcome to Azteca Home Services - <br />
+        Your Trusted Pest Control Experts in Phoenix, Arizona Metro Area
       </h4>
     </section>
 
     <div class="bg-army-200 py-4">
-    <section class="container mx-auto p-4">
-      <h4 class="col-span-12 max-w-3xl text-3xl py-4 font-bold">Effective Pest Control Solutions Tailored for Arizona Homes Throughout Phoenix</h4>
+      <section class="container mx-auto p-4">
+        <h4 class="col-span-12 max-w-3xl py-4 text-3xl font-bold">
+          Effective Pest Control Solutions Tailored for Arizona Homes Throughout
+          Phoenix
+        </h4>
 
-      <p class="max-w-prose py-4 text-2xl accent-font">Are pests invading your home and disrupting your peace of mind? Look no further than Azteca Home Services for reliable and effective pest control solutions in Phoenix, Arizona. With our extensive knowledge of local pests and years of experience, we are committed to providing you with a pest-free environment that you and your family deserve.</p>
-    </section>
+        <p class="accent-font max-w-prose py-4 text-2xl">
+          Are pests invading your home and disrupting your peace of mind? Look
+          no further than Azteca Home Services for reliable and effective pest
+          control solutions in Phoenix, Arizona. With our extensive knowledge of
+          local pests and years of experience, we are committed to providing you
+          with a pest-free environment that you and your family deserve.
+        </p>
+      </section>
     </div>
 
     <section class="container mx-auto p-4">
@@ -234,12 +243,11 @@ Phoenix, Arizona Metro Area
         {
           pestsSorted.map(({ name, file, url }) => (
             <li class="group col-span-6 gap-2 sm:col-span-4 md:col-span-3 lg:col-span-2">
-              <!--TODO: use URL -->
               <a
                 href={`/pest-control/${url}`}
                 class="flex flex-col items-center justify-center gap-2"
               >
-                <div class="bg-army-200 group-hover:bg-army-400 flex h-[100px] w-[100px] items-center justify-center rounded p-3 transition-colors">
+                <div class="flex h-[100px] w-[100px] items-center justify-center rounded bg-army-200 p-3 transition-colors group-hover:bg-army-400">
                   <object
                     class="pointer-events-none h-full w-full group-hover:animate-[shake_120ms_linear_infinite]"
                     data={`/pest/${file}`}
@@ -254,7 +262,6 @@ Phoenix, Arizona Metro Area
       </ul>
     </section>
 
-    
     <section class="mt-36 flex justify-center bg-army-200">
       <div class="container flex flex-col items-center justify-center p-8">
         <p>
@@ -280,47 +287,59 @@ Phoenix, Arizona Metro Area
 
     <Banner cta="Get pest control now!" />
 
-    <section class=" py-8 bg-army-100">
+    <section class="bg-army-100 py-8">
       <div class="container mx-auto flex flex-col items-center">
-      <h2
-        class="sticky lg:relative lg:top-auto top-[150px] max-w-[400px] p-4 text-center text-3xl font-bold"
-      >
-        Our Six-Step Pest Control Initial:
-      </h2>
-      <ol
-        class="initialList sticky lg:relative lg:top-auto top-[200px] grid grid-rows-6 gap-3 p-3 text-xl lg:grid-cols-3 lg:grid-rows-2"
-      >
-        {
-          sixSteps.map(({ title, description, bgImage }, i) => (
-            <li class={`bg-army-100 sticky lg:relative lg:top-auto top-[250px] text-left z-10 flex max-w-[400px] flex-col content-start items-center gap-2 rounded-lg p-8 `} data-image-url="/general/days/Crocodile.svg" style={`--image-url: url('${bgImage}');`}>
-              <h3 class="text-2xl font-bold w-full ">{`${i+1}. ${title}`}</h3>
-              <p class="text-xl drop-shadow w-full">{description}</p>
-            </li>
-          ))
-        }
-      </ol>
+        <h2
+          class="sticky top-[150px] max-w-[400px] p-4 text-center text-3xl font-bold lg:relative lg:top-auto"
+        >
+          Our Six-Step Pest Control Initial:
+        </h2>
+        <ol
+          class="initialList sticky top-[200px] grid grid-rows-6 gap-3 p-3 text-xl lg:relative lg:top-auto lg:grid-cols-3 lg:grid-rows-2"
+        >
+          {
+            sixSteps.map(({ title, description, bgImage }, i) => (
+              <li
+                class={`sticky top-[250px] z-10 flex max-w-[400px] flex-col content-start items-center gap-2 rounded-lg bg-army-100 p-8 text-left lg:relative lg:top-auto `}
+                data-image-url="/general/days/Crocodile.svg"
+                style={`--image-url: url('${bgImage}');`}
+              >
+                <h3 class="w-full text-2xl font-bold ">{`${
+                  i + 1
+                }. ${title}`}</h3>
+                <p class="w-full text-xl drop-shadow">{description}</p>
+              </li>
+            ))
+          }
+        </ol>
       </div>
     </section>
 
-    <section class=" py-8 bg-army-50">
+    <section class="bg-army-50 py-8">
       <div class="container mx-auto flex flex-col items-center">
-      <h2
-        class="lg:relative lg:top-auto top-[150px] max-w-[400px] p-4 text-center text-4xl font-black"
-      >
-        Why choose AZTECA Home Services?
-      </h2>
-      <ol
-        class="grid grid-rows-5 gap-3 p-3 text-xl lg:grid-cols-2 lg:grid-rows-3"
-      >
-        {
-          reasons.map(({ title, description, bgImage }, i) => (
-            <li class={`bg-army-100 text-left z-10 flex max-w-prose flex-col content-start items-center gap-2 rounded-lg p-8 `} data-image-url="/general/days/Crocodile.svg" style={`--image-url: url('${bgImage}');`}>
-              <h3 class="text-2xl font-bold w-full ">{`${i+1}. ${title}`}</h3>
-              <p class="text-xl drop-shadow w-full">{description}</p>
-            </li>
-          ))
-        }
-      </ol>
+        <h2
+          class="top-[150px] max-w-[400px] p-4 text-center text-4xl font-black lg:relative lg:top-auto"
+        >
+          Why choose AZTECA Home Services?
+        </h2>
+        <ol
+          class="grid grid-rows-5 gap-3 p-3 text-xl lg:grid-cols-2 lg:grid-rows-3"
+        >
+          {
+            reasons.map(({ title, description, bgImage }, i) => (
+              <li
+                class={`z-10 flex max-w-prose flex-col content-start items-center gap-2 rounded-lg bg-army-100 p-8 text-left `}
+                data-image-url="/general/days/Crocodile.svg"
+                style={`--image-url: url('${bgImage}');`}
+              >
+                <h3 class="w-full text-2xl font-bold ">{`${
+                  i + 1
+                }. ${title}`}</h3>
+                <p class="w-full text-xl drop-shadow">{description}</p>
+              </li>
+            ))
+          }
+        </ol>
       </div>
     </section>
   </main>
@@ -366,7 +385,7 @@ Phoenix, Arizona Metro Area
    */
   .initialList li {
     --size: 4px;
-    --insetAmt: 2.75;    
+    --insetAmt: 2.75;
   }
 
   .initialList li::before {
@@ -383,15 +402,13 @@ Phoenix, Arizona Metro Area
     position: absolute;
     border-radius: inherit;
     /* The attr function will not work here */
-    background-image: var(--image-url); 
+    background-image: var(--image-url);
     z-index: -1;
-  } 
-   
+  }
+
   .accent-font {
     font-family: "Rokkitt";
   }
-
-
 </style>
 <!-- <script> 
   // const anime = require("/anime.min.js");
