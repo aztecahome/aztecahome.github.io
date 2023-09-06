@@ -3,23 +3,26 @@ import Layout from "../layouts/Layout.astro";
 import { Picture } from "astro-imagetools/components";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
-
 ---
 
 <Layout title="Landscaping">
   <main>
     <section
-      class="flex flex-col items-center justify-top sm:justify-center h-[75vh] relative bg-army-900"
+      class="justify-top relative flex h-[75vh] flex-col items-center bg-army-900 sm:justify-center"
     >
       <div class="hero contents">
-        <Picture src="/landscape/general.webp" alt="Beautiful clean sparkling pool"
-        objectFit="cover" objectPosition="top center"  />
+        <Picture
+          src="/landscape/general.webp"
+          alt="Beautiful clean sparkling pool"
+          objectFit="cover"
+          objectPosition="top center"
+        />
       </div>
-      <div class="container mx-auto p-4 flex flex-col gap-4 absolute z-10">
+      <div class="container absolute z-10 mx-auto flex flex-col gap-4 p-4">
         <h2
-          class="text-3xl max-w-[600px] p-4 bg-army-50/60 backdrop-blur-sm rounded text-army-900 drop-shadow-2xl"
+          class="max-w-[600px] rounded bg-army-50/60 p-4 text-3xl text-army-900 drop-shadow-2xl backdrop-blur-sm"
         >
-        <b>Transform</b> Your Desert Landscape into a <b
+          <b>Transform</b> Your Desert Landscape into a <b
             >Lush and Inviting Oasis</b
           >
         </h2>
@@ -28,6 +31,5 @@ import Banner from "../components/ui/Banner.astro";
     </section>
 
     <Banner cta="Let's create your personal paradise" />
-
   </main>
 </Layout>

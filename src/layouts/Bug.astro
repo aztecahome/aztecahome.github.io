@@ -14,7 +14,7 @@ type Props = MarkdownLayoutProps<{
 }>;
 
 const { frontmatter, compiledContent } = Astro.props;
-import './Bug.css';
+import "./Bug.css";
 ---
 
 <Layout title={frontmatter.title}>
@@ -50,4 +50,3 @@ import './Bug.css';
   </div>
   <Banner cta={`Book ${frontmatter.bug} Control Now`} />
 </Layout>
-
