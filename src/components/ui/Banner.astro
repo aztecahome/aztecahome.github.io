@@ -3,11 +3,12 @@ import ButtonLink from "./ButtonLink.astro";
 
 interface Props {
   cta: string;
+  verticalSpace: boolean;
 }
-const { cta } = Astro.props;
+const { cta, verticalSpace } = Astro.props;
 ---
 
-<aside class="relative z-10 bg-army-500">
+<aside class={`relative z-10 bg-army-500 ${verticalSpace ? " my-16 " : ""}`}>
   <div
     class="container mx-auto grid grid-cols-1 items-center gap-4 p-4 md:grid-cols-3"
   >
