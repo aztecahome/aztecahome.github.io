@@ -1,8 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Picture } from "astro-imagetools/components";
+import { Image } from "astro:assets";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
+import PoolImg from "../assets/pool/18.webp";
+import { generatePlaceholder } from "astro-eleventy-img";
+
+const myPlaceholder = await generatePlaceholder("src/assets/pool/18.webp");
 
 type Service = {
   name: string;
@@ -66,11 +70,11 @@ const services: Service[] = [
 ];
 
 const servicesSorted = services.sort(({ name: a }, { name: b }) =>
-  a.localeCompare(b)
+  a.localeCompare(b),
 );
 ---
 
-<!-- 
+<!--
   <p>
               <u>Chemical balancing & testing</u>, <u>green-to-cleans</u>, <u
                 >vacuuming & cleaning</u
@@ -89,11 +93,17 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
       class="relative flex h-[75vh] flex-col items-center justify-end bg-army-900 sm:justify-center"
     >
       <div class="hero contents">
-        <Picture
-          src="/pool/18.webp"
+        <img
+          src={myPlaceholder.dataURI}
           alt="Beautiful clean sparkling pool"
-          objectFit="cover"
-          objectPosition="top left"
+          class="object-cover object-[top_left]"
+          loading="eager"
+        />
+        <Image
+          src={PoolImg}
+          alt="Beautiful clean sparkling pool"
+          class="object-cover object-[top_left]"
+          loading="eager"
         />
       </div>
       <div

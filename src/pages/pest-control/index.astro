@@ -1,9 +1,15 @@
 ---
 // Our 6 step process
 import Layout from "../../layouts/Layout.astro";
-import { Picture } from "astro-imagetools/components";
+import { Image } from "astro:assets";
 import ButtonLink from "../../components/ui/ButtonLink.astro";
 import Banner from "../../components/ui/Banner.astro";
+import PestImage from "../../assets/general/truck.webp";
+import { generatePlaceholder } from "astro-eleventy-img";
+
+const myPlaceholder = await generatePlaceholder(
+  "src/assets/general/truck.webp",
+);
 
 type Pest = {
   name: string;
@@ -97,7 +103,7 @@ const pests: Pest[] = [
 ];
 
 const pestsSorted = pests.sort(({ name: a }, { name: b }) =>
-  a.localeCompare(b)
+  a.localeCompare(b),
 );
 
 type Step = {
@@ -186,11 +192,17 @@ const reasons: Step[] = [
       class="justify-top relative flex h-[75vh] flex-col items-center bg-army-900 sm:justify-center"
     >
       <div class="hero contents">
-        <Picture
-          src="/general/truck.webp"
+        <img
+          src={myPlaceholder.dataURI}
           alt="AZTECA Pest Control truck in front of house"
-          objectFit="cover"
-          objectPosition="center"
+          class="object-cover object-center"
+          loading="eager"
+        />
+        <Image
+          src={PestImage}
+          alt="AZTECA Pest Control truck in front of house"
+          class="object-cover object-center"
+          loading="eager"
         />
       </div>
       <div class="container absolute z-10 mx-auto flex flex-col gap-4 p-4">
@@ -210,13 +222,6 @@ const reasons: Step[] = [
     </section>
 
     <Banner cta="Bid farewell to creepy crawlers" />
-
-    <section class="container mx-auto my-8 p-4">
-      <h4 class="col-span-12 max-w-3xl py-4 text-5xl font-bold">
-        Welcome to Azteca Home Services - <br />
-        Your Trusted Pest Control Experts in Phoenix, Arizona Metro Area
-      </h4>
-    </section>
 
     <section class="my-8 bg-army-100 py-8">
       <div class="container mx-auto flex flex-col items-center">
@@ -381,27 +386,27 @@ const reasons: Step[] = [
   }
 
   /* Proof of concept: https://codepen.io/xav-ie/pen/poOqQme?editors=0100
-   * 
+   *
    * The purpose of the weird ::before is because:
-   * I want the ::before element wrapping the shadow of each <li>. The reason I want to wrap 
-   * shadows because they stack on top of each other, so I want the ::before to have the same 
+   * I want the ::before element wrapping the shadow of each <li>. The reason I want to wrap
+   * shadows because they stack on top of each other, so I want the ::before to have the same
    * color as the page background. This will create the illusion of shadows not stacking!
-   * 
+   *
    * Why not have ::before wrap the shadow? This is because applying `position: sticky` to the
-   * <li> breaks z-index values and does not work as expected (if you don't know how ::before 
-   * works and stacking contexts work). 
-   * 
-   * Trying to set the ::before element to be behind the the <li> will NOT work. 
-   * I tried and it only puts it behind the content/text of the <li>. The background of 
+   * <li> breaks z-index values and does not work as expected (if you don't know how ::before
+   * works and stacking contexts work).
+   *
+   * Trying to set the ::before element to be behind the the <li> will NOT work.
+   * I tried and it only puts it behind the content/text of the <li>. The background of
    * the <li> cannot be put in front of the ::before element because the <li> is (a) sticky
-   * which does not respect stacking contexts and (b) holds the ::before element within it, 
+   * which does not respect stacking contexts and (b) holds the ::before element within it,
    * naturally not allowing its children to be stacked behind it.
-   * 
+   *
    * There *is* a way to put the ::before element behind the <li> by applying `translateZ(-1px)`
    * to the ::before and `transform-style: preserve-3d` to the <li>, but this makes the text
    * extremely blurry and it seems like this workaround is more effort than just having the
    * ::before wrap the shadow instead. :/
-   *  
+   *
    */
   .initialList li {
     --size: 4px;
@@ -430,7 +435,7 @@ const reasons: Step[] = [
     font-family: "Rokkitt";
   }
 </style>
-<!-- <script> 
+<!-- <script>
   // const anime = require("/anime.min.js");
   // anime({
   //   targets: 'a[href^="#"]',
@@ -450,5 +455,5 @@ const reasons: Step[] = [
     });
   });
 
-  
+
 </script> -->

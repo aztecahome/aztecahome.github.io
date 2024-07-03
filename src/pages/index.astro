@@ -1,8 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Picture } from "astro-imagetools/components";
+import {Image} from "astro:assets";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
+import MainImage from "../assets/landscape/general2.webp"
+import { generatePlaceholder } from "astro-eleventy-img";
+
+const myPlaceholder = await generatePlaceholder(
+  "src/assets/landscape/general2.webp",
+);
 ---
 
 <Layout title="AZTECA Home Services">
@@ -11,11 +17,17 @@ import Banner from "../components/ui/Banner.astro";
       class="relative flex h-[75vh] flex-col items-center justify-end bg-army-900 sm:justify-center"
     >
       <div class="hero contents">
-        <Picture
-          src="/landscape/general2.webp"
-          alt="Beautiful clean sparkling pool"
-          objectFit="cover"
-          objectPosition="top center"
+        <img
+        src={myPlaceholder.dataURI}
+        alt="A perfectly manicured landscape"
+        class="object-cover object-[top_center]"
+        loading="eager"
+        />
+        <Image
+        src={MainImage}
+        alt="A perfectly manicured landscape"
+        class="object-cover object-[top_center]"
+        loading="eager"
         />
       </div>
       <div class="container absolute z-10 mx-auto flex flex-col gap-4 p-4">

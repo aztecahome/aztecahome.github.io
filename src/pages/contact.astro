@@ -74,16 +74,11 @@ import Layout from "../layouts/Layout.astro";
       class="col-span-12 m-4 flex items-center justify-center sm:col-span-7"
     >
       <div
-        class="min-h-[100vh] w-full max-w-[800px] rounded-lg bg-white shadow-lg"
+        class="min-h-[100vh] w-full max-w-[800px] rounded-lg bg-white shadow-lg animate-pulse formContainer"
         id="4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3"
       >
+        <p class="loadingText p-4 text-md removeOnLoad opacity-0 transition-all absolute bg-white/80 rounded-lg ">Loading...</p>
       </div>
-      <!-- <link
-        rel="stylesheet"
-        media="screen"
-        href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"
-        <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3" form_url="https://clienthub.getjobber.com/client_hubs/4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3/public/work_request/embedded_work_request_form"></script>
-      /> -->
       <script
         clienthub_id="4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3"
         form_url="https://clienthub.getjobber.com/client_hubs/4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3/public/work_request/embedded_work_request_form"
@@ -139,6 +134,11 @@ import Layout from "../layouts/Layout.astro";
             for (i = 0; i < pulses.length; i++) {
               pulses[i].classList.remove("animate-pulse");
             }
+            var loaders = document.querySelectorAll(".removeOnLoad");
+            console.log({loaders});
+            for (i = 0; i < loaders.length; i++) {
+              loaders[i].classList.remove("removeOnLoad");
+            }
           }
 
           function checkStatus() {
@@ -188,5 +188,8 @@ import Layout from "../layouts/Layout.astro";
     min-height: 100vh;
     max-width: 800px;
     border-radius: theme("borderRadius.lg");
+  }
+  .removeOnLoad {
+    opacity: 1;
   }
 </style>
