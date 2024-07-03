@@ -77,9 +77,14 @@ import Layout from "../layouts/Layout.astro";
         class="min-h-[100vh] w-full max-w-[800px] rounded-lg bg-white shadow-lg animate-pulse formContainer"
         id="4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3"
       >
-        <p class="loadingText p-4 text-md removeOnLoad opacity-0 transition-all absolute bg-white/80 rounded-lg ">Loading...</p>
+        <p
+          class="loadingText p-4 text-md removeOnLoad opacity-0 transition-all absolute bg-white/80 rounded-lg"
+        >
+          Loading...
+        </p>
       </div>
       <script
+        is:inline
         clienthub_id="4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3"
         form_url="https://clienthub.getjobber.com/client_hubs/4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3/public/work_request/embedded_work_request_form"
       >
@@ -100,13 +105,13 @@ import Layout from "../layouts/Layout.astro";
                 else if ("recaptcha-setup" === messageData);
                 else {
                   var iframe = document.querySelector(
-                    "iframe.jobber-work-request"
+                    "iframe.jobber-work-request",
                   );
                   iframe.parentElement.style.height = messageData;
                   iframe.style.height = messageData;
                 }
               },
-              false
+              false,
             );
           }
 
@@ -135,7 +140,7 @@ import Layout from "../layouts/Layout.astro";
               pulses[i].classList.remove("animate-pulse");
             }
             var loaders = document.querySelectorAll(".removeOnLoad");
-            console.log({loaders});
+            console.log({ loaders });
             for (i = 0; i < loaders.length; i++) {
               loaders[i].classList.remove("removeOnLoad");
             }
@@ -146,7 +151,7 @@ import Layout from "../layouts/Layout.astro";
             else {
               removeLoaders();
               var iframe = document.querySelector(
-                ".jobber-inline-work-request"
+                ".jobber-inline-work-request",
               );
               div = document.createElement("div");
               div.classList.add("jobber-flash", "jobber-flash--error");
