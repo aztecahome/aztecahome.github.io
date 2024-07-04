@@ -1,15 +1,10 @@
 ---
 // Our 6 step process
 import Layout from "../../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import ButtonLink from "../../components/ui/ButtonLink.astro";
 import Banner from "../../components/ui/Banner.astro";
+import BlurryImage from "../../components/ui/BlurryImage.astro";
 import PestImage from "../../assets/general/truck.webp";
-import { generatePlaceholder } from "astro-eleventy-img";
-
-const myPlaceholder = await generatePlaceholder(
-  "src/assets/general/truck.webp",
-);
 
 type Pest = {
   name: string;
@@ -192,17 +187,10 @@ const reasons: Step[] = [
       class="justify-top relative flex h-[75vh] flex-col items-center bg-army-900 sm:justify-center"
     >
       <div class="hero contents">
-        <img
-          src={myPlaceholder.dataURI}
+        <BlurryImage
           alt="AZTECA Pest Control truck in front of house"
-          class="object-cover object-center"
-          loading="eager"
-        />
-        <Image
-          src={PestImage}
-          alt="AZTECA Pest Control truck in front of house"
-          class="object-cover object-center"
-          loading="eager"
+          url="src/assets/general/truck.webp"
+          imageMeta={PestImage}
         />
       </div>
       <div class="container absolute z-10 mx-auto flex flex-col gap-4 p-4">
@@ -435,25 +423,3 @@ const reasons: Step[] = [
     font-family: "Rokkitt";
   }
 </style>
-<!-- <script>
-  // const anime = require("/anime.min.js");
-  // anime({
-  //   targets: 'a[href^="#"]',
-  //   translateY: 100
-  // });
- </script>-->
-<!-- <script data-turbo-track="reload">
-
-
-  // this script only works bc we do not save any variables
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth",
-      });
-    });
-  });
-
-
-</script> -->

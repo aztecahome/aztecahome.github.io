@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+// import PestImage from "../../assets/general/truck.webp";
+import { generatePlaceholder } from "astro-eleventy-img";
+interface Props {
+  alt: string;
+  url: string;
+  imageMeta: ImageMetadata;
+  extraClass?: string;
+}
+const { alt, url, imageMeta, extraClass } = Astro.props;
+
+const myPlaceholder = await generatePlaceholder(
+  // "src/assets/general/truck.webp",
+  url,
+  { quality: 100 },
+);
+---
+
+<div class="image-container">
+  <img
+    src={myPlaceholder.dataURI}
+    alt={alt}
+    class:list={[
+      "object-cover object-center w-full h-full absolute blur-lg",
+      extraClass,
+    ]}
+    loading="eager"
+  />
+  <Image
+    src={imageMeta}
+    alt={alt}
+    class:list={[
+      "object-cover object-center w-full h-full absolute unblurImg opacity-0 transition-all duration-300 ease-in-out blur-lg",
+      extraClass,
+    ]}
+    loading="lazy"
+  />
+</div>
+
+<style>
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: translateZ(1);
+  }
+
+  .image-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(20px);
+    transition: backdrop-filter 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  .image-container.loaded::before {
+    backdrop-filter: blur(0);
+  }
+</style>
+
+<script>
+  // this makes the transition between the preload and the image more seamless
+  const myImg = document.querySelector("img.unblurImg");
+  const imageContainer = document.querySelector(".image-container");
+  if (
+    imageContainer &&
+    imageContainer instanceof HTMLDivElement &&
+    myImg &&
+    myImg instanceof HTMLImageElement
+  ) {
+    if (myImg.complete) {
+      imageContainer.classList.add("loaded");
+      myImg.classList.remove("blur-lg");
+      myImg.classList.remove("opacity-0");
+    }
+    myImg.onload = () => {
+      imageContainer.classList.add("loaded");
+      myImg.classList.remove("blur-lg");
+      myImg.classList.remove("opacity-0");
+    };
+  } else {
+    alert("WOMP");
+    throw new Error("Could not find image to unblur");
+  }
+</script>
