@@ -1,12 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
 import PoolImg from "../assets/pool/18.webp";
-import { generatePlaceholder } from "astro-eleventy-img";
-
-const myPlaceholder = await generatePlaceholder("src/assets/pool/18.webp");
+import BlurryImage from "../components/ui/BlurryImage.astro";
 
 type Service = {
   name: string;
@@ -93,17 +90,10 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
       class="relative flex h-[75vh] flex-col items-center justify-end bg-army-900 sm:justify-center"
     >
       <div class="hero contents">
-        <img
-          src={myPlaceholder.dataURI}
-          alt="Beautiful clean sparkling pool"
-          class="object-cover object-[top_left]"
-          loading="eager"
-        />
-        <Image
-          src={PoolImg}
-          alt="Beautiful clean sparkling pool"
-          class="object-cover object-[top_left]"
-          loading="eager"
+        <BlurryImage
+          alt="A perfectly manicured landscape"
+          url="src/assets/pool/18.webp"
+          imageMeta={PoolImg}
         />
       </div>
       <div

@@ -1,14 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
 import LandscapeImg from "../assets/landscape/general.webp";
-import { generatePlaceholder } from "astro-eleventy-img";
-
-const myPlaceholder = await generatePlaceholder(
-  "src/assets/landscape/general.webp",
-);
+import BlurryImage from "../components/ui/BlurryImage.astro";
 ---
 
 <Layout title="Landscaping">
@@ -17,17 +12,10 @@ const myPlaceholder = await generatePlaceholder(
       class="justify-top relative flex h-[75vh] flex-col items-center bg-army-900 sm:justify-center"
     >
       <div class="hero contents">
-        <img
-          src={myPlaceholder.dataURI}
+        <BlurryImage
           alt="Beautiful backyard"
-          class="object-cover object-[top_center]"
-          loading="eager"
-        />
-        <Image
-          src={LandscapeImg}
-          alt="Beautiful backyard"
-          class="object-cover object-[top_center]"
-          loading="eager"
+          url="src/assets/landscape/general.webp"
+          imageMeta={LandscapeImg}
         />
       </div>
       <div class="container absolute z-10 mx-auto flex flex-col gap-4 p-4">
