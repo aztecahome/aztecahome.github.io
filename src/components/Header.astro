@@ -14,16 +14,16 @@ const paths = [
 ---
 
 <header
-  class="sticky top-[-170px] z-20 bg-[var(--nav-background)] shadow-lg sm:top-0 sm:flex sm:justify-between"
+  class="sticky top-[-170px] z-20 bg-[var(--nav-background)] shadow-lg md:top-0 md:flex md:justify-between"
 >
-  <div class="flex w-auto justify-center">
+  <div class="flex w-full justify-center">
     <a href="/">
       <AztecaLogo class="max-w-[225px]" data-turbo-permanent id="headerLogo" />
     </a>
   </div>
-  <div class="sm:flex sm:flex-col sm:justify-between">
+  <div class="md:flex md:flex-col md:justify-between">
     <div
-      class="mx-3 my-1 flex h-full flex-wrap items-center justify-center sm:justify-end"
+      class="mx-3 my-1 flex h-full flex-wrap items-center justify-center md:justify-end"
     >
       <svg
         class="mx-1 h-[20px] w-[20px] shrink-0 animate-[wiggle_15s_linear_infinite_15s] fill-army-900"
@@ -44,7 +44,7 @@ const paths = [
     </div>
     <nav class="font-sans font-semibold text-army-900">
       <ul
-        class="flex flex-wrap justify-center pb-1 sm:grid sm:auto-cols-max sm:grid-flow-col-dense sm:grid-cols-none sm:pb-0"
+        class="flex flex-wrap justify-center pb-1 md:grid md:auto-cols-max md:grid-flow-col-dense md:grid-cols-none md:pb-0"
         role="menubar"
       >
         {
@@ -52,14 +52,14 @@ const paths = [
             <li class="contents" role="none">
               <a
                 class={`col-span-4 m-1 whitespace-nowrap rounded px-3
-                        py-3 text-center underline transition-all ease-out hover:bg-army-400 sm:col-auto sm:m-0
-                      sm:rounded-none
-                        sm:border-b-8 sm:pb-2 sm:no-underline
-                        sm:active:pb-0 sm:active:pt-4
+                        py-3 text-center underline transition-all ease-out hover:bg-army-400 md:col-auto md:m-0
+                      md:rounded-none
+                        md:border-b-8 md:pb-2 md:no-underline
+                        md:active:pb-0 md:active:pt-4
                         ${
                           pathname === path.url || otherPathname === path.url
-                            ? "border-army-900 bg-army-900 text-army-50 no-underline sm:bg-army-300 sm:text-army-900"
-                            : " border-transparent bg-army-300 sm:bg-transparent "
+                            ? "border-army-900 bg-army-900 text-army-50 no-underline md:bg-army-300 md:text-army-900"
+                            : " border-transparent bg-army-300 md:bg-transparent "
                         }`}
                 href={path.url}
                 aria-current={pathname === path.url ? "true" : "false"}
@@ -73,6 +73,17 @@ const paths = [
         }
       </ul>
     </nav>
+  </div>
+  <div
+    class="flex flex-col items-center justify-center bg-red-600 p-2 w-full text-red-50"
+  >
+    <h3 class="text-xl">Last Drop-Off/Donation:</h3>
+    <p>
+      August 30th <span
+        class="daysLeft bg-red-50 text-red-900 rounded-lg px-2 whitespace-nowrap"
+        >27 days left!</span
+      >
+    </p>
   </div>
 </header>
 <style is:global>
