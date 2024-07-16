@@ -18,9 +18,9 @@ import ConnollysLogo from "../components/ConnollysLogo.astro";
           <h3 class="text-4xl italic font-light">10th Annual</h3>
           <div class="flex flex-wrap gap-x-4">
             <h2 class="text-8xl font-black">Water Drive</h2>
-            <div class="flex flex-col items-center justify-center bg-red-600 rounded-lg p-2 w-fit">
+            <div class="flex flex-col items-center justify-center bg-red-600 rounded-lg p-2 w-fit shadow-red-700 shadow text-red-50">
               <h3 class="text-2xl">Last Drop-Off/Donation:</h3>
-              <p>August 30th <span class="daysLeft bg-white text-blue-900 rounded-lg px-2 whitespace-nowrap">27 days left!</span></p> 
+              <p>August 30th <span class="daysLeft bg-red-50 text-red-900 rounded-lg px-2 whitespace-nowrap">27 days left!</span></p> 
             </div>
           </div>
           <p class="max-w-prose text-2xl">
@@ -31,28 +31,29 @@ import ConnollysLogo from "../components/ConnollysLogo.astro";
             <h3 class="text-3xl font-bold bg-white text-blue-500 px-4 py-2 rounded-full w-fit my-2">1. Monetary Donation</h3>
             <ul class="max-w-prose text-2xl list-disc pl-8">
               <li>Easiest and most direct way to donate.</li>
-              <li>100% of your donation will be going to Phoenix Rescue Mission.</li>
+              <li>100% of your donation will be going to purchase water for the Phoenix Rescue Mission.</li>
               <li>Donations are collected through Fundly, our fundraising platform.</li>
-              <li>Click below to donate.</li>
             </ul>
 
-            <div class="flex gap-1 donateButtons">
-              <button class="minus touch-manipulation flex items-center justify-center bg-red-500 hover:bg-red-600 text-white p-2 rounded-tl-full rounded-bl-full w-[2em] h-[2em] text-2xl h-full">
-                -
-              </button>
-              <a class="donate flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white p-2 px-4 w-fit text-2xl font-bold" href="https://fundly.com/water-drive-1?form=popup2#donate/20">
-                Click Here to Donate $<span class="tabular-nums font-mono">20</span>
+            <div class="flex gap-1 donateButtons my-16 justify-center">
+              <a class="donate ring-4 ring-green-900 rounded-lg shadow-2xl shadow-lime-400 flex items-center gap-2 justify-center bg-lime-500 hover:bg-lime-600 text-green-900 p-6 w-fit text-3xl font-bold" href="https://fundly.com/water-drive-1?form=popup2#donate/20">
+                Click Here to Donate<span class="tabular-nums font-mono hidden ">$20</span>
               </a>
-              <button class="plus touch-manipulation flex items-center justify-center bg-green-500 hover:bg-green-600 text-white p-2 rounded-tr-full rounded-br-full w-[2em] h-[2em] text-2xl h-full">
-                +
-              </button>
+              <div class="flex flex-col gap-1 font-black hidden">
+                <button class="plus touch-manipulation flex items-center justify-center bg-white hover:bg-slate-300 text-blue-500 p-2 rounded-tr-full rounded-br-full w-[1em] h-[1em] text-2xl h-full">
+                  +
+                </button>
+                <button class="minus touch-manipulation flex items-center justify-center bg-white hover:bg-slate-300 text-blue-500 p-2 rounded-tl-full rounded-bl-full w-[1em] h-[1em] text-2xl h-full">
+                  −
+                </button>
+              </div>
             </div>
 
-            <p class="bg-yellow-500 text-black px-2 w-fit rounded-md">Note: you can further adjust your donation amount after clicking the donate button.</p>
+            <p class="text-white px-2 w-fit rounded-md mt-12 hidden">^ Note: you can further adjust your donation amount after clicking the donate button.</p>
           </div>
 
 
-          <h3 class="text-3xl font-bold bg-white text-blue-500 px-4 py-2 rounded-full w-fit my-2">2. Water Donation Drop-Off</h3>
+          <h3 class="text-3xl font-bold bg-white text-blue-500 px-4 py-2 rounded-full w-fit my-2 mt-12">2. Water Donation Drop-Off</h3>
           <ul class="max-w-prose text-2xl list-disc pl-8">
             <li>Bring bottled water to one of our drop-off location partners.</li>
             <li>AZTECA will pick up your donation and deliver it to a local water source once the drive is complete.</li>
@@ -65,7 +66,7 @@ import ConnollysLogo from "../components/ConnollysLogo.astro";
             </address>
             <address class="text-xl">
               Connolly's Sports Grill <br/><br/>
-              123 E. Main St.<br/> Phoenix, AZ 85026
+              2605 W Carefree Hwy.<br/> Phoenix, AZ 85085
             </address>
             <TennesseeGrillLogo class="w-full max-w-[300px] drop-shadow-2xl" />
             <ConnollysLogo class="w-full max-w-[300px] drop-shadow-2xl" />
@@ -573,7 +574,7 @@ import ConnollysLogo from "../components/ConnollysLogo.astro";
       
       if (newAmount >= 5 && newAmount <= 10000) {
         currentAmount = newAmount;
-        donateButtonSpan.innerHTML = currentAmount.toString();
+        donateButtonSpan.innerHTML = "$ " +currentAmount.toString();
         donateButton.setAttribute("href", `${urlPrefix}${currentAmount}`);
       }
     };
