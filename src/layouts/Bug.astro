@@ -19,20 +19,22 @@ import "./Bug.css";
 
 <Layout title={frontmatter.title}>
   <div class="container mx-auto mt-14">
-    <div class="mx-4 w-fit rounded bg-army-100 p-4 font-bold">
-      <a href="/pest-control" class="underline">/pest-control</a>{
-        frontmatter.url.slice(13)
-      }
-    </div>
-    <div class="flex items-center gap-4 px-4">
+    <div class="mx-4 flex items-center justify-between gap-4">
+      <div class="rounded bg-army-100 p-4 font-bold">
+        <a href="/pest-control" class="underline">/pest-control</a>{
+          frontmatter.url.slice(13)
+        }
+      </div>
       <div
-        class="flex h-[80px] w-[80px] shrink-0 items-center justify-center rounded bg-army-200 p-3 transition-colors group-hover:bg-army-400"
+        class="flex h-[56px] w-[56px] shrink-0 items-center justify-center rounded bg-army-200 p-2 transition-colors group-hover:bg-army-400"
       >
         <object
           class="pointer-events-none h-full w-full group-hover:animate-[shake_120ms_linear_infinite]"
           data={`/pest/${frontmatter.svg}`}
           type=""></object>
       </div>
+    </div>
+    <div class="px-4">
       <h1>{frontmatter.title}</h1>
     </div>
     <div class="mx-4 grid grid-cols-12">

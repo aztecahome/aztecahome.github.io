@@ -112,6 +112,25 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
 
     <Banner cta="Transform your backyard into an oasis" />
 
+    <section class="container mx-auto p-4 py-8">
+      <p class="text-xl max-w-prose">
+        Azteca Home has been serving pools in the greater Phoenix area since
+        2012, offering quality maintenance and cleaning solutions that keep your
+        pool clean, protected, and in pristine condition.
+      </p>
+      <ul class="my-4 list-disc pl-8 text-xl">
+        <li>Algae Prevention &amp; Removal</li>
+        <li>Chemical Balancing &amp; Testing</li>
+        <li>Filter Cleaning</li>
+        <li>Equipment Repair</li>
+        <li>Green-To-Clean Treatments</li>
+        <li>Pool Acid Washes</li>
+        <li>Tile Cleaning</li>
+        <li>Weekly Maintenance</li>
+      </ul>
+      <ButtonLink content="Get a Quote" url="/contact" addBorder />
+    </section>
+
     <section class="container mx-auto mb-16 p-4">
       <h4 class="col-span-12 py-8 text-3xl font-black uppercase">
         Our Pool Services
@@ -127,16 +146,18 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
                 style={`background-image: url('${imageUrl}');`}
                 class="group my-0 mx-auto aspect-square w-full max-w-[300px] overflow-hidden rounded-lg bg-army-200 bg-cover shadow hover:underline"
               >
-                <h5 class="bg-army-50/90 p-4 text-2xl transition-all group-hover:bg-army-200/90 group-hover:pb-16">
-                  {name}
-                </h5>
-                <svg
-                  class="fill-army-50/90 transition-all group-hover:fill-army-200/90"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 1440 320"
-                >
-                  <path d={d} />
-                </svg>
+                <div class="opacity-90">
+                  <h5 class="bg-army-50 p-4 text-2xl transition-all group-hover:bg-army-200 group-hover:pb-16">
+                    {name}
+                  </h5>
+                  <svg
+                    class="-mt-px block fill-army-50 transition-all group-hover:fill-army-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1440 320"
+                  >
+                    <path d={d} />
+                  </svg>
+                </div>
               </a>
             </li>
           ))
@@ -146,8 +167,71 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
 
     <Banner cta="Set up weekly pool service now!" />
 
+    <section class="my-8 bg-army-100 py-8">
+      <div class="container mx-auto flex flex-col items-center">
+        <h4 class="p-4 text-center text-4xl font-black">
+          Your Plan for a<br />Well-Maintained Pool
+        </h4>
+        <ol class="grid grid-cols-1 gap-6 p-4 text-xl md:grid-cols-3">
+          <li class="flex max-w-[400px] flex-col gap-2 rounded-lg bg-army-50 p-8">
+            <h3 class="text-2xl font-bold">Step 1</h3>
+            <p>
+              We'll assess your pool and give you a quote, as well as schedule a
+              date/time to arrive. We'll discuss your goals to determine what
+              kind of maintenance is needed.
+            </p>
+          </li>
+          <li class="flex max-w-[400px] flex-col gap-2 rounded-lg bg-army-50 p-8">
+            <h3 class="text-2xl font-bold">Step 2</h3>
+            <p>
+              Our pool technicians will arrive to carry out the work. We'll
+              communicate with you and answer questions along the way about what
+              services are being performed and why they're needed.
+            </p>
+          </li>
+          <li class="flex max-w-[400px] flex-col gap-2 rounded-lg bg-army-50 p-8">
+            <h3 class="text-2xl font-bold">Step 3</h3>
+            <p>
+              Relax and enjoy your pool! Schedule recurring maintenance to keep
+              your pool operating in peak shape.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="container mx-auto p-4 py-8">
+      <h4 class="py-4 text-3xl font-black uppercase">
+        Excellent Communication
+      </h4>
+      <p class="text-xl max-w-prose">
+        We strive to keep you in the loop about what's happening and when. Here
+        is what to expect when signing up for our services:
+      </p>
+      <ul class="my-4 list-disc pl-8 text-xl max-w-prose">
+        <li>
+          A text and email will be sent confirming your scheduled appointment at
+          the time that it is booked.
+        </li>
+        <li>
+          The evening before we arrive, you'll receive an automated text message
+          reminding you of our upcoming visit the next day.
+        </li>
+        <li>
+          You'll receive an "on my way" notification when our technician is
+          headed to your property.
+        </li>
+        <li>
+          The next day, you'll receive a summary of the services that were
+          performed along with any notes or recommendations from your
+          technician.
+        </li>
+      </ul>
+      <ButtonLink content="Contact Us" url="/contact" addBorder />
+    </section>
+
     <svg
-      class="fill-army-900"
+      class="-mb-px block fill-army-900"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1440 320"
       ><path
@@ -161,6 +245,12 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
         <div class="flex flex-col gap-8 p-4">
           <h4 class="text-3xl font-black uppercase">Clean, easy, simple.</h4>
           <p class="text-xl">
+            Keeping your pool or spa clean and chemically balanced is essential
+            for both safety and long-term savings. At Azteca Home Services, we
+            take the guesswork out of pool care by protecting your family and
+            helping you avoid costly damage through proper, consistent treatment.
+          </p>
+          <p class="text-xl mt-4">
             Choose AZTECA to do your weekly pool service, repairs, and more.
           </p>
           <ButtonLink
@@ -183,7 +273,7 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
       </div>
     </section>
     <svg
-      class="mb-16 fill-army-900"
+      class="-mt-px mb-16 block fill-army-900"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1440 320"
       ><path
