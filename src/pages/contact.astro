@@ -71,20 +71,20 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section
-      class="col-span-12 m-4 flex items-center justify-center sm:col-span-7"
+      class="col-span-12 m-4 flex flex-col items-center justify-center gap-4 sm:col-span-7"
     >
+      <div class="w-full max-w-[800px]">
+        <p class="text-lg">
+          Please fill out this form to make an online request for an estimate.
+        </p>
+        <p class="text-md text-army-700 mt-2">
+          <em>Please note that we request up to 48hr to get back to you about your estimate request.</em>
+        </p>
+      </div>
       <div
         class="min-h-[100vh] w-full max-w-[800px] rounded-lg bg-white shadow-lg animate-pulse formContainer"
         id="4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3"
       >
-        <div class="p-4 pb-0">
-          <p class="text-lg">
-            Please fill out this form to make an online request for an estimate.
-          </p>
-          <p class="text-md text-army-700 mt-2">
-            <em>Please note that we request up to 48hr to get back to you about your estimate request.</em>
-          </p>
-        </div>
         <p
           class="loadingText p-4 text-md removeOnLoad opacity-0 transition-all absolute bg-white/80 rounded-lg"
         >

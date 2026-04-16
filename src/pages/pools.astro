@@ -146,16 +146,18 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
                 style={`background-image: url('${imageUrl}');`}
                 class="group my-0 mx-auto aspect-square w-full max-w-[300px] overflow-hidden rounded-lg bg-army-200 bg-cover shadow hover:underline"
               >
-                <h5 class="bg-army-50/90 p-4 text-2xl transition-all group-hover:bg-army-200/90 group-hover:pb-16">
-                  {name}
-                </h5>
-                <svg
-                  class="fill-army-50/90 transition-all group-hover:fill-army-200/90"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 1440 320"
-                >
-                  <path d={d} />
-                </svg>
+                <div class="opacity-90">
+                  <h5 class="bg-army-50 p-4 text-2xl transition-all group-hover:bg-army-200 group-hover:pb-16">
+                    {name}
+                  </h5>
+                  <svg
+                    class="-mt-px block fill-army-50 transition-all group-hover:fill-army-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1440 320"
+                  >
+                    <path d={d} />
+                  </svg>
+                </div>
               </a>
             </li>
           ))
@@ -229,7 +231,7 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
     </section>
 
     <svg
-      class="fill-army-900"
+      class="-mb-px block fill-army-900"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1440 320"
       ><path
@@ -271,7 +273,7 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
       </div>
     </section>
     <svg
-      class="mb-16 fill-army-900"
+      class="-mt-px mb-16 block fill-army-900"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1440 320"
       ><path
