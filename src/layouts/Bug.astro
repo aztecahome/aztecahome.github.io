@@ -32,13 +32,15 @@ const crumbs = breadcrumb([
   { name: frontmatter.bug, url: pageUrl },
 ]);
 
-const description = `Professional ${frontmatter.bug.toLowerCase()} control and mitigation in Phoenix, AZ from AZTECA Home Services. Schedule service today.`;
+const slug = Astro.url.pathname.split("/").filter(Boolean).pop();
+const metaTitle = `${frontmatter.bug} Control in Phoenix, AZ — AZTECA Home Services`;
+const description = `Professional ${frontmatter.bug.toLowerCase()} control and mitigation across the Phoenix valley. Veteran-owned AZTECA Home Services delivers fast, reliable results — call (602) 926-2021.`;
 ---
 
 <Layout
-  title={`${frontmatter.title} — AZTECA Home Services`}
+  title={metaTitle}
   description={description}
-  ogImage={frontmatter.image}
+  ogImage={`/og/${slug}.png`}
   ogType="article"
   jsonLd={[svc, crumbs]}
 >
