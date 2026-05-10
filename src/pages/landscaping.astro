@@ -4,9 +4,23 @@ import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
 import LandscapeImg from "../assets/landscape/general.webp";
 import BlurryImage from "../components/ui/BlurryImage.astro";
+import { service, breadcrumb, SITE_URL } from "../lib/business";
+
+const svc = service({
+  name: "Landscaping",
+  url: `${SITE_URL}/landscaping/`,
+  serviceType: "Landscaping",
+  description:
+    "Transform your desert landscape into a lush and inviting oasis with professional landscaping in Phoenix, AZ.",
+});
+
+const crumbs = breadcrumb([
+  { name: "Home", url: `${SITE_URL}/` },
+  { name: "Landscaping", url: `${SITE_URL}/landscaping/` },
+]);
 ---
 
-<Layout title="Landscaping">
+<Layout title="Landscaping" jsonLd={[svc, crumbs]}>
   <main>
     <section
       class="justify-top relative flex h-[75vh] flex-col items-center bg-army-900 sm:justify-center"
@@ -59,7 +73,9 @@ import BlurryImage from "../components/ui/BlurryImage.astro";
         </p>
         <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
-            <h3 class="text-2xl font-bold pb-2 text-army-50">1. Bush Trimming</h3>
+            <h3 class="text-2xl font-bold pb-2 text-army-50">
+              1. Bush Trimming
+            </h3>
             <p class="text-lg text-army-200">
               We shape and maintain your bushes to keep them healthy, tidy, and
               visually appealing.
@@ -68,15 +84,17 @@ import BlurryImage from "../components/ui/BlurryImage.astro";
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
             <h3 class="text-2xl font-bold pb-2 text-army-50">2. Mowing</h3>
             <p class="text-lg text-army-200">
-              Our team provides clean, even lawn mowing to keep your grass at the
-              perfect height.
+              Our team provides clean, even lawn mowing to keep your grass at
+              the perfect height.
             </p>
           </li>
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
-            <h3 class="text-2xl font-bold pb-2 text-army-50">3. Edge Trimming</h3>
+            <h3 class="text-2xl font-bold pb-2 text-army-50">
+              3. Edge Trimming
+            </h3>
             <p class="text-lg text-army-200">
-              We trim along sidewalks, driveways, and flower beds for crisp, clean
-              lawn edges.
+              We trim along sidewalks, driveways, and flower beds for crisp,
+              clean lawn edges.
             </p>
           </li>
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
@@ -87,14 +105,18 @@ import BlurryImage from "../components/ui/BlurryImage.astro";
             </p>
           </li>
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
-            <h3 class="text-2xl font-bold pb-2 text-army-50">5. Irrigation Check</h3>
+            <h3 class="text-2xl font-bold pb-2 text-army-50">
+              5. Irrigation Check
+            </h3>
             <p class="text-lg text-army-200">
-              We inspect your sprinkler system to ensure it's running efficiently
-              and covering all zones.
+              We inspect your sprinkler system to ensure it's running
+              efficiently and covering all zones.
             </p>
           </li>
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
-            <h3 class="text-2xl font-bold pb-2 text-army-50">6. Debris Removal</h3>
+            <h3 class="text-2xl font-bold pb-2 text-army-50">
+              6. Debris Removal
+            </h3>
             <p class="text-lg text-army-200">
               We clear out branches, leaves, and other yard debris to keep your
               property neat and safe.
@@ -128,7 +150,9 @@ import BlurryImage from "../components/ui/BlurryImage.astro";
         </h4>
         <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
-            <h3 class="text-2xl font-bold pb-2 text-army-50">1. Weed Prevention</h3>
+            <h3 class="text-2xl font-bold pb-2 text-army-50">
+              1. Weed Prevention
+            </h3>
             <p class="text-lg text-army-200">
               We apply treatments and strategies to stop weeds before they take
               root and spread in your yard.
@@ -142,17 +166,21 @@ import BlurryImage from "../components/ui/BlurryImage.astro";
             </p>
           </li>
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
-            <h3 class="text-2xl font-bold pb-2 text-army-50">3. Tree Trimming</h3>
+            <h3 class="text-2xl font-bold pb-2 text-army-50">
+              3. Tree Trimming
+            </h3>
             <p class="text-lg text-army-200">
-              Pruning and shaping of trees to improve appearance, promote healthy
-              growth, and prevent potential safety hazards.
+              Pruning and shaping of trees to improve appearance, promote
+              healthy growth, and prevent potential safety hazards.
             </p>
           </li>
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
-            <h3 class="text-2xl font-bold pb-2 text-army-50">4. Decorative Rock</h3>
+            <h3 class="text-2xl font-bold pb-2 text-army-50">
+              4. Decorative Rock
+            </h3>
             <p class="text-lg text-army-200">
-              Placement of aesthetically pleasing gravel or stone to enhance curb
-              appeal and reduce water usage in landscape design.
+              Placement of aesthetically pleasing gravel or stone to enhance
+              curb appeal and reduce water usage in landscape design.
             </p>
           </li>
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
@@ -170,14 +198,18 @@ import BlurryImage from "../components/ui/BlurryImage.astro";
             </p>
           </li>
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
-            <h3 class="text-2xl font-bold pb-2 text-army-50">7. Junk Removal</h3>
+            <h3 class="text-2xl font-bold pb-2 text-army-50">
+              7. Junk Removal
+            </h3>
             <p class="text-lg text-army-200">
-              Hauling away unwanted outdoor items, debris, or clutter to keep your
-              property clean and usable.
+              Hauling away unwanted outdoor items, debris, or clutter to keep
+              your property clean and usable.
             </p>
           </li>
           <li class="rounded-lg border border-army-700 bg-army-800/50 p-6">
-            <h3 class="text-2xl font-bold pb-2 text-army-50">8. Synthetic Grass</h3>
+            <h3 class="text-2xl font-bold pb-2 text-army-50">
+              8. Synthetic Grass
+            </h3>
             <p class="text-lg text-army-200">
               Professional installation of artificial turf that looks like real
               grass without the upkeep, watering, or mowing.
@@ -194,7 +226,9 @@ import BlurryImage from "../components/ui/BlurryImage.astro";
       </div>
     </section>
 
-    <section class="flex flex-wrap items-center justify-center gap-8 py-12 px-4">
+    <section
+      class="flex flex-wrap items-center justify-center gap-8 py-12 px-4"
+    >
       <img
         src="/landscape/pavers.webp"
         alt="Paver installation"

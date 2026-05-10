@@ -1,14 +1,14 @@
 ---
-import './index.css';
+import "./index.css";
 import Layout from "../layouts/Layout.astro";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
 import MainImage from "../assets/landscape/general2.webp";
 import BlurryImage from "../components/ui/BlurryImage.astro";
-
+import { website } from "../lib/business";
 ---
 
-<Layout title="AZTECA Home Services">
+<Layout title="AZTECA Home Services" jsonLd={website}>
   <main>
     <section
       class="relative flex h-[75vh] flex-col items-center justify-end bg-army-900 sm:justify-center"
@@ -355,10 +355,13 @@ import BlurryImage from "../components/ui/BlurryImage.astro";
     margin-bottom: 1rem;
   }
 
-
   .header {
-    position:relative;
-    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
-    color:white;
+    position: relative;
+    background: linear-gradient(
+      60deg,
+      rgba(84, 58, 183, 1) 0%,
+      rgba(0, 172, 193, 1) 100%
+    );
+    color: white;
   }
 </style>

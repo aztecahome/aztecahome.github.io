@@ -4,6 +4,20 @@ import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
 import PoolImg from "../assets/pool/18.webp";
 import BlurryImage from "../components/ui/BlurryImage.astro";
+import { service, breadcrumb, SITE_URL } from "../lib/business";
+
+const svc = service({
+  name: "Pool Services",
+  url: `${SITE_URL}/pools/`,
+  serviceType: "Pool Maintenance and Cleaning",
+  description:
+    "Professional pool cleaning, maintenance, and service in the Phoenix, AZ valley.",
+});
+
+const crumbs = breadcrumb([
+  { name: "Home", url: `${SITE_URL}/` },
+  { name: "Pools", url: `${SITE_URL}/pools/` },
+]);
 
 type Service = {
   name: string;
@@ -84,7 +98,7 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
               professionalism.
             </p>
  -->
-<Layout title="Pools">
+<Layout title="Pools" jsonLd={[svc, crumbs]}>
   <main>
     <section
       class="relative flex h-[75vh] flex-col items-center justify-end bg-army-900 sm:justify-center"
@@ -173,7 +187,9 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
           Your Plan for a<br />Well-Maintained Pool
         </h4>
         <ol class="grid grid-cols-1 gap-6 p-4 text-xl md:grid-cols-3">
-          <li class="flex max-w-[400px] flex-col gap-2 rounded-lg bg-army-50 p-8">
+          <li
+            class="flex max-w-[400px] flex-col gap-2 rounded-lg bg-army-50 p-8"
+          >
             <h3 class="text-2xl font-bold">Step 1</h3>
             <p>
               We'll assess your pool and give you a quote, as well as schedule a
@@ -181,7 +197,9 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
               kind of maintenance is needed.
             </p>
           </li>
-          <li class="flex max-w-[400px] flex-col gap-2 rounded-lg bg-army-50 p-8">
+          <li
+            class="flex max-w-[400px] flex-col gap-2 rounded-lg bg-army-50 p-8"
+          >
             <h3 class="text-2xl font-bold">Step 2</h3>
             <p>
               Our pool technicians will arrive to carry out the work. We'll
@@ -189,7 +207,9 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
               services are being performed and why they're needed.
             </p>
           </li>
-          <li class="flex max-w-[400px] flex-col gap-2 rounded-lg bg-army-50 p-8">
+          <li
+            class="flex max-w-[400px] flex-col gap-2 rounded-lg bg-army-50 p-8"
+          >
             <h3 class="text-2xl font-bold">Step 3</h3>
             <p>
               Relax and enjoy your pool! Schedule recurring maintenance to keep
@@ -248,7 +268,8 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
             Keeping your pool or spa clean and chemically balanced is essential
             for both safety and long-term savings. At Azteca Home Services, we
             take the guesswork out of pool care by protecting your family and
-            helping you avoid costly damage through proper, consistent treatment.
+            helping you avoid costly damage through proper, consistent
+            treatment.
           </p>
           <p class="text-xl mt-4">
             Choose AZTECA to do your weekly pool service, repairs, and more.
