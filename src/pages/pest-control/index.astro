@@ -5,6 +5,20 @@ import ButtonLink from "../../components/ui/ButtonLink.astro";
 import Banner from "../../components/ui/Banner.astro";
 import BlurryImage from "../../components/ui/BlurryImage.astro";
 import PestImage from "../../assets/general/truck.webp";
+import { service, breadcrumb, SITE_URL } from "../../lib/business";
+
+const svc = service({
+  name: "Pest Control",
+  url: `${SITE_URL}/pest-control/`,
+  serviceType: "Pest Control",
+  description:
+    "Comprehensive pest control in Phoenix, AZ — termites, scorpions, roaches, spiders, bed bugs, rodents, bees, and more.",
+});
+
+const crumbs = breadcrumb([
+  { name: "Home", url: `${SITE_URL}/` },
+  { name: "Pest Control", url: `${SITE_URL}/pest-control/` },
+]);
 
 type Pest = {
   name: string;
@@ -181,7 +195,7 @@ const reasons: Step[] = [
 // "When your home is built, contractors automatically make a giant hole that the pipes rarely fill. Insects take advantage of this gap so we treat all of your plumbing intrusions which is one of the most forgotten areas and is a highway for insects to come into your home.",
 ---
 
-<Layout title="Pest Control">
+<Layout title="Pest Control" jsonLd={[svc, crumbs]}>
   <main>
     <section
       class="justify-top relative flex h-[75vh] flex-col items-center bg-army-900 sm:justify-center"

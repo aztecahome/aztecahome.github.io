@@ -1,0 +1,15 @@
+---
+interface Props {
+  data: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { data } = Astro.props;
+const graph = Array.isArray(data) ? data : [data];
+const payload = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": graph,
+});
+const safe = payload.replace(/</g, "\\u003c");
+---
+
+<script type="application/ld+json" is:inline set:html={safe} />

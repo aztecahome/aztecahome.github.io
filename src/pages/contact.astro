@@ -1,8 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { breadcrumb, SITE_URL, BUSINESS_ID } from "../lib/business";
+
+const contactPage = {
+  "@type": "ContactPage",
+  url: `${SITE_URL}/contact/`,
+  name: "Contact AZTECA Home Services",
+  about: { "@id": BUSINESS_ID },
+};
+
+const crumbs = breadcrumb([
+  { name: "Home", url: `${SITE_URL}/` },
+  { name: "Contact", url: `${SITE_URL}/contact/` },
+]);
 ---
 
-<Layout title="Contact Us">
+<Layout title="Contact Us" jsonLd={[contactPage, crumbs]}>
   <main class="container my-12 mx-auto grid grid-cols-12">
     <section
       class="col-span-12 m-4 flex flex-col gap-4 bg-[url('/general/aztecaCalendarOutline.svg')] bg-contain bg-right-top bg-no-repeat text-xl sm:col-span-5"
@@ -78,7 +91,10 @@ import Layout from "../layouts/Layout.astro";
           Please fill out this form to make an online request for an estimate.
         </p>
         <p class="text-md text-army-700 mt-2">
-          <em>Please note that we request up to 48hr to get back to you about your estimate request.</em>
+          <em
+            >Please note that we request up to 48hr to get back to you about
+            your estimate request.</em
+          >
         </p>
       </div>
       <div

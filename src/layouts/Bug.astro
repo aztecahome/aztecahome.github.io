@@ -3,6 +3,7 @@
 import type { MarkdownLayoutProps } from "astro";
 import Layout from "./Layout.astro";
 import Banner from "../components/ui/Banner.astro";
+import { service, breadcrumb, SITE_URL } from "../lib/business";
 type Props = MarkdownLayoutProps<{
   // Define frontmatter props here
   title: string;
@@ -15,9 +16,24 @@ type Props = MarkdownLayoutProps<{
 
 const { frontmatter, compiledContent } = Astro.props;
 import "./Bug.css";
+
+const pageUrl = new URL(Astro.url.pathname, SITE_URL).href;
+const svc = service({
+  name: frontmatter.title,
+  url: pageUrl,
+  serviceType: `${frontmatter.bug} Control`,
+  description: `Professional ${frontmatter.bug.toLowerCase()} control and mitigation in Phoenix, AZ.`,
+  image: `${SITE_URL}${frontmatter.image}`,
+});
+
+const crumbs = breadcrumb([
+  { name: "Home", url: `${SITE_URL}/` },
+  { name: "Pest Control", url: `${SITE_URL}/pest-control/` },
+  { name: frontmatter.bug, url: pageUrl },
+]);
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={frontmatter.title} jsonLd={[svc, crumbs]}>
   <div class="container mx-auto mt-14">
     <div class="mx-4 flex items-center justify-between gap-4">
       <div class="rounded bg-army-100 p-4 font-bold">
