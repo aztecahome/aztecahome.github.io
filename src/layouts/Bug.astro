@@ -31,9 +31,17 @@ const crumbs = breadcrumb([
   { name: "Pest Control", url: `${SITE_URL}/pest-control/` },
   { name: frontmatter.bug, url: pageUrl },
 ]);
+
+const description = `Professional ${frontmatter.bug.toLowerCase()} control and mitigation in Phoenix, AZ from AZTECA Home Services. Schedule service today.`;
 ---
 
-<Layout title={frontmatter.title} jsonLd={[svc, crumbs]}>
+<Layout
+  title={`${frontmatter.title} — AZTECA Home Services`}
+  description={description}
+  ogImage={frontmatter.image}
+  ogType="article"
+  jsonLd={[svc, crumbs]}
+>
   <div class="container mx-auto mt-14">
     <div class="mx-4 flex items-center justify-between gap-4">
       <div class="rounded bg-army-100 p-4 font-bold">

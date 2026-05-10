@@ -2,17 +2,37 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import JsonLd from "../components/JsonLd.astro";
-import { business } from "../lib/business";
+import {
+  business,
+  SITE_URL,
+  SITE_NAME,
+  SITE_LOCALE,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+} from "../lib/business";
 // import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
   title: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: "website" | "article";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, jsonLd } = Astro.props;
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  ogImage = DEFAULT_OG_IMAGE,
+  ogType = "website",
+  jsonLd,
+} = Astro.props;
+
 const extras = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 const graph = [business, ...extras];
+
+const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+const ogImageUrl = new URL(ogImage, SITE_URL).href;
 ---
 
 <!doctype html>
@@ -61,12 +81,24 @@ const graph = [business, ...extras];
       }
     </script>
 
-    <meta
-      name="Description"
-      content="Azteca Home Serives: Providing Pest Control, Pool, and Landscape services in the valley of Phoenix, AZ."
-    />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={SITE_LOCALE} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
     <JsonLd data={graph} />
     <!-- <ViewTransitions /> -->
   </head>
