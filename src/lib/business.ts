@@ -3,7 +3,7 @@ export const SITE_NAME = "AZTECA Home Services";
 export const SITE_LOCALE = "en_US";
 export const DEFAULT_DESCRIPTION =
   "AZTECA Home Services: pest control, pool, and landscape services in the Phoenix, AZ valley. Call (602) 926-2021 for a free estimate.";
-export const DEFAULT_OG_IMAGE = "/og/default.png";
+export const DEFAULT_OG_IMAGE = "/og/default.jpg";
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;

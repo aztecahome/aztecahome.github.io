@@ -6,6 +6,8 @@
     "dev": "astro dev --host",
     "start": "astro dev",
     "format": "prettier --plugin-search-dir=. --write .",
+    "generate:og": "node scripts/generate-og.mjs",
+    "prebuild": "node scripts/generate-og.mjs",
     "build": "astro build",
     "preview": "astro preview --host",
     "astro": "astro"
