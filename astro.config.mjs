@@ -1,10 +1,13 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import compress from "@playform/compress";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://aztecahome.com",
-  integrations: [tailwind(), sitemap(), compress({ Image: false })],
+  // astro 7 compressHTML drops spaces before inline tags; @playform/compress minifies instead
+  compressHTML: false,
+  integrations: [sitemap(), compress({ Image: false })],
+  vite: { plugins: [tailwindcss()] },
 });

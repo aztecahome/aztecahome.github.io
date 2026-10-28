@@ -23,7 +23,7 @@ const crumbs = breadcrumb([
 >
   <main class="container my-12 mx-auto grid grid-cols-12">
     <section
-      class="col-span-12 m-4 flex flex-col gap-4 bg-[url('/general/aztecaCalendarOutline.svg')] bg-contain bg-right-top bg-no-repeat text-xl sm:col-span-5"
+      class="col-span-12 m-4 flex flex-col gap-4 bg-[url('/general/aztecaCalendarOutline.svg')] bg-contain bg-top-right bg-no-repeat text-xl sm:col-span-5"
     >
       <h2 class="col-span-12 text-3xl font-black uppercase">Contact Us</h2>
       <ul class="flex flex-col gap-4">
@@ -103,7 +103,7 @@ const crumbs = breadcrumb([
         </p>
       </div>
       <div
-        class="min-h-[100vh] w-full max-w-[800px] rounded-lg bg-white shadow-lg animate-pulse formContainer"
+        class="min-h-screen w-full max-w-[800px] rounded-lg bg-white shadow-lg animate-pulse formContainer"
         id="4bdbda5e-0260-4d9e-aae3-5f41aee2e9c3"
       >
         <p
@@ -221,7 +221,7 @@ const crumbs = breadcrumb([
     width: 100%;
     min-height: 100vh;
     max-width: 800px;
-    border-radius: theme("borderRadius.lg");
+    border-radius: var(--radius-lg);
   }
   .removeOnLoad {
     opacity: 1;
