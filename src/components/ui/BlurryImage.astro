@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
-// import PestImage from "../../assets/general/truck.webp";
-import { generatePlaceholder } from "astro-eleventy-img";
+import sharp from "sharp";
 interface Props {
   alt: string;
   url: string;
@@ -10,16 +9,20 @@ interface Props {
 }
 const { alt, url, imageMeta, extraClass } = Astro.props;
 
-const myPlaceholder = await generatePlaceholder(
-  // "src/assets/general/truck.webp",
-  url,
-  { quality: 100 },
-);
+// tiny png of ~100 pixels, blown up and blurred while the real image loads
+const { width = 1, height = 1 } = await sharp(url).metadata();
+const scale = Math.sqrt(100 / (width * height));
+const placeholder = await sharp(url)
+  .rotate()
+  .resize(Math.round(width * scale), Math.round(height * scale))
+  .png()
+  .toBuffer();
+const placeholderURI = `data:image/png;base64,${placeholder.toString("base64")}`;
 ---
 
 <div class="image-container">
   <img
-    src={myPlaceholder.dataURI}
+    src={placeholderURI}
     alt={alt}
     class:list={[
       "object-cover object-center w-full h-full absolute blur-lg",

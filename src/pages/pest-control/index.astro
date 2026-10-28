@@ -216,9 +216,8 @@ const reasons: Step[] = [
         <h2
           class="max-w-[600px] rounded-sm bg-army-50/60 p-4 text-3xl text-army-900 drop-shadow-2xl backdrop-blur-xs"
         >
-          Keep Your Property <b>Pest-Free</b> with Our <b
-            >Comprehensive Control Solutions</b
-          >
+          Keep Your Property <b>Pest-Free</b> with Our
+          <b>Comprehensive Control Solutions</b>
         </h2>
         <ButtonLink
           content="Schedule an Appointment"
@@ -254,25 +253,25 @@ const reasons: Step[] = [
         Pests We Handle
       </h4>
       <ul class="grid grid-cols-12 gap-4 text-xl">
-        {
-          pestsSorted.map(({ name, file, url }) => (
-            <li class="group col-span-6 gap-2 sm:col-span-4 md:col-span-3 lg:col-span-2">
-              <a
-                href={`/pest-control/${url}`}
-                class="flex flex-col items-center justify-center gap-2"
-              >
-                <div class="flex h-[100px] w-[100px] items-center justify-center rounded-sm bg-army-200 p-3 transition-colors group-hover:bg-army-400">
-                  <object
-                    class="pointer-events-none h-full w-full group-hover:animate-[shake_120ms_linear_infinite]"
-                    data={`/pest/${file}`}
-                    type=""
-                  />
-                </div>
-                <h2 class="group-hover:underline">{name}</h2>
-              </a>
-            </li>
-          ))
-        }
+        {pestsSorted.map(({ name, file, url }) => <li
+          class="group col-span-6 gap-2 sm:col-span-4 md:col-span-3 lg:col-span-2"
+        >
+          <a
+            href={`/pest-control/${url}`}
+            class="flex flex-col items-center justify-center gap-2"
+          >
+            <div
+              class="flex h-[100px] w-[100px] items-center justify-center rounded-sm bg-army-200 p-3 transition-colors group-hover:bg-army-400"
+            >
+              <object
+                class="pointer-events-none h-full w-full group-hover:animate-[shake_120ms_linear_infinite]"
+                data={`/pest/${file}`}
+                type=""
+              />
+            </div>
+            <h2 class="group-hover:underline">{name}</h2>
+          </a>
+        </li>)}
       </ul>
     </section>
 
@@ -288,12 +287,12 @@ const reasons: Step[] = [
           <em class="text-2xl">(noun)</em>
           <span class="max-w-prose text-2xl">
             a <u>modern</u> and <u>sustainable</u> approach to pest control that
-            uses
-            <u>eco-friendly</u> methods to manage pests while minimizing the use
-            of harmful chemicals. Our tailored IPM programs are designed to save
-            you money by <u>preventing pest problems before they occur</u>,
-            ensuring your property is protected from pests in a safe, effective,
-            and environmentally responsible manner.
+            uses <u>eco-friendly</u> methods to manage pests while minimizing
+            the use of harmful chemicals. Our tailored IPM programs are designed
+            to save you money by
+            <u>preventing pest problems before they occur</u>, ensuring your
+            property is protected from pests in a safe, effective, and
+            environmentally responsible manner.
           </span>
         </p>
       </div>
@@ -311,20 +310,14 @@ const reasons: Step[] = [
         <ol
           class="initialList grid grid-rows-6 gap-3 p-3 text-xl lg:relative lg:grid-cols-3 lg:grid-rows-2"
         >
-          {
-            sixSteps.map(({ title, description, bgImage }, i) => (
-              <li
-                class={`sticky top-[160px] z-10 flex max-w-[400px] flex-col content-start items-center gap-2 rounded-lg bg-army-100 p-8 text-left lg:relative lg:top-auto `}
-                data-image-url="/general/days/Crocodile.svg"
-                style={`--image-url: url('${bgImage}');`}
-              >
-                <h3 class="w-full text-2xl font-bold ">{`${
-                  i + 1
-                }. ${title}`}</h3>
-                <p class="w-full text-xl drop-shadow-sm">{description}</p>
-              </li>
-            ))
-          }
+          {sixSteps.map(({ title, description, bgImage }, i) => <li
+            class={`sticky top-[160px] z-10 flex max-w-[400px] flex-col content-start items-center gap-2 rounded-lg bg-army-100 p-8 text-left lg:relative lg:top-auto `}
+            data-image-url="/general/days/Crocodile.svg"
+            style={`--image-url: url('${bgImage}');`}
+          >
+            <h3 class="w-full text-2xl font-bold">{`${i + 1}. ${title}`}</h3>
+            <p class="w-full text-xl drop-shadow-sm">{description}</p>
+          </li>)}
         </ol>
       </div>
     </section>
@@ -339,20 +332,14 @@ const reasons: Step[] = [
         <ol
           class="grid grid-rows-5 gap-3 p-3 text-xl lg:grid-cols-2 lg:grid-rows-3"
         >
-          {
-            reasons.map(({ title, description, bgImage }, i) => (
-              <li
-                class={`z-10 flex max-w-prose flex-col content-start items-center gap-2 rounded-lg bg-army-100 p-8 text-left `}
-                data-image-url="/general/days/Crocodile.svg"
-                style={`--image-url: url('${bgImage}');`}
-              >
-                <h3 class="w-full text-2xl font-bold ">{`${
-                  i + 1
-                }. ${title}`}</h3>
-                <p class="w-full text-xl drop-shadow-sm">{description}</p>
-              </li>
-            ))
-          }
+          {reasons.map(({ title, description, bgImage }, i) => <li
+            class={`z-10 flex max-w-prose flex-col content-start items-center gap-2 rounded-lg bg-army-100 p-8 text-left `}
+            data-image-url="/general/days/Crocodile.svg"
+            style={`--image-url: url('${bgImage}');`}
+          >
+            <h3 class="w-full text-2xl font-bold">{`${i + 1}. ${title}`}</h3>
+            <p class="w-full text-xl drop-shadow-sm">{description}</p>
+          </li>)}
         </ol>
       </div>
     </section>
