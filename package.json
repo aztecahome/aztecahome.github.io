@@ -13,18 +13,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.11.3"
+    "astro": "^7.4.4"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.0",
-    "@playform/compress": "0.0.13",
+    "@astrojs/sitemap": "^3.7.4",
+    "@playform/compress": "^0.2.5",
+    "@tailwindcss/vite": "^4.3.3",
     "astro-eleventy-img": "^0.6.2",
-    "prettier": "^3.3.2",
-    "prettier-plugin-astro": "^0.14.0",
-    "prettier-plugin-tailwindcss": "^0.6.5",
-    "sharp": "^0.33.4",
-    "tailwindcss": "^3.2.6",
-    "typescript": "^5.5.3"
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
   }
 }
