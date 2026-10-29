@@ -4,11 +4,13 @@ import { join } from "node:path";
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/ui/Banner.astro";
 import { breadcrumb, SITE_URL } from "../lib/business";
+import { SIZES, thumbPath, thumbSrcset, TILE_SIZES } from "../lib/thumbs.mjs";
 
 // The site's own photos by service, from their folders in public/. On
 // aztecahome.com the Worker replaces [data-gallery-slot] with the live
 // gallery (these photos plus uploads, with filters and a lightbox); this
-// is what GitHub Pages shows on its own.
+// is what GitHub Pages shows on its own. Tiles show thumbnails (see
+// src/lib/thumbs.mjs) and link to the full photo.
 const sections = [
   { name: "Pest Control", url: "/pest-control", folder: "pest" },
   { name: "Pools", url: "/pools", folder: "pool" },
@@ -41,20 +43,25 @@ const crumbs = breadcrumb([
         pools, and well kept yards.
       </p>
       <div data-gallery-slot>
-        {sections.map((section) => <section class="py-4">
+        {sections.map((section, s) => <section class="py-4">
           <h2 class="py-2 text-3xl font-bold">
             <a class="hover:underline" href={section.url}>
               {section.name}
             </a>
           </h2>
           <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-            {section.photos.map((src) => <li>
+            {section.photos.map((src, i) => <li>
               <a href={src}>
                 <img
                   class="aspect-square w-full rounded-sm object-cover"
-                  src={src}
+                  src={thumbPath(src, SIZES.at(-1))}
+                  srcset={thumbSrcset(src)}
+                  sizes={TILE_SIZES}
+                  width={SIZES.at(-1)}
+                  height={SIZES.at(-1)}
                   alt={`${section.name} photo`}
-                  loading="lazy"
+                  loading={s === 0 && i < 4 ? "eager" : "lazy"}
+                  decoding="async"
                 />
               </a>
             </li>)}
