@@ -201,7 +201,7 @@ const reasons: Step[] = [
   ogImage="/og/pest-control.jpg"
   jsonLd={[svc, crumbs]}
 >
-  <main>
+  <div>
     <section
       class="justify-top relative flex h-[75vh] flex-col items-center bg-army-900 sm:justify-center"
     >
@@ -213,12 +213,12 @@ const reasons: Step[] = [
         />
       </div>
       <div class="container absolute z-10 mx-auto flex flex-col gap-4 p-4">
-        <h2
+        <h1
           class="max-w-[600px] rounded-sm bg-army-50/60 p-4 text-3xl text-army-900 drop-shadow-2xl backdrop-blur-xs"
         >
           Keep Your Property <b>Pest-Free</b> with Our
           <b>Comprehensive Control Solutions</b>
-        </h2>
+        </h1>
         <ButtonLink
           content="Schedule an Appointment"
           url="/contact"
@@ -231,12 +231,12 @@ const reasons: Step[] = [
 
     <section class="my-8 bg-army-100 py-8">
       <div class="container mx-auto flex flex-col items-center">
-        <h4
+        <h2
           class="max-w-4xl p-4 text-center text-4xl font-black lg:relative lg:top-auto"
         >
           Effective Pest Control Solutions Tailored for Arizona Homes Throughout
           Phoenix
-        </h4>
+        </h2>
 
         <p class="accent-font max-w-prose py-4 text-2xl">
           Are pests invading your home and disrupting your peace of mind? Look
@@ -249,9 +249,9 @@ const reasons: Step[] = [
     </section>
 
     <section class="container mx-auto p-4">
-      <h4 class="col-span-12 py-4 text-3xl font-black uppercase">
+      <h2 class="col-span-12 py-4 text-3xl font-black uppercase">
         Pests We Handle
-      </h4>
+      </h2>
       <ul class="grid grid-cols-12 gap-4 text-xl">
         {pestsSorted.map(({ name, file, url }) => <li
           class="group col-span-6 gap-2 sm:col-span-4 md:col-span-3 lg:col-span-2"
@@ -267,9 +267,10 @@ const reasons: Step[] = [
                 class="pointer-events-none h-full w-full group-hover:animate-[shake_120ms_linear_infinite]"
                 data={`/pest/${file}`}
                 type=""
+                aria-hidden="true"
               />
             </div>
-            <h2 class="group-hover:underline">{name}</h2>
+            <h3 class="group-hover:underline">{name}</h3>
           </a>
         </li>)}
       </ul>
@@ -277,7 +278,7 @@ const reasons: Step[] = [
 
     <section class="my-8 flex justify-center bg-army-100">
       <div class="container flex flex-col items-center justify-center p-8">
-        <p>
+        <div>
           <h2 class="text-center text-4xl">
             Over <b>10 Years</b> of Experience Using <br />
             <dfn title="Integrated Pest Management"
@@ -294,7 +295,7 @@ const reasons: Step[] = [
             property is protected from pests in a safe, effective, and
             environmentally responsible manner.
           </span>
-        </p>
+        </div>
       </div>
     </section>
 
@@ -346,9 +347,9 @@ const reasons: Step[] = [
 
     <section class="my-8 bg-army-100 py-8">
       <div class="container mx-auto flex flex-col items-center">
-        <h4 class="p-4 text-center text-4xl font-black lg:relative lg:top-auto">
+        <h2 class="p-4 text-center text-4xl font-black lg:relative lg:top-auto">
           Schedule Your Pest Control Service Today
-        </h4>
+        </h2>
 
         <p class="accent-font max-w-prose py-4 text-2xl">
           Don&#39;t let pests take over your home. Choose Azteca Home Services
@@ -361,7 +362,7 @@ const reasons: Step[] = [
     </section>
 
     <Banner cta="Book pest control now!" verticalSpace />
-  </main>
+  </div>
 </Layout>
 <style is:global>
   @keyframes shake {

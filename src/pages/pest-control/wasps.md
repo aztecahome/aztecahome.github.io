@@ -4,7 +4,7 @@ title: "Warding Off Wasps: Your Sting-Free Fortress"
 bug: "Wasp"
 svg: "wasp.svg"
 image: "/pest/bugs/wasp.png"
-alt: "wasps"
+alt: "Close-up of a wasp"
 ---
 
 ## Your Defense Against Winged Stingers

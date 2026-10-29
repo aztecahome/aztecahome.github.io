@@ -21,11 +21,11 @@ const crumbs = breadcrumb([
   ogImage="/og/contact.jpg"
   jsonLd={[contactPage, crumbs]}
 >
-  <main class="container my-12 mx-auto grid grid-cols-12">
+  <div class="container my-12 mx-auto grid grid-cols-12">
     <section
       class="col-span-12 m-4 flex flex-col gap-4 bg-[url('/general/aztecaCalendarOutline.svg')] bg-contain bg-top-right bg-no-repeat text-xl sm:col-span-5"
     >
-      <h2 class="col-span-12 text-3xl font-black uppercase">Contact Us</h2>
+      <h1 class="col-span-12 text-3xl font-black uppercase">Contact Us</h1>
       <ul class="flex flex-col gap-4">
         <li class="flex gap-2">
           <svg
@@ -40,7 +40,7 @@ const crumbs = breadcrumb([
             ></path>
           </svg>
           <span>
-            <h3 class="text-2xl font-bold">Call Us</h3>
+            <h2 class="text-2xl font-bold">Call Us</h2>
             <a class="font-bold underline" href="tel:602-926-2021"
               >(602)-926-2021</a
             >
@@ -59,7 +59,7 @@ const crumbs = breadcrumb([
             ></path>
           </svg>
           <span>
-            <h3 class="text-2xl font-bold">Email Us</h3>
+            <h2 class="text-2xl font-bold">Email Us</h2>
             <a
               class="inline-block font-bold underline"
               href="mailto:support@aztecahome.com"
@@ -80,7 +80,7 @@ const crumbs = breadcrumb([
             ></path>
           </svg>
           <span>
-            <h3 class="text-2xl font-bold">Mail Us</h3>
+            <h2 class="text-2xl font-bold">Mail Us</h2>
             <p>3655 W Anthem Way Ste. A-109 #342</p>
             <p>Anthem, AZ 85086</p>
           </span>
@@ -156,6 +156,7 @@ const crumbs = breadcrumb([
                 this.style.visibility = "visible";
               });
             var iframe = responseElement.querySelector("iframe");
+            iframe.title = "Estimate request form";
             holderDiv.insertAdjacentElement("beforeend", iframe);
           }
 
@@ -214,7 +215,7 @@ const crumbs = breadcrumb([
         })();
       </script>
     </section>
-  </main>
+  </div>
 </Layout>
 <style is:global>
   iframe {

@@ -4,7 +4,7 @@ title: "Guarding Your Home from Beetles"
 bug: "Beetle"
 svg: "beetle.svg"
 image: "/pest/bugs/beetle.png"
-alt: "bugs"
+alt: "Black beetle on a piece of wood"
 ---
 
 ## Your Trustworthy Pest Defense

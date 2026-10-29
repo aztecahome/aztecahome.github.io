@@ -4,7 +4,7 @@ title: "Effective Ant Mitigation"
 bug: "Ant"
 svg: "ant.svg"
 image: "/pest/bugs/ant.png"
-alt: "bugs"
+alt: "Close-up of a red ant"
 ---
 
 ## Your Expert Pest Shield

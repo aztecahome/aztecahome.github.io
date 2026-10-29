@@ -4,7 +4,7 @@ title: "Flies Be Gone: Restoring Your Peace"
 bug: "Fly"
 svg: "fly.svg"
 image: "/pest/bugs/fly.png"
-alt: "flies"
+alt: "Close-up of a house fly"
 ---
 
 ## Your Guardian Against Buzzing Annoyances

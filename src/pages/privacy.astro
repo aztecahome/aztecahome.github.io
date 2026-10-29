@@ -1,19 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { breadcrumb, SITE_URL } from "../lib/business";
+
+const crumbs = breadcrumb([
+  { name: "Home", url: `${SITE_URL}/` },
+  { name: "Privacy Policy", url: `${SITE_URL}/privacy/` },
+]);
 ---
 
 <Layout
-  title="Privacy Policy"
+  title="Privacy Policy — AZTECA Home Services"
   description="How AZTECA Home Services handles your information."
+  jsonLd={crumbs}
 >
-  <main
+  <div
     class="container mx-auto my-12 flex max-w-3xl flex-col gap-6 px-4 text-lg"
   >
-    <h2 class="text-3xl font-black uppercase">Privacy Policy</h2>
+    <h1 class="text-3xl font-black uppercase">Privacy Policy</h1>
     <p class="text-base">Last updated October 28, 2026</p>
 
     <section class="flex flex-col gap-2">
-      <h3 class="text-2xl font-bold">Who we are</h3>
+      <h2 class="text-2xl font-bold">Who we are</h2>
       <p>
         AZTECA Home Services provides pest control, landscaping, and pool
         services in the Phoenix, AZ valley. This policy covers aztecahome.com
@@ -22,7 +29,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section class="flex flex-col gap-2">
-      <h3 class="text-2xl font-bold">Information we collect</h3>
+      <h2 class="text-2xl font-bold">Information we collect</h2>
       <p>
         When you call, email, or contact us, we keep the details you give us
         (such as your name, phone number, email, and address) to respond and
@@ -31,7 +38,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section class="flex flex-col gap-2">
-      <h3 class="text-2xl font-bold">Social media publishing</h3>
+      <h2 class="text-2xl font-bold">Social media publishing</h2>
       <p>
         We use an internal scheduling tool, connected through Facebook Login, to
         publish posts to the Facebook Page and Instagram account owned by AZTECA
@@ -42,7 +49,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section class="flex flex-col gap-2">
-      <h3 class="text-2xl font-bold">Deleting your data</h3>
+      <h2 class="text-2xl font-bold">Deleting your data</h2>
       <p>
         To ask us to delete information we hold about you, or data connected
         through Facebook Login, email
@@ -55,7 +62,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section class="flex flex-col gap-2">
-      <h3 class="text-2xl font-bold">Contact</h3>
+      <h2 class="text-2xl font-bold">Contact</h2>
       <p>
         Questions about this policy: email
         <a class="font-bold underline" href="mailto:support@aztecahome.com"
@@ -66,5 +73,5 @@ import Layout from "../layouts/Layout.astro";
         >.
       </p>
     </section>
-  </main>
+  </div>
 </Layout>

@@ -4,7 +4,7 @@ title: "Mosquito-Free Tranquility: Your Pest-Free Haven"
 bug: "Mosquito"
 svg: "mosquito.svg"
 image: "/pest/bugs/mosquito.png"
-alt: "mosquitoes"
+alt: "Close-up of a mosquito"
 ---
 
 ## Your Sentinel Against Biting Pests

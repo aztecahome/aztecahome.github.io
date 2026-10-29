@@ -4,7 +4,7 @@ title: "Thwarting Termites: Your Woodwork Warrior"
 bug: "Termite"
 svg: "termite.svg"
 image: "/pest/bugs/termite.png"
-alt: "termites"
+alt: "Close-up of a termite"
 ---
 
 ## Your Protector Against Wood-Destroying Invaders

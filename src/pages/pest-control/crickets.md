@@ -4,7 +4,7 @@ title: "Silencing the Nocturnal Symphony: Cricket Control"
 bug: "Cricket"
 svg: "cricket.svg"
 image: "/pest/bugs/cricket.png"
-alt: "crickets"
+alt: "Cricket on a log"
 ---
 
 ## Your Vanguard Against Noisy Night Visitors

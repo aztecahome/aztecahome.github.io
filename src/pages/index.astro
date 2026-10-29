@@ -14,7 +14,7 @@ import { website } from "../lib/business";
   ogImage="/og/default.jpg"
   jsonLd={website}
 >
-  <main>
+  <div>
     <section
       data-campaign-slot
       class="relative flex h-[75vh] flex-col items-center justify-end bg-army-900 sm:justify-center"
@@ -27,12 +27,12 @@ import { website } from "../lib/business";
         />
       </div>
       <div class="container absolute z-10 mx-auto flex flex-col gap-4 p-4">
-        <h2
+        <h1
           class="max-w-[600px] rounded-sm bg-army-50/60 p-4 text-3xl text-army-900 drop-shadow-2xl backdrop-blur-xs"
         >
           <b>Say Goodbye to Pests</b>, <b>Hello to a Sparkling Pool</b> and
           <b>Yes to a Well-Manicured Landscape</b>
-        </h2>
+        </h1>
         <ButtonLink
           content="Schedule an Appointment"
           url="/contact"
@@ -44,9 +44,9 @@ import { website } from "../lib/business";
     <Banner cta="Contact us for a free estimate" />
 
     <section class="container mx-auto p-4">
-      <h4 class="col-span-12 py-4 text-3xl font-black uppercase">
+      <h2 class="col-span-12 py-4 text-3xl font-black uppercase">
         Our Services
-      </h4>
+      </h2>
       <ul class="grid grid-cols-12 text-xl sm:gap-8">
         <li
           class="col-span-12 flex flex-col justify-between gap-4 pb-8 sm:col-span-4 sm:pb-0"
@@ -58,8 +58,9 @@ import { website } from "../lib/business";
                 height="40px"
                 data="/general/bug.svg"
                 type=""
+                aria-hidden="true"
               ></object>
-              <h5 class="whitespace-nowrap text-2xl font-bold">Pest Control</h5>
+              <h3 class="whitespace-nowrap text-2xl font-bold">Pest Control</h3>
             </div>
             <p>
               <u>Termites</u>, <u>birds</u>, <u>scorpions</u>, <u>roaches</u>,
@@ -90,10 +91,11 @@ import { website } from "../lib/business";
                 height="40px"
                 data="/general/pool.svg"
                 type=""
+                aria-hidden="true"
               ></object>
-              <h5 class="whitespace-nowrap text-2xl font-bold">
+              <h3 class="whitespace-nowrap text-2xl font-bold">
                 Pool Services
-              </h5>
+              </h3>
             </div>
             <p>
               <u>Chemical balancing & testing</u>, <u>green-to-cleans</u>,
@@ -118,8 +120,9 @@ import { website } from "../lib/business";
                 height="40px"
                 data="/general/shovel.svg"
                 type=""
+                aria-hidden="true"
               ></object>
-              <h5 class="whitespace-nowrap text-2xl font-bold">Landscaping</h5>
+              <h3 class="whitespace-nowrap text-2xl font-bold">Landscaping</h3>
             </div>
             <p>
               We offer <u>general maintenance</u>, <u>landscape installation</u
@@ -143,7 +146,7 @@ import { website } from "../lib/business";
     <!-- <hr class="my-3 border-army-300 mx-4" /> -->
 
     <section class="container mx-auto my-8 p-4">
-      <h5 class="py-3 text-3xl font-black uppercase">Why AZTECA?</h5>
+      <h2 class="py-3 text-3xl font-black uppercase">Why AZTECA?</h2>
       <ul class="text-xl">
         <li>&check; Dedicated to Quality, Workmanship and Service</li>
         <li>&check; Licensed, Bonded and Insured</li>
@@ -158,7 +161,7 @@ import { website } from "../lib/business";
     </section>
 
     <section class="container mx-auto my-8 p-4 text-xl">
-      <h5 class="py-4 text-3xl font-black uppercase">Office Hours</h5>
+      <h2 class="py-4 text-3xl font-black uppercase">Office Hours</h2>
       <ul>
         <li>Monday - Friday: 8:00am - 3:00pm</li>
       </ul>
@@ -169,7 +172,7 @@ import { website } from "../lib/business";
     </section>
 
     <section class="container mx-auto my-8 p-4 text-xl">
-      <h5 class="py-4 text-3xl font-black uppercase">Testimonials</h5>
+      <h2 class="py-4 text-3xl font-black uppercase">Testimonials</h2>
       <div class="flex justify-center fill-army-900 py-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -239,7 +242,7 @@ import { website } from "../lib/business";
       <div
         class="bg-[url('/general/aztecaCalendarOutline.svg')] bg-contain bg-no-repeat"
       >
-        <h4 class="py-4 text-3xl font-black uppercase">AZTECA Home Services</h4>
+        <h2 class="py-4 text-3xl font-black uppercase">AZTECA Home Services</h2>
         <div class="grid grid-cols-12 gap-4">
           <img
             class="col-span-12 w-full max-w-[400px] rounded-sm drop-shadow-lg sm:col-span-5"
@@ -269,7 +272,7 @@ import { website } from "../lib/business";
       <div
         class="bg-[url('/general/days/Wind.svg')] bg-contain bg-bottom-right bg-no-repeat"
       >
-        <h4 class="py-4 text-3xl font-black uppercase">Areas We Serve</h4>
+        <h2 class="py-4 text-3xl font-black uppercase">Areas We Serve</h2>
         <div class="citiesLists grid grid-cols-12 text-xl">
           <ul class="col-span-12 sm:col-span-6 md:col-span-3">
             <li>Anthem</li>
@@ -280,11 +283,10 @@ import { website } from "../lib/business";
           <ul class="col-span-12 sm:col-span-6 md:col-span-3">
             <li>Black Canyon City</li>
             <li>Glendale</li>
-            <li>Pardise Valley</li>
+            <li>Paradise Valley</li>
             <li>Sun City</li>
           </ul>
           <ul class="col-span-12 sm:col-span-6 md:col-span-3">
-            <li>Glendale</li>
             <li>Luke AFB</li>
             <li>Peoria</li>
             <li>Sun City West</li>
@@ -345,7 +347,7 @@ import { website } from "../lib/business";
         </p>
       </div>
     </section>
-  </main>
+  </div>
 </Layout>
 <style>
   .citiesLists ul li {

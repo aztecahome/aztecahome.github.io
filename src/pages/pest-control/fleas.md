@@ -4,7 +4,7 @@ title: "Flea-Free Living: Safeguarding Your Space"
 bug: "Flea"
 svg: "flea.svg"
 image: "/pest/bugs/flea.png"
-alt: "fleas"
+alt: "Close-up of a flea"
 ---
 
 ## Your Protector Against Jumping Pests
