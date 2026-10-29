@@ -4,6 +4,7 @@ import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
 import PoolImg from "../assets/pool/18.webp";
 import BlurryImage from "../components/ui/BlurryImage.astro";
+import Photo from "../components/ui/Photo.astro";
 import { service, breadcrumb, SITE_URL } from "../lib/business";
 
 const svc = service({
@@ -161,9 +162,14 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
         >
           <a
             href={url}
-            style={`background-image: url('${imageUrl}');`}
-            class="group my-0 mx-auto aspect-square w-full max-w-[300px] overflow-hidden rounded-lg bg-army-200 bg-cover shadow-sm hover:underline"
+            class="group relative my-0 mx-auto aspect-square w-full max-w-[300px] overflow-hidden rounded-lg bg-army-200 shadow-sm hover:underline"
           >
+            <Photo
+              src={imageUrl}
+              alt=""
+              class="absolute inset-0 h-full w-full object-cover object-top-left"
+              sizes="300px"
+            />
             <div class="opacity-90">
               <h5
                 class="bg-army-50 p-4 text-2xl transition-all group-hover:bg-army-200 group-hover:pb-16"
@@ -294,6 +300,8 @@ const servicesSorted = services.sort(({ name: a }, { name: b }) =>
             width="200px"
             height="200px"
             alt="Daysign for Water"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
