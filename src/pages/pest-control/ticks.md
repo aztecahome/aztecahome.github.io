@@ -4,7 +4,7 @@ title: "Tackling Ticks: Your Parasite Protector"
 bug: "Tick"
 svg: "tick.svg"
 image: "/pest/bugs/tick.png"
-alt: "ticks"
+alt: "Close-up of a tick"
 ---
 
 ## Your Guard Against Bloodsucking Pests

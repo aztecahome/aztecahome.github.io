@@ -4,7 +4,7 @@ title: "Buzz Off Bees: Ensuring a Sting-Free Environment"
 bug: "Bee"
 svg: "bee.svg"
 image: "/pest/bugs/bee.png"
-alt: "bugs"
+alt: "Close-up of a honey bee"
 ---
 
 ## Your Shield Against Buzzing Invaders

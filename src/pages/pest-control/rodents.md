@@ -4,7 +4,7 @@ title: "Repelling Rodents: Secure Your Sanctuary"
 bug: "Rodent"
 svg: "rodent.svg"
 image: "/pest/bugs/rodent.png"
-alt: "rodents"
+alt: "Close-up of a mouse"
 ---
 
 ## Your Shield Against Scavenging Pests

@@ -4,7 +4,7 @@ title: "Banishing Spiders: Your Safe Haven"
 bug: "Spider"
 svg: "spider.svg"
 image: "/pest/bugs/spider.png"
-alt: "spiders"
+alt: "Close-up of an orange spider"
 ---
 
 ## Your Guardian Against Eight-Legged Intruders

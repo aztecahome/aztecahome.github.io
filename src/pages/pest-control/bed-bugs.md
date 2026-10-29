@@ -4,7 +4,7 @@ title: "Banishing Bed Bugs: Your Path to a Peaceful Sleep"
 bug: "Bed Bug"
 svg: "bedbug.svg"
 image: "/pest/bugs/bed-bug.png"
-alt: "bugs"
+alt: "Close-up of a bed bug"
 ---
 
 ## Your Defender Against Sleep Disturbers

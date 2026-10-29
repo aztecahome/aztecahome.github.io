@@ -4,7 +4,7 @@ title: "Securing Against Scorpions: Your Sting-Free Sanctuary"
 bug: "Scorpion"
 svg: "scorpion.svg"
 image: "/pest/bugs/scorpion.png"
-alt: "scorpions"
+alt: "Scorpion glowing under a blacklight"
 ---
 
 ## Your Shield Against Arachnid Adversaries

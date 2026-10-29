@@ -5,6 +5,26 @@ export const DEFAULT_DESCRIPTION =
   "AZTECA Home Services: pest control, pool, and landscape services in the Phoenix, AZ valley. Call (602) 926-2021 for a free estimate.";
 export const DEFAULT_OG_IMAGE = "/og/default.jpg";
 
+// the "Areas We Serve" list on the home page
+const AREA_SERVED = [
+  "Anthem",
+  "Black Canyon City",
+  "Cave Creek",
+  "El Mirage",
+  "Glendale",
+  "Luke AFB",
+  "Morristown",
+  "New River",
+  "Paradise Valley",
+  "Peoria",
+  "Phoenix",
+  "Scottsdale",
+  "Sun City",
+  "Sun City West",
+  "Surprise",
+  "Youngtown",
+].map((name) => ({ "@type": "Place", name }));
+
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
@@ -14,7 +34,7 @@ export const business = {
   name: "AZTECA Home Services",
   url: SITE_URL,
   telephone: "+1-602-926-2021",
-  image: `${SITE_URL}/favicon.svg`,
+  image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
   logo: `${SITE_URL}/favicon.svg`,
   description:
     "Pest control, pool, and landscape services in the Phoenix, AZ valley.",
@@ -26,10 +46,7 @@ export const business = {
     postalCode: "85086",
     addressCountry: "US",
   },
-  areaServed: [
-    { "@type": "City", name: "Phoenix" },
-    { "@type": "AdministrativeArea", name: "Maricopa County" },
-  ],
+  areaServed: AREA_SERVED,
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -113,9 +130,6 @@ export function service({
     ...(serviceType && { serviceType }),
     ...(image && { image }),
     provider: { "@id": BUSINESS_ID },
-    areaServed: [
-      { "@type": "City", name: "Phoenix" },
-      { "@type": "AdministrativeArea", name: "Maricopa County" },
-    ],
+    areaServed: AREA_SERVED,
   };
 }

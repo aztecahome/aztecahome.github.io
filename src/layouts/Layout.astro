@@ -104,8 +104,15 @@ const ogImageUrl = new URL(ogImage, SITE_URL).href;
     <!-- <ViewTransitions /> -->
   </head>
   <body class="bg-army-50">
+    <a
+      href="#main"
+      class="sr-only z-30 rounded bg-army-900 p-3 font-bold text-army-50 focus:not-sr-only focus:fixed focus:p-3 focus:top-2 focus:left-2"
+      >Skip to content</a
+    >
     <Header />
-    <slot />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
     <Footer />
     <style is:global>
       @font-face {
@@ -169,6 +176,24 @@ const ogImageUrl = new URL(ogImage, SITE_URL).href;
       }
       a {
         -webkit-tap-highlight-color: var(--color-army-300);
+      }
+      :focus-visible {
+        outline: 3px solid var(--color-army-900);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 5px var(--color-army-50);
+      }
+      main:focus {
+        outline: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
       }
     </style>
     <!-- prettier-ignore -->

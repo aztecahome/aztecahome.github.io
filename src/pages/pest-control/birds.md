@@ -4,7 +4,7 @@ title: "Fending Off Feathered Foes: Bird Control Solutions"
 bug: "Bird"
 svg: "bird.svg"
 image: "/pest/bugs/bird.png"
-alt: "birds"
+alt: "Close-up of a pigeon"
 ---
 
 ## Your Sentry Against Winged Intruders

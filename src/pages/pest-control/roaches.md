@@ -4,7 +4,7 @@ title: "Repelling Roaches: Secure Your Sanctuary"
 bug: "Roach"
 svg: "roach.svg"
 image: "/pest/bugs/roach.png"
-alt: "roaches"
+alt: "Close-up of a cockroach"
 ---
 
 ## Your Defense Against Creeping Pests
