@@ -1,0 +1,46 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import sharp from "sharp";
+import { FORMATS, resizedSrcset } from "../../lib/resized.mjs";
+
+// A photo from public/ (src is its URL, like /pool/7.webp) in the size the
+// layout shows it at: `sizes` says how wide that is, and the browser picks
+// the resized copy (src/lib/resized.mjs) to fit, AVIF where it can. Lazy
+// unless it's the page's main image (`priority`). Its style sets --ratio,
+// the photo's width over its height, for CSS that sizes it by its height.
+// The picture is display: contents so the img is laid out as if unwrapped
+// (its classes can place it in a grid or flex parent); that gives the source
+// a box, so it's hidden.
+interface Props extends HTMLAttributes<"img"> {
+  src: string;
+  alt: string;
+  sizes: string;
+  priority?: boolean;
+}
+const { src, sizes, priority, ...attrs } = Astro.props;
+
+const { width, height } = (await sharp(`public${src}`).metadata()).autoOrient;
+---
+
+<picture class="contents">
+  {FORMATS.slice(0, -1).map((format) => (
+    <source
+      class="hidden"
+      type={`image/${format}`}
+      srcset={resizedSrcset(src, width, format)}
+      sizes={sizes}
+    />
+  ))}
+  <img
+    src={src}
+    srcset={resizedSrcset(src, width, FORMATS.at(-1))}
+    sizes={sizes}
+    width={width}
+    height={height}
+    loading={priority ? "eager" : "lazy"}
+    fetchpriority={priority ? "high" : undefined}
+    decoding="async"
+    style={`--ratio: ${+(width / height).toFixed(4)}`}
+    {...attrs}
+  />
+</picture>

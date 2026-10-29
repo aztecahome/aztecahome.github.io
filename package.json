@@ -8,7 +8,8 @@
     "format": "prettier --write .",
     "generate:og": "node scripts/generate-og.mjs",
     "generate:thumbs": "node scripts/generate-thumbs.mjs",
-    "prebuild": "node scripts/generate-og.mjs && node scripts/generate-thumbs.mjs",
+    "generate:resized": "node scripts/generate-resized.mjs",
+    "prebuild": "node scripts/generate-og.mjs && node scripts/generate-thumbs.mjs && node scripts/generate-resized.mjs",
     "build": "astro build",
     "preview": "astro preview --host",
     "astro": "astro"

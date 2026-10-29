@@ -4,6 +4,7 @@ import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
 import LandscapeImg from "../assets/landscape/general.webp";
 import BlurryImage from "../components/ui/BlurryImage.astro";
+import Photo from "../components/ui/Photo.astro";
 import { service, breadcrumb, SITE_URL } from "../lib/business";
 
 const svc = service({
@@ -133,17 +134,17 @@ const crumbs = breadcrumb([
     <Banner cta="Get a landscaping quote today!" />
 
     <section class="grid grid-cols-1 sm:grid-cols-2">
-      <img
+      <Photo
         src="/landscape/treeTrim1.webp"
         alt="Tree trimming service"
         class="h-[300px] w-full object-cover"
-        loading="lazy"
+        sizes="(min-width: 640px) max(50vw, 533px), max(100vw, 533px)"
       />
-      <img
+      <Photo
         src="/landscape/rock.webp"
         alt="Decorative rock landscaping"
         class="h-[300px] w-full object-cover"
-        loading="lazy"
+        sizes="(min-width: 640px) max(50vw, 533px), max(100vw, 533px)"
       />
     </section>
 
@@ -233,23 +234,23 @@ const crumbs = breadcrumb([
     <section
       class="flex flex-wrap items-center justify-center gap-8 py-12 px-4"
     >
-      <img
+      <Photo
         src="/landscape/pavers.webp"
         alt="Paver installation"
-        class="max-h-[280px] rounded-sm border-[5px] border-white shadow-lg -rotate-2"
-        loading="lazy"
+        class="max-h-[280px] w-[min(100%,270px*var(--ratio)_+_10px)] rounded-sm border-[5px] border-white shadow-lg -rotate-2"
+        sizes="270px"
       />
-      <img
+      <Photo
         src="/landscape/grass5.webp"
         alt="Beautiful maintained lawn"
-        class="max-h-[280px] rounded-sm border-[5px] border-white shadow-lg rotate-[1.5deg]"
-        loading="lazy"
+        class="max-h-[280px] w-[min(100%,270px*var(--ratio)_+_10px)] rounded-sm border-[5px] border-white shadow-lg rotate-[1.5deg]"
+        sizes="135px"
       />
-      <img
+      <Photo
         src="/landscape/cleanup.webp"
         alt="Yard cleanup service"
-        class="max-h-[280px] rounded-sm border-[5px] border-white shadow-lg -rotate-1"
-        loading="lazy"
+        class="max-h-[280px] w-[min(100%,270px*var(--ratio)_+_10px)] rounded-sm border-[5px] border-white shadow-lg -rotate-1"
+        sizes="min(480px, 100vw - 42px)"
       />
     </section>
 

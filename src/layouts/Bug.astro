@@ -3,6 +3,7 @@
 import type { MarkdownLayoutProps } from "astro";
 import Layout from "./Layout.astro";
 import Banner from "../components/ui/Banner.astro";
+import Photo from "../components/ui/Photo.astro";
 import { service, breadcrumb, SITE_URL } from "../lib/business";
 type Props = MarkdownLayoutProps<{
   // Define frontmatter props here
@@ -66,10 +67,12 @@ const description = `Professional ${frontmatter.bug.toLowerCase()} control and m
     </div>
     <div class="mx-4 grid grid-cols-12">
       <div class="col-span-12 md:col-span-8 xl:col-span-6">
-        <img
+        <Photo
           src={frontmatter.image}
           alt={frontmatter.alt}
-          class="max-h-[70vh] rounded-md"
+          class="max-h-[70vh] w-[min(100%,70vh*var(--ratio))] rounded-md"
+          sizes="(min-width: 768px) min(752px, 70vh), min(100vw - 32px, 70vh)"
+          priority
         />
         <div class="my-10">
           <slot />

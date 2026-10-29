@@ -5,6 +5,7 @@ import ButtonLink from "../components/ui/ButtonLink.astro";
 import Banner from "../components/ui/Banner.astro";
 import MainImage from "../assets/landscape/general2.webp";
 import BlurryImage from "../components/ui/BlurryImage.astro";
+import Photo from "../components/ui/Photo.astro";
 import { website } from "../lib/business";
 ---
 
@@ -244,11 +245,11 @@ import { website } from "../lib/business";
       >
         <h2 class="py-4 text-3xl font-black uppercase">AZTECA Home Services</h2>
         <div class="grid grid-cols-12 gap-4">
-          <img
+          <Photo
             class="col-span-12 w-full max-w-[400px] rounded-sm drop-shadow-lg sm:col-span-5"
             src="/landscape/grass5.webp"
             alt="Azteca Employees Working"
-            loading="lazy"
+            sizes="(min-width: 640px) min(400px, 42vw), min(400px, 100vw - 32px)"
           />
           <p class="col-span-12 text-xl sm:col-span-5">
             AZTECA Home Services is a full-service company that offers a wide
@@ -308,23 +309,23 @@ import { website } from "../lib/business";
       <div class="flex flex-col gap-4 text-lg lg:gap-8">
         <h2 class="py-4 text-3xl font-black uppercase">About the Owner</h2>
         <div class="grid grid-cols-12 sm:gap-4">
-          <img
+          <Photo
             class="col-span-12 w-full max-w-[640px] rounded-t drop-shadow-lg sm:col-span-4 sm:max-w-[400px] sm:rounded-sm"
             src="/dad/volunteering.webp"
             alt="Frankie Volunteering"
-            loading="lazy"
+            sizes="(min-width: 640px) min(400px, 33vw), min(640px, 100vw - 32px)"
           />
-          <img
+          <Photo
             class="col-span-6 w-full max-w-[640px] rounded-bl drop-shadow-lg sm:col-span-4 sm:max-w-[400px] sm:rounded-sm"
             src="/dad/foodBank.webp"
             alt="Frankie at a Food Bank"
-            loading="lazy"
+            sizes="(min-width: 640px) min(400px, 33vw), 50vw - 16px"
           />
-          <img
+          <Photo
             class="col-span-6 w-full max-w-[640px] rounded-br drop-shadow-lg sm:col-span-4 sm:max-w-[400px] sm:rounded-sm"
             src="/dad/donatingBlood.webp"
             alt="Frankie donating Blood"
-            loading="lazy"
+            sizes="(min-width: 640px) min(400px, 33vw), 50vw - 16px"
           />
         </div>
         <p class="max-w-prose">
