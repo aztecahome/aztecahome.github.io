@@ -1,27 +1,37 @@
 ---
-import { readdirSync } from "node:fs";
+import { existsSync } from "node:fs";
 import { join } from "node:path";
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/ui/Banner.astro";
 import { breadcrumb, SITE_URL } from "../lib/business";
 import { SIZES, thumbPath, thumbSrcset, TILE_SIZES } from "../lib/thumbs.mjs";
+import gallery from "../data/gallery.json";
 
-// The site's own photos by service, from their folders in public/. On
-// aztecahome.com the Worker replaces [data-gallery-slot] with the live
-// gallery (these photos plus uploads, with filters and a lightbox); this
-// is what GitHub Pages shows on its own. Tiles show thumbnails (see
-// src/lib/thumbs.mjs) and link to the full photo.
-const sections = [
-  { name: "Pest Control", url: "/pest-control", folder: "pest" },
-  { name: "Pools", url: "/pools", folder: "pool" },
-  { name: "Landscaping", url: "/landscaping", folder: "landscape" },
-].map((section) => ({
-  ...section,
-  photos: readdirSync(join(process.cwd(), "public", section.folder))
-    .filter((file) => file.endsWith(".webp"))
-    .sort((a, b) => a.localeCompare(b, "en", { numeric: true }))
-    .map((file) => `/${section.folder}/${file}`),
-}));
+// The site's own photos by service and kind of work. On aztecahome.com the
+// Worker replaces [data-gallery-slot] with the live gallery (these photos
+// plus approved uploads, with filters and a lightbox); this is what GitHub
+// Pages shows on its own. The categories and the photos' places in them
+// come from the Worker repo (src/categories.ts and src/photos.json there),
+// exported to src/data/gallery.json with its `npm run export:site`; don't
+// edit that file here. Tiles show thumbnails (see src/lib/thumbs.mjs) and
+// link to the full photo.
+for (const { src } of gallery.photos)
+  if (!existsSync(join(process.cwd(), "public", src)))
+    throw new Error(
+      `src/data/gallery.json lists ${src}, which isn't in public/`,
+    );
+
+const sections = gallery.categories
+  .map((category) => ({
+    ...category,
+    subs: category.subs
+      .map((sub) => ({
+        ...sub,
+        photos: gallery.photos.filter((p) => p.category === sub.id),
+      }))
+      .filter((sub) => sub.photos.length),
+  }))
+  .filter((category) => category.subs.length);
 
 const crumbs = breadcrumb([
   { name: "Home", url: `${SITE_URL}/` },
@@ -45,27 +55,42 @@ const crumbs = breadcrumb([
       <div data-gallery-slot>
         {sections.map((section, s) => <section class="py-4">
           <h2 class="py-2 text-3xl font-bold">
-            <a class="hover:underline" href={section.url}>
-              {section.name}
-            </a>
-          </h2>
-          <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-            {section.photos.map((src, i) => <li>
-              <a href={src}>
-                <img
-                  class="aspect-square w-full rounded-sm object-cover"
-                  src={thumbPath(src, SIZES.at(-1))}
-                  srcset={thumbSrcset(src)}
-                  sizes={TILE_SIZES}
-                  width={SIZES.at(-1)}
-                  height={SIZES.at(-1)}
-                  alt={`${section.name} photo`}
-                  loading={s === 0 && i < 4 ? "eager" : "lazy"}
-                  decoding="async"
-                />
+            {section.page ? (
+              <a class="hover:underline" href={section.page}>
+                {section.label}
               </a>
-            </li>)}
-          </ul>
+            ) : (
+              section.label
+            )}
+          </h2>
+          {section.subs.map((sub, n) => <section class="py-2">
+            <h3 class="py-2 text-xl font-bold">
+              {sub.page ? (
+                <a class="hover:underline" href={sub.page}>
+                  {sub.label}
+                </a>
+              ) : (
+                sub.label
+              )}
+            </h3>
+            <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+              {sub.photos.map((photo, i) => <li>
+                <a href={photo.src}>
+                  <img
+                    class="aspect-square w-full rounded-sm object-cover"
+                    src={thumbPath(photo.src, SIZES.at(-1))}
+                    srcset={thumbSrcset(photo.src)}
+                    sizes={TILE_SIZES}
+                    width={SIZES.at(-1)}
+                    height={SIZES.at(-1)}
+                    alt={photo.description}
+                    loading={s === 0 && n === 0 && i < 4 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                </a>
+              </li>)}
+            </ul>
+          </section>)}
         </section>)}
       </div>
     </section>

@@ -1,0 +1,438 @@
+{
+  "categories": [
+    {
+      "slug": "pest-control",
+      "label": "Pest Control",
+      "page": "/pest-control",
+      "service": "pest control",
+      "subs": [
+        {
+          "id": "pest-control/scorpions",
+          "label": "Scorpions",
+          "page": "/pest-control/scorpions"
+        },
+        {
+          "id": "pest-control/spiders",
+          "label": "Spiders",
+          "page": "/pest-control/spiders"
+        },
+        {
+          "id": "pest-control/bees-wasps",
+          "label": "Bees & Wasps",
+          "page": "/pest-control/bees"
+        },
+        {
+          "id": "pest-control/termites",
+          "label": "Termites",
+          "page": "/pest-control/termites"
+        },
+        {
+          "id": "pest-control/rodents",
+          "label": "Rodents",
+          "page": "/pest-control/rodents"
+        },
+        {
+          "id": "pest-control/treatments",
+          "label": "Treatments",
+          "page": null
+        },
+        {
+          "id": "pest-control/other",
+          "label": "Other Pests",
+          "page": null
+        }
+      ]
+    },
+    {
+      "slug": "pools",
+      "label": "Pools",
+      "page": "/pools",
+      "service": "pool service",
+      "subs": [
+        {
+          "id": "pools/green-to-clean",
+          "label": "Green to Clean",
+          "page": null
+        },
+        {
+          "id": "pools/acid-wash",
+          "label": "Acid Washes",
+          "page": null
+        },
+        {
+          "id": "pools/tile-cleaning",
+          "label": "Tile Cleaning",
+          "page": null
+        },
+        {
+          "id": "pools/filters-equipment",
+          "label": "Filters & Equipment",
+          "page": null
+        },
+        {
+          "id": "pools/water-testing",
+          "label": "Water Testing",
+          "page": null
+        },
+        {
+          "id": "pools/maintenance",
+          "label": "Clean Pools",
+          "page": null
+        },
+        {
+          "id": "pools/other",
+          "label": "Other Pool Work",
+          "page": null
+        }
+      ]
+    },
+    {
+      "slug": "landscaping",
+      "label": "Landscaping",
+      "page": "/landscaping",
+      "service": "landscaping",
+      "subs": [
+        {
+          "id": "landscaping/trimming",
+          "label": "Tree & Bush Trimming",
+          "page": null
+        },
+        {
+          "id": "landscaping/lawns",
+          "label": "Lawns & Mowing",
+          "page": null
+        },
+        {
+          "id": "landscaping/synthetic-grass",
+          "label": "Synthetic Grass",
+          "page": null
+        },
+        {
+          "id": "landscaping/rock-pavers",
+          "label": "Rock & Pavers",
+          "page": null
+        },
+        {
+          "id": "landscaping/cleanups",
+          "label": "Clean Ups & Hauling",
+          "page": null
+        },
+        {
+          "id": "landscaping/holiday-lights",
+          "label": "Holiday Lights",
+          "page": null
+        },
+        {
+          "id": "landscaping/yards",
+          "label": "Finished Yards",
+          "page": null
+        },
+        {
+          "id": "landscaping/other",
+          "label": "Other Landscaping",
+          "page": null
+        }
+      ]
+    },
+    {
+      "slug": "company",
+      "label": "Our Team",
+      "page": null,
+      "service": null,
+      "subs": [
+        {
+          "id": "company/crew",
+          "label": "Our Crew",
+          "page": null
+        },
+        {
+          "id": "company/trucks",
+          "label": "Trucks & Gear",
+          "page": null
+        },
+        {
+          "id": "company/other",
+          "label": "Other",
+          "page": null
+        }
+      ]
+    }
+  ],
+  "photos": [
+    {
+      "src": "/general/truck.webp",
+      "description": "AZTECA company truck parked in front of a large home, bright blue sky",
+      "category": "company/trucks"
+    },
+    {
+      "src": "/landscape/cleanup1.webp",
+      "description": "Worker with a leaf blower cleaning a green lawn",
+      "category": "landscaping/cleanups"
+    },
+    {
+      "src": "/landscape/cleanup.webp",
+      "description": "Crew cleaning up a front yard with gravel and shrubs",
+      "category": "landscaping/cleanups"
+    },
+    {
+      "src": "/landscape/debrisHaul.webp",
+      "description": "Trailer loaded with tree branches being hauled away",
+      "category": "landscaping/cleanups"
+    },
+    {
+      "src": "/landscape/general1.webp",
+      "description": "Shaded patio looking out on a green lawn and hedges",
+      "category": "landscaping/yards"
+    },
+    {
+      "src": "/landscape/general2.webp",
+      "description": "Backyard pool with artificial turf and stone patio (current home page hero)",
+      "category": "landscaping/yards"
+    },
+    {
+      "src": "/landscape/general3.webp",
+      "description": "Lagoon pool and spa with lawn and mountain view",
+      "category": "landscaping/yards"
+    },
+    {
+      "src": "/landscape/general.webp",
+      "description": "Desert backyard with fountain, pavers, turf and lounge chairs",
+      "category": "landscaping/yards"
+    },
+    {
+      "src": "/landscape/grass1.webp",
+      "description": "Lush green lawn lined with tall hedges",
+      "category": "landscaping/lawns"
+    },
+    {
+      "src": "/landscape/grass2.webp",
+      "description": "Artificial turf with gravel border next to a pool",
+      "category": "landscaping/synthetic-grass"
+    },
+    {
+      "src": "/landscape/grass3.webp",
+      "description": "Paver patio with turf strip and small pool",
+      "category": "landscaping/yards"
+    },
+    {
+      "src": "/landscape/grass4.webp",
+      "description": "Green lawn beside a small guest house",
+      "category": "landscaping/lawns"
+    },
+    {
+      "src": "/landscape/grass5.webp",
+      "description": "Sod installation before and after (tall, portrait)",
+      "category": "landscaping/lawns"
+    },
+    {
+      "src": "/landscape/grass.webp",
+      "description": "Freshly mowed striped backyard lawn with fire pit",
+      "category": "landscaping/lawns"
+    },
+    {
+      "src": "/landscape/holiday1.webp",
+      "description": "Front yard decorated with Christmas lights and figures",
+      "category": "landscaping/holiday-lights"
+    },
+    {
+      "src": "/landscape/holiday.webp",
+      "description": "Front porch and shrubs wrapped in holiday lights",
+      "category": "landscaping/holiday-lights"
+    },
+    {
+      "src": "/landscape/rock.webp",
+      "description": "Worker spreading decorative rock with a wheelbarrow",
+      "category": "landscaping/rock-pavers"
+    },
+    {
+      "src": "/landscape/treeTrim1.webp",
+      "description": "Overgrown tree being trimmed in a desert front yard",
+      "category": "landscaping/trimming"
+    },
+    {
+      "src": "/landscape/treeTrim.webp",
+      "description": "Worker trimming a tree with a pole saw",
+      "category": "landscaping/trimming"
+    },
+    {
+      "src": "/pest/bees.webp",
+      "description": "Honeycomb covered in bees",
+      "category": "pest-control/bees-wasps"
+    },
+    {
+      "src": "/pest/bugs.webp",
+      "description": "Swarm of flying bugs under a light at night",
+      "category": "pest-control/other"
+    },
+    {
+      "src": "/pest/rat.webp",
+      "description": "Mouse in a dark corner",
+      "category": "pest-control/rodents"
+    },
+    {
+      "src": "/pest/scorpion1.webp",
+      "description": "Scorpion glowing under UV light on rocks (portrait)",
+      "category": "pest-control/scorpions"
+    },
+    {
+      "src": "/pest/scorpion2.webp",
+      "description": "Arizona bark scorpion close up on stucco",
+      "category": "pest-control/scorpions"
+    },
+    {
+      "src": "/pest/scorpion3.webp",
+      "description": "Scorpion glowing blue under UV light",
+      "category": "pest-control/scorpions"
+    },
+    {
+      "src": "/pest/spider1.webp",
+      "description": "Spider on concrete (portrait)",
+      "category": "pest-control/spiders"
+    },
+    {
+      "src": "/pest/spider.webp",
+      "description": "Black widow spider close up (square)",
+      "category": "pest-control/spiders"
+    },
+    {
+      "src": "/pest/spray.webp",
+      "description": "Technician spraying a yard with a pump sprayer",
+      "category": "pest-control/treatments"
+    },
+    {
+      "src": "/pest/termite.webp",
+      "description": "Termite mud tube on a wall",
+      "category": "pest-control/termites"
+    },
+    {
+      "src": "/pest/wasp.webp",
+      "description": "Paper wasp on its nest",
+      "category": "pest-control/bees-wasps"
+    },
+    {
+      "src": "/pool/1.webp",
+      "description": "Pool at sunset with glowing mountains",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/2.webp",
+      "description": "Freeform pool with umbrella and boulders",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/3.webp",
+      "description": "Lagoon pool with palm trees",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/4.webp",
+      "description": "Kidney pool with technician by a block wall",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/5.webp",
+      "description": "Rectangular pool and spa with robotic cleaner",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/6.webp",
+      "description": "Rectangular pool and spa with palms and string lights",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/7.webp",
+      "description": "Bright pool with deck jets and cactus planters",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/8.webp",
+      "description": "Pool with pergola and desert mountain view",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/9.webp",
+      "description": "Lagoon pool and spa next to turf (square)",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/10.webp",
+      "description": "Pool with patio chairs and flowering shrubs",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/11.webp",
+      "description": "Freeform pool and raised spa with mountain view",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/12.webp",
+      "description": "Pool framed by palm trees",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/13.webp",
+      "description": "Infinity edge pool with pergola and desert view",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/14.webp",
+      "description": "Pool with rock waterfall and cactus",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/15.webp",
+      "description": "Pool with turf and wide desert mountain view",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/16.webp",
+      "description": "Pool with flowers, lounge chairs and saguaro",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/17.webp",
+      "description": "Technician cleaning a pool wall with a hose",
+      "category": "pools/tile-cleaning"
+    },
+    {
+      "src": "/pool/acidwash.webp",
+      "description": "Pool steps half acid washed, before and after (square)",
+      "category": "pools/acid-wash"
+    },
+    {
+      "src": "/pool/algae.webp",
+      "description": "Green algae filled pool (square)",
+      "category": "pools/green-to-clean"
+    },
+    {
+      "src": "/pool/filters.webp",
+      "description": "Dirty and clean pool filter cartridges side by side (square)",
+      "category": "pools/filters-equipment"
+    },
+    {
+      "src": "/pool/greentoclean.webp",
+      "description": "Green pool turned clean, split before and after (square)",
+      "category": "pools/green-to-clean"
+    },
+    {
+      "src": "/pool/lightrepair.webp",
+      "description": "Technician repairing a pool light (square)",
+      "category": "pools/filters-equipment"
+    },
+    {
+      "src": "/pool/maintenance.webp",
+      "description": "Sparkling pool next to a stone column (square)",
+      "category": "pools/maintenance"
+    },
+    {
+      "src": "/pool/strips.webp",
+      "description": "Hand holding pool test strips (square)",
+      "category": "pools/water-testing"
+    },
+    {
+      "src": "/pool/tilecleaning.webp",
+      "description": "Technician cleaning pool tile line (square)",
+      "category": "pools/tile-cleaning"
+    }
+  ]
+}
