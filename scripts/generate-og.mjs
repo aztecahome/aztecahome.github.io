@@ -140,6 +140,13 @@ const sections = [
     bg: POOL_BG,
   },
   {
+    name: "gallery",
+    badge: "Gallery",
+    headline: "See Our Work.",
+    subhead: "Pest control, pools & landscaping across the Phoenix valley.",
+    bg: POOL_BG,
+  },
+  {
     name: "contact",
     badge: "Contact",
     headline: "Free Estimates.",
