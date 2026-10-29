@@ -428,11 +428,6 @@
       "src": "/pool/strips.webp",
       "description": "Hand holding pool test strips (square)",
       "category": "pools/water-testing"
-    },
-    {
-      "src": "/pool/tilecleaning.webp",
-      "description": "Technician cleaning pool tile line (square)",
-      "category": "pools/tile-cleaning"
     }
   ]
 }
