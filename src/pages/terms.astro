@@ -1,0 +1,106 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { breadcrumb, SITE_URL } from "../lib/business";
+
+const crumbs = breadcrumb([
+  { name: "Home", url: `${SITE_URL}/` },
+  { name: "Terms of Service", url: `${SITE_URL}/terms/` },
+]);
+---
+
+<Layout
+  title="Terms of Service — AZTECA Home Services"
+  description="Terms for using AZTECA Home Services, including our SMS program."
+  jsonLd={crumbs}
+>
+  <div
+    class="container mx-auto my-12 flex max-w-3xl flex-col gap-6 px-4 text-lg"
+  >
+    <h1 class="text-3xl font-black uppercase">Terms of Service</h1>
+    <p class="text-base">Last updated October 30, 2026</p>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-2xl font-bold">Acceptance of terms</h2>
+      <p>
+        By accessing or using the services provided by AZTECA Home Services, you
+        agree to be bound by these Terms of Service. If you do not agree to
+        these terms, please do not use our services.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-2xl font-bold">Description of services</h2>
+      <p>
+        AZTECA Home Services provides residential and commercial pest control,
+        pool maintenance, and landscaping services. We reserve the right to
+        modify or discontinue any service at any time without notice.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-2xl font-bold">SMS / text messaging program terms</h2>
+      <p>
+        By providing your phone number, you consent to receive SMS/text messages
+        from AZTECA Home Services. The customer may send recurring messages
+        regarding service reminders, appointment updates, and promotional
+        offers.
+      </p>
+      <p>
+        Message frequency varies based on your interaction with our services.
+        Message and data rates may apply. Recipients can reply STOP to opt out
+        of future messages and HELP for help. Carriers are not liable for
+        delayed or undelivered messages.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-2xl font-bold">User responsibilities</h2>
+      <p>
+        You are responsible for providing accurate and current information when
+        requesting services. You agree not to use our services for any unlawful
+        purpose or in any way that could damage or impair our operations.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-2xl font-bold">Disclaimer of warranties</h2>
+      <p>
+        Our services are provided on an "as is" and "as available" basis. AZTECA
+        Home Services makes no warranties, expressed or implied, regarding the
+        reliability or availability of our services beyond the specific
+        guarantees provided in our service agreements.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-2xl font-bold">Limitation of liability</h2>
+      <p>
+        To the maximum extent permitted by law, AZTECA Home Services shall not
+        be liable for any indirect, incidental, or consequential damages arising
+        out of or in connection with your use of our services.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-2xl font-bold">Changes to these terms</h2>
+      <p>
+        We reserve the right to update or modify these Terms of Service at any
+        time. Your continued use of our services after any changes constitutes
+        your acceptance of the new terms.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-2xl font-bold">Contact</h2>
+      <p>
+        Questions about these terms: email
+        <a class="font-bold underline" href="mailto:support@aztecahome.com"
+          >support@aztecahome.com</a
+        >
+        or call
+        <a class="font-bold underline" href="tel:602-926-2021">(602) 926-2021</a
+        >.
+      </p>
+    </section>
+  </div>
+</Layout>

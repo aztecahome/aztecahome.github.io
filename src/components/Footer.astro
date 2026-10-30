@@ -82,9 +82,15 @@ import AztecaLogo from "./AztecaLogo.astro";
     </div>
   </div>
   <div class="bg-army-600 p-4 text-army-100">
-    <div class="container mx-auto">
-      &#169; {new Date().getFullYear()} Copyright AZTECA Home Services. All
-      rights reserved.
+    <div class="container mx-auto flex flex-wrap justify-between gap-2">
+      <span>
+        &#169; {new Date().getFullYear()} Copyright AZTECA Home Services. All
+        rights reserved.
+      </span>
+      <span class="flex gap-4">
+        <a class="hover:underline" href="/privacy">Privacy Policy</a>
+        <a class="hover:underline" href="/terms">Terms of Service</a>
+      </span>
     </div>
   </div>
 </footer>
